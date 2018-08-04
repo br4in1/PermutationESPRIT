@@ -30,33 +30,79 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
-        echo "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\" />
-        <title>";
-        // line 5
+        echo "<!doctype html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <meta name=\"description\" content=\"\">
+    <meta name=\"author\" content=\"\">
+    <link rel=\"icon\" href=\"../../../../favicon.ico\">
+    <!-- Bootstrap core CSS -->
+    <link href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <link href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/base.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+    <title>";
+        // line 12
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        ";
-        // line 6
+    ";
+        // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
-    </head>
-    <body>
-        ";
-        // line 10
-        $this->displayBlock('body', $context, $blocks);
-        // line 11
-        echo "        ";
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
-        echo "    </body>
-</html>
+        // line 14
+        echo "</head>
+
+<body>
+
+<nav class=\"site-header sticky-top py-1\">
+    <div class=\"container d-flex flex-column flex-md-row justify-content-between\">
+        <a class=\"py-2\" href=\"#\">
+            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"d-block mx-auto\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"14.31\" y1=\"8\" x2=\"20.05\" y2=\"17.94\"></line><line x1=\"9.69\" y1=\"8\" x2=\"21.17\" y2=\"8\"></line><line x1=\"7.38\" y1=\"12\" x2=\"13.12\" y2=\"2.06\"></line><line x1=\"9.69\" y1=\"16\" x2=\"3.95\" y2=\"6.06\"></line><line x1=\"14.31\" y1=\"16\" x2=\"2.83\" y2=\"16\"></line><line x1=\"16.62\" y1=\"12\" x2=\"10.88\" y2=\"21.94\"></line></svg>
+        </a>
+
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Home</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Permutation</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Register/Login</a>
+        </div>
+
+</nav>
+
 ";
+        // line 31
+        $this->displayBlock('body', $context, $blocks);
+        // line 32
+        echo "
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+<script src=\"";
+        // line 34
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popover.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 35
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 36
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/holder.min.js"), "html", null, true);
+        echo "\"></script>
+<script>
+    Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+    });
+</script>
+";
+        // line 44
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 45
+        echo "</body>
+</html>";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -65,7 +111,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 5
+    // line 12
     public function block_title($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -83,7 +129,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 6
+    // line 13
     public function block_stylesheets($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -100,7 +146,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 10
+    // line 31
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -117,7 +163,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 11
+    // line 44
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -146,24 +192,56 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     public function getDebugInfo()
     {
-        return array (  121 => 11,  104 => 10,  87 => 6,  69 => 5,  57 => 12,  54 => 11,  52 => 10,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  167 => 44,  150 => 31,  133 => 13,  115 => 12,  104 => 45,  102 => 44,  91 => 36,  87 => 35,  83 => 34,  79 => 32,  77 => 31,  58 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  33 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel=\"icon\" type=\"image/x-icon\" href=\"{{ asset('favicon.ico') }}\" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
-", "base.html.twig", "/Users/simo/Desktop/PermutationESPRIT/app/Resources/views/base.html.twig");
+        return new Twig_Source("<!doctype html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <meta name=\"description\" content=\"\">
+    <meta name=\"author\" content=\"\">
+    <link rel=\"icon\" href=\"../../../../favicon.ico\">
+    <!-- Bootstrap core CSS -->
+    <link href=\"{{ asset('assets/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets/css/base.css') }}\" rel=\"stylesheet\">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+
+<body>
+
+<nav class=\"site-header sticky-top py-1\">
+    <div class=\"container d-flex flex-column flex-md-row justify-content-between\">
+        <a class=\"py-2\" href=\"#\">
+            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"d-block mx-auto\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"14.31\" y1=\"8\" x2=\"20.05\" y2=\"17.94\"></line><line x1=\"9.69\" y1=\"8\" x2=\"21.17\" y2=\"8\"></line><line x1=\"7.38\" y1=\"12\" x2=\"13.12\" y2=\"2.06\"></line><line x1=\"9.69\" y1=\"16\" x2=\"3.95\" y2=\"6.06\"></line><line x1=\"14.31\" y1=\"16\" x2=\"2.83\" y2=\"16\"></line><line x1=\"16.62\" y1=\"12\" x2=\"10.88\" y2=\"21.94\"></line></svg>
+        </a>
+
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Home</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Permutation</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Register/Login</a>
+        </div>
+
+</nav>
+
+{% block body %}{% endblock %}
+
+<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
+<script src=\"{{ asset('assets/js/popover.js') }}\"></script>
+<script src=\"{{ asset('assets/js/bootstrap.min.js') }}\"></script>
+<script src=\"{{ asset('assets/js/holder.min.js') }}\"></script>
+<script>
+    Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+    });
+</script>
+{% block javascripts %}{% endblock %}
+</body>
+</html>", "base.html.twig", "/Users/simo/Desktop/PermutationESPRIT/app/Resources/views/base.html.twig");
     }
 }
