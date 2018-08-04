@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Permutation</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ permutation.id }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ permutation.user }}</td>
+            </tr>
+            <tr>
+                <th>Target</th>
+                <td>{{ permutation.target }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ permutation.state }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('permutation_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('permutation_edit', { 'id': permutation.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

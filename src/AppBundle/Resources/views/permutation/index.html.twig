@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block body %}
+    <h1>Permutations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>User</th>
+                <th>Target</th>
+                <th>Date</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permutation in permutations %}
+            <tr>
+                <td><a href="{{ path('permutation_show', { 'id': permutation.id }) }}">{{ permutation.id }}</a></td>
+                <td>{{ permutation.user }}</td>
+                <td>{{ permutation.target }}</td>
+                <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ permutation.state }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('permutation_show', { 'id': permutation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('permutation_edit', { 'id': permutation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Create a new permutation
+            </button>
+
+        </li>
+    </ul>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Permutation creation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('permutation_index') }}">Back to the list</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" value="Create" />
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

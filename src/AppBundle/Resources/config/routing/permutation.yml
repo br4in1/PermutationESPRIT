@@ -1,0 +1,20 @@
+permutation_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Permutation:index" }
+    methods:  [GET, POST]
+
+permutation_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Permutation:show" }
+    methods:  GET
+
+
+permutation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Permutation:edit" }
+    methods:  [GET, POST]
+
+permutation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Permutation:delete" }
+    methods:  DELETE

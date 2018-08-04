@@ -65,29 +65,34 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"d-block mx-auto\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"14.31\" y1=\"8\" x2=\"20.05\" y2=\"17.94\"></line><line x1=\"9.69\" y1=\"8\" x2=\"21.17\" y2=\"8\"></line><line x1=\"7.38\" y1=\"12\" x2=\"13.12\" y2=\"2.06\"></line><line x1=\"9.69\" y1=\"16\" x2=\"3.95\" y2=\"6.06\"></line><line x1=\"14.31\" y1=\"16\" x2=\"2.83\" y2=\"16\"></line><line x1=\"16.62\" y1=\"12\" x2=\"10.88\" y2=\"21.94\"></line></svg>
         </a>
 
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Home</a>
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Permutation</a>
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Register/Login</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "\">Home</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_registration_register");
+        echo "\">Register/Login</a>
         </div>
 
 </nav>
 
 ";
-        // line 31
+        // line 30
         $this->displayBlock('body', $context, $blocks);
-        // line 32
+        // line 31
         echo "
 <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
 <script src=\"";
-        // line 34
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popover.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 35
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 36
+        // line 35
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/holder.min.js"), "html", null, true);
         echo "\"></script>
 <script>
@@ -98,9 +103,9 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
     });
 </script>
 ";
-        // line 44
+        // line 43
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 45
+        // line 44
         echo "</body>
 </html>";
         
@@ -146,7 +151,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 31
+    // line 30
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -163,7 +168,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 44
+    // line 43
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -192,7 +197,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     public function getDebugInfo()
     {
-        return array (  167 => 44,  150 => 31,  133 => 13,  115 => 12,  104 => 45,  102 => 44,  91 => 36,  87 => 35,  83 => 34,  79 => 32,  77 => 31,  58 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  33 => 1,);
+        return array (  172 => 43,  155 => 30,  138 => 13,  120 => 12,  109 => 44,  107 => 43,  96 => 35,  92 => 34,  88 => 33,  84 => 31,  82 => 30,  74 => 25,  70 => 24,  58 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -220,9 +225,8 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
             <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"d-block mx-auto\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"14.31\" y1=\"8\" x2=\"20.05\" y2=\"17.94\"></line><line x1=\"9.69\" y1=\"8\" x2=\"21.17\" y2=\"8\"></line><line x1=\"7.38\" y1=\"12\" x2=\"13.12\" y2=\"2.06\"></line><line x1=\"9.69\" y1=\"16\" x2=\"3.95\" y2=\"6.06\"></line><line x1=\"14.31\" y1=\"16\" x2=\"2.83\" y2=\"16\"></line><line x1=\"16.62\" y1=\"12\" x2=\"10.88\" y2=\"21.94\"></line></svg>
         </a>
 
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Home</a>
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Permutation</a>
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"#\">Register/Login</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"{{ path('index') }}\">Home</a>
+        <a class=\"py-2 d-none d-md-inline-block\" href=\"{{ path('fos_user_registration_register') }}\">Register/Login</a>
         </div>
 
 </nav>
@@ -242,6 +246,6 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 </script>
 {% block javascripts %}{% endblock %}
 </body>
-</html>", "base.html.twig", "/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/app/Resources/views/base.html.twig");
+</html>", "base.html.twig", "/Users/simo/Desktop/PermutationESPRIT/app/Resources/views/base.html.twig");
     }
 }

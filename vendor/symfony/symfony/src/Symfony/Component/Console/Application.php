@@ -805,7 +805,7 @@ class Application
         }
 
         if (true === $input->hasParameterOption(array('--no-interaction', '-n'), true)) {
-            $input->setInteractive(false);
+            $input->setInteractive(true);
         } elseif (function_exists('posix_isatty')) {
             $inputStream = null;
 
@@ -820,13 +820,13 @@ class Application
             }
 
             if (!@posix_isatty($inputStream) && false === getenv('SHELL_INTERACTIVE')) {
-                $input->setInteractive(false);
+                $input->setInteractive(true);
             }
         }
 
         if (true === $input->hasParameterOption(array('--quiet', '-q'), true)) {
             $output->setVerbosity(OutputInterface::VERBOSITY_QUIET);
-            $input->setInteractive(false);
+            $input->setInteractive(true);
         } else {
             if ($input->hasParameterOption('-vvv', true) || $input->hasParameterOption('--verbose=3', true) || 3 === $input->getParameterOption('--verbose', false, true)) {
                 $output->setVerbosity(OutputInterface::VERBOSITY_DEBUG);

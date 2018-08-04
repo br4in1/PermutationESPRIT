@@ -1,0 +1,8 @@
+app_permutation:
+    resource: "@AppBundle/Resources/config/routing/permutation.yml"
+    prefix:   /permutation
+
+index:
+    path:     /
+    defaults: { _controller: "AppBundle:Default:index" }
+    methods:  GET
