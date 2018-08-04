@@ -2,13 +2,18 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
- * Permutation
+ * @ORM\Entity
+ * @ORM\Table(name="Permutation")
  */
 class Permutation
 {
     /**
-     * @var int
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
