@@ -132,6 +132,6 @@ class __TwigTemplate_e07e524cb0d19c8ec59dab60ea1519ede4ddc106a84438bcdb6f0672ed0
         </div>
     </div>
 {% endblock %}
-", "default/index.html.twig", "/Users/simo/Desktop/PermutationESPRIT/app/Resources/views/default/index.html.twig");
+", "default/index.html.twig", "/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/app/Resources/views/default/index.html.twig");
     }
 }

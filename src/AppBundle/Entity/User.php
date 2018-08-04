@@ -57,6 +57,18 @@ class User extends BaseUser
     }
 
     /**
+     * Overridden so that username is now optional
+     *
+     * @param string $email
+     * @return User
+     */
+    public function setEmail($email)
+    {
+        $this->setUsername($email);
+        return parent::setEmail($email);
+    }
+
+    /**
      * @return mixed
      */
     public function getSpecialite()

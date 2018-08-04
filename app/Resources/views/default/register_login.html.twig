@@ -65,7 +65,8 @@
                             </div>
                         </div>
                         <div class="form-bottom">
-                            <form role="form" action="" method="post" class="login-form">
+                            {{ include('@FOSUser/Security/login_content.html.twig') }}
+                            <!--<form role="form" action="" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Username</label>
                                     <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
@@ -75,22 +76,7 @@
                                     <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
                                 </div>
                                 <button type="submit" class="btn">Sign in!</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="social-login">
-                        <h3>...or login with:</h3>
-                        <div class="social-login-buttons">
-                            <a class="btn btn-link-1 btn-link-1-facebook" href="#">
-                                <i class="fa fa-facebook"></i> Facebook
-                            </a>
-                            <a class="btn btn-link-1 btn-link-1-twitter" href="#">
-                                <i class="fa fa-twitter"></i> Twitter
-                            </a>
-                            <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
-                                <i class="fa fa-google-plus"></i> Google Plus
-                            </a>
+                            </form>-->
                         </div>
                     </div>
 
@@ -99,6 +85,7 @@
                 <div class="col-sm-1 middle-border"></div>
                 <div class="col-sm-1"></div>
 
+                {% if form is defined%}
                 <div class="col-sm-5">
 
                     <div class="form-box">
@@ -117,6 +104,7 @@
                     </div>
 
                 </div>
+                {% endif %}
             </div>
 
         </div>
