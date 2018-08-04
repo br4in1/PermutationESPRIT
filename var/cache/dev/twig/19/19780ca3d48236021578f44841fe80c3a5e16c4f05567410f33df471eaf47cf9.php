@@ -376,6 +376,6 @@ class __TwigTemplate_4f8a8c38a16c55f124bfcc4c0f16a554df91b69945a678c2b8139b1bb28
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/Users/simo/Desktop/PermutationESPRIT/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views/Collector/events.html.twig");
     }
 }

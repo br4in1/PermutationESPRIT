@@ -1659,6 +1659,6 @@ class __TwigTemplate_c4d3b70354d4395a0ac0720e621a439884da8b0f8a4f45fafb63e85fe10
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/simo/Desktop/PermutationESPRIT/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

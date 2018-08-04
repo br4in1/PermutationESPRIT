@@ -409,6 +409,6 @@ class __TwigTemplate_06ad173002216d14b9cb7ab29a85c82c5abe60a1e4647cb8cd6c377e445
     });
 
 /*]]>*/</script>
-", "@Twig/base_js.html.twig", "/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/base_js.html.twig");
+", "@Twig/base_js.html.twig", "/Users/simo/Desktop/PermutationESPRIT/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views/base_js.html.twig");
     }
 }
