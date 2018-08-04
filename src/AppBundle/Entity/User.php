@@ -25,6 +25,14 @@ class User extends BaseUser
      * @ORM\Column(type="string")
      */
     private $specialite;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $firstname;
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $lastname;
 
     public function __construct()
     {
@@ -62,6 +70,38 @@ class User extends BaseUser
     public function setSpecialite($specialite)
     {
         $this->specialite = $specialite;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param mixed $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param mixed $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
     }
 
 

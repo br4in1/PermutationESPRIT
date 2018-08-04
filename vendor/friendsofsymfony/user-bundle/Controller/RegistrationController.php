@@ -68,11 +68,12 @@ class RegistrationController extends Controller
 
         $form = $this->formFactory->createForm();
         $form->setData($user);
-
+        $user->setUsername($user->getEmail());
+        $user->setUsernameCanonical($user->getUsername());
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-            if ($form->isValid()) {
+            if ($form->isValid() && substr($user->getEmail(), -strlen("@esprit.tn")) === "@esprit.tn") {
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
@@ -96,7 +97,8 @@ class RegistrationController extends Controller
             }
         }
 
-        return $this->render('@FOSUser/Registration/register.html.twig', array(
+        //return $this->render('@FOSUser/Registration/register.html.twig', array('form' => $form->createView(),));
+        return $this->render(':default:register_login.html.twig', array(
             'form' => $form->createView(),
         ));
     }

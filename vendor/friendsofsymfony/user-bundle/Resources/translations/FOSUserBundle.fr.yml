@@ -85,3 +85,7 @@ form:
     password_confirmation: 'Répéter le mot de passe'
     new_password: 'Nouveau mot de passe'
     new_password_confirmation: 'Répéter le nouveau mot de passe'
+    phone: 'Numéro de téléphone'
+    specialite: 'Spécialité'
+    firstname:  'Prénom'
+    lastname: 'Nom'

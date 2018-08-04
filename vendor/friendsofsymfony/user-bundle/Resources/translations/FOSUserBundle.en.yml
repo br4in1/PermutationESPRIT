@@ -90,3 +90,7 @@ form:
     password_confirmation: 'Repeat password'
     new_password: 'New password'
     new_password_confirmation: 'Repeat new password'
+    phone: 'Phone Number'
+    specialite:  'Speciality'
+    firstname:  'First Name'
+    lastname: 'Last Name'
