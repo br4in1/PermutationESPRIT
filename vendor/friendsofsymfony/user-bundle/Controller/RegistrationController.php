@@ -56,6 +56,7 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
+        if($this->isGranted("ROLE_USER")) return $this->redirectToRoute("index");
         $user = $this->userManager->createUser();
         $user->setEnabled(true);
 

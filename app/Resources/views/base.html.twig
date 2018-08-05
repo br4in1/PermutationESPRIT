@@ -7,31 +7,46 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/base.css') }}" rel="stylesheet">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+    {% endblock %}
 </head>
 
 <body>
 
-<nav class="site-header sticky-top py-1">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-        </a>
 
-        <a class="py-2 d-none d-md-inline-block" href="{{ path('index') }}">Home</a>
-        <a class="py-2 d-none d-md-inline-block" href="{{ path('fos_user_registration_register') }}">Register/Login</a>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">EspritEntraide</a>
         </div>
-
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-8730686316513863",
+                enable_page_level_ads: true
+            });
+        </script>
+        <ul class="nav navbar-nav">
+            <li ><a style="color:white;" href="{{ path('index') }}">Accueil</a></li>
+        </ul>
+        <ul style="float: right" class="nav navbar-nav ml-auto">
+            {% if is_granted("ROLE_USER") %}
+                <li style="float: right;"><a style="color:white; "><strong>Bonjour </strong> {{ app.user.firstname }} !</a></li>
+            {% else %}
+                <a href="{{ path('fos_user_registration_register') }}" class="btn btn-primary navbar-btn">Connexion/Inscription</a>
+            {% endif %}
+        </ul>
+    </div>
 </nav>
 
 {% block body %}{% endblock %}
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="{{ asset('assets/js/popover.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/js/holder.min.js') }}"></script>
 <script>
     Holder.addTheme('thumb', {

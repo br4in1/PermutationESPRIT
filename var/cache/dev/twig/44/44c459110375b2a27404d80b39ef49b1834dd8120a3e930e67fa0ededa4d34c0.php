@@ -41,7 +41,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
     <!-- Bootstrap core CSS -->
     <link href=\"";
         // line 10
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/bootstrap.min.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/bootstrap/css/bootstrap.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     <link href=\"";
         // line 11
@@ -54,45 +54,60 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
     ";
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 14
+        // line 15
         echo "</head>
 
 <body>
 
-<nav class=\"site-header sticky-top py-1\">
-    <div class=\"container d-flex flex-column flex-md-row justify-content-between\">
-        <a class=\"py-2\" href=\"#\">
-            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"d-block mx-auto\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"14.31\" y1=\"8\" x2=\"20.05\" y2=\"17.94\"></line><line x1=\"9.69\" y1=\"8\" x2=\"21.17\" y2=\"8\"></line><line x1=\"7.38\" y1=\"12\" x2=\"13.12\" y2=\"2.06\"></line><line x1=\"9.69\" y1=\"16\" x2=\"3.95\" y2=\"6.06\"></line><line x1=\"14.31\" y1=\"16\" x2=\"2.83\" y2=\"16\"></line><line x1=\"16.62\" y1=\"12\" x2=\"10.88\" y2=\"21.94\"></line></svg>
-        </a>
 
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"";
-        // line 24
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\">Home</a>
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"";
-        // line 25
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_registration_register");
-        echo "\">Register/Login</a>
+<nav class=\"navbar navbar-inverse\">
+    <div class=\"container-fluid\">
+        <div class=\"navbar-header\">
+            <a class=\"navbar-brand\" href=\"#\">EspritEntraide</a>
         </div>
-
+        <ul class=\"nav navbar-nav\">
+            <li ><a style=\"color:white;\" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "\">Accueil</a></li>
+        </ul>
+        <ul style=\"float: right\" class=\"nav navbar-nav ml-auto\">
+            ";
+        // line 29
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 30
+            echo "                <li style=\"float: right;\"><a style=\"color:white; \"><strong>Bonjour </strong> ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 30, $this->source); })()), "user", array()), "firstname", array()), "html", null, true);
+            echo " !</a></li>
+            ";
+        } else {
+            // line 32
+            echo "                <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fos_user_registration_register");
+            echo "\" class=\"btn btn-primary navbar-btn\">Connexion/Inscription</a>
+            ";
+        }
+        // line 34
+        echo "        </ul>
+    </div>
 </nav>
 
 ";
-        // line 30
+        // line 38
         $this->displayBlock('body', $context, $blocks);
-        // line 31
+        // line 39
         echo "
 <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
 <script src=\"";
-        // line 33
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/popover.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 34
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/bootstrap.min.js"), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/bootstrap/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 35
+        // line 43
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/holder.min.js"), "html", null, true);
         echo "\"></script>
 <script>
@@ -103,9 +118,9 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
     });
 </script>
 ";
-        // line 43
+        // line 51
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 44
+        // line 52
         echo "</body>
 </html>";
         
@@ -143,6 +158,8 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
+        // line 14
+        echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -151,7 +168,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 30
+    // line 38
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -168,7 +185,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     }
 
-    // line 43
+    // line 51
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -197,7 +214,7 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
 
     public function getDebugInfo()
     {
-        return array (  172 => 43,  155 => 30,  138 => 13,  120 => 12,  109 => 44,  107 => 43,  96 => 35,  92 => 34,  88 => 33,  84 => 31,  82 => 30,  74 => 25,  70 => 24,  58 => 14,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  33 => 1,);
+        return array (  189 => 51,  172 => 38,  162 => 14,  153 => 13,  135 => 12,  124 => 52,  122 => 51,  111 => 43,  107 => 42,  103 => 41,  99 => 39,  97 => 38,  91 => 34,  85 => 32,  79 => 30,  77 => 29,  71 => 26,  58 => 15,  56 => 13,  52 => 12,  48 => 11,  44 => 10,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -211,31 +228,39 @@ class __TwigTemplate_e593ded40bef961a16a3d44e17899aadb0b65e86739cf01afd40330e484
     <meta name=\"author\" content=\"\">
     <link rel=\"icon\" href=\"../../../../favicon.ico\">
     <!-- Bootstrap core CSS -->
-    <link href=\"{{ asset('assets/css/bootstrap.min.css') }}\" rel=\"stylesheet\">
+    <link href=\"{{ asset('assets/bootstrap/css/bootstrap.css') }}\" rel=\"stylesheet\">
     <link href=\"{{ asset('assets/css/base.css') }}\" rel=\"stylesheet\">
     <title>{% block title %}Welcome!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    {% block stylesheets %}
+    {% endblock %}
 </head>
 
 <body>
 
-<nav class=\"site-header sticky-top py-1\">
-    <div class=\"container d-flex flex-column flex-md-row justify-content-between\">
-        <a class=\"py-2\" href=\"#\">
-            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"d-block mx-auto\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><line x1=\"14.31\" y1=\"8\" x2=\"20.05\" y2=\"17.94\"></line><line x1=\"9.69\" y1=\"8\" x2=\"21.17\" y2=\"8\"></line><line x1=\"7.38\" y1=\"12\" x2=\"13.12\" y2=\"2.06\"></line><line x1=\"9.69\" y1=\"16\" x2=\"3.95\" y2=\"6.06\"></line><line x1=\"14.31\" y1=\"16\" x2=\"2.83\" y2=\"16\"></line><line x1=\"16.62\" y1=\"12\" x2=\"10.88\" y2=\"21.94\"></line></svg>
-        </a>
 
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"{{ path('index') }}\">Home</a>
-        <a class=\"py-2 d-none d-md-inline-block\" href=\"{{ path('fos_user_registration_register') }}\">Register/Login</a>
+<nav class=\"navbar navbar-inverse\">
+    <div class=\"container-fluid\">
+        <div class=\"navbar-header\">
+            <a class=\"navbar-brand\" href=\"#\">EspritEntraide</a>
         </div>
-
+        <ul class=\"nav navbar-nav\">
+            <li ><a style=\"color:white;\" href=\"{{ path('index') }}\">Accueil</a></li>
+        </ul>
+        <ul style=\"float: right\" class=\"nav navbar-nav ml-auto\">
+            {% if is_granted(\"ROLE_USER\") %}
+                <li style=\"float: right;\"><a style=\"color:white; \"><strong>Bonjour </strong> {{ app.user.firstname }} !</a></li>
+            {% else %}
+                <a href=\"{{ path('fos_user_registration_register') }}\" class=\"btn btn-primary navbar-btn\">Connexion/Inscription</a>
+            {% endif %}
+        </ul>
+    </div>
 </nav>
 
 {% block body %}{% endblock %}
 
 <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>
 <script src=\"{{ asset('assets/js/popover.js') }}\"></script>
-<script src=\"{{ asset('assets/js/bootstrap.min.js') }}\"></script>
+<script src=\"{{ asset('assets/bootstrap/js/bootstrap.js') }}\"></script>
 <script src=\"{{ asset('assets/js/holder.min.js') }}\"></script>
 <script>
     Holder.addTheme('thumb', {

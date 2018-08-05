@@ -1,50 +1,41 @@
 {% extends 'base.html.twig' %}
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body %}
-    <h1>Permutations list</h1>
+    <h1 style="margin: 30px;">Liste des permutations</h1>
 
-    <table>
-        <thead>
+    <div id="table_div" style="width: 95%; margin: auto;">
+        <table id="permutations_table">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>User</th>
-                <th>Target</th>
-                <th>Date</th>
-                <th>State</th>
-                <th>Actions</th>
+                <th>Etudiant</th>
+                <th>Specialité actuelle</th>
+                <th></th>
+                <th>Destination</th>
+                <th>Ajoutée le</th>
+                <th><i class="fa fa-phone"></i> Téléphone</th>
+                <th><i class="fa fa-mail-forward"></i> Email</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for permutation in permutations %}
-            <tr>
-                <td><a href="{{ path('permutation_show', { 'id': permutation.id }) }}">{{ permutation.id }}</a></td>
-                <td>{{ permutation.user }}</td>
-                <td>{{ permutation.target }}</td>
-                <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ permutation.state }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('permutation_show', { 'id': permutation.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('permutation_edit', { 'id': permutation.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for permutation in permutations %}
+                <tr>
+                    <td>{{ permutation.user.lastname ~ " " ~ permutation.user.firstname }}</td>
+                    <td>{{ permutation.user.specialite }}</td>
+                    <td><i class="fa fa-arrow-right"></i></td>
+                    <td>{{ permutation.target }}</td>
+                    <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if permutation.user.phone is defined %} {{ permutation.user.phone }} {% endif %}</td>
+                    <td><a href="mailto:{{ permutation.user.email }}">{{ permutation.user.email }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 
     <ul>
-        <li>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                Create a new permutation
-            </button>
-
-        </li>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            +
+        </button>
     </ul>
 
     <!-- Modal -->
@@ -52,7 +43,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Permutation creation</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Nouvelle Permutation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -61,20 +52,29 @@
 
                     {{ form_start(form) }}
                     {{ form_widget(form) }}
-
-                    <ul>
-                        <li>
-                            <a href="{{ path('permutation_index') }}">Back to the list</a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <input type="submit" value="Create" />
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Confirmer</button>
                     {{ form_end(form) }}
                 </div>
             </div>
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/Datatables/datatables.min.js') }}"></script>
+    <script language="JavaScript">
+        $(document).ready( function () {
+            $('#permutations_table').DataTable();
+        } );
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Datatables/datatables.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}"/>
+    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 {% endblock %}

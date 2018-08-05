@@ -14,17 +14,20 @@ class PermutationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('target',ChoiceType::class,['choices' => [ 'Arctic (Cloud)'=> "Arctic (Cloud)",
-                                                                            'DataScience'=> "DataScience",
-                                                                            'ERP-BI'=> "ERP-BI",
-                                                                            'GL'=> "GL",
-                                                                            'Infini'=> "Infini",
-                                                                            'IRT'=> "IRT",
-                                                                            'ISEM'=> "ISEM",
-                                                                            'NIDS'=> "NIDS",
-                                                                            'TWIN'=> "TWIN",
-                                                                            'SIM'=> "SIM",
-                                                                            'SLEAM'=> "SLEAM"]]);
+        $builder->add('target',ChoiceType::class,['choices' => array(
+            'GL' => 'GL',
+            'INFINI' => 'INFINI',
+            'DS' => 'DS',
+            'ISEM' => 'ISEM',
+            'SLEAM' => 'SLEAM',
+            'INFO B' => 'INFO B',
+            'NIDS' => 'NIDS',
+            'SIM' => 'SIM',
+            'ArcTic (Cloud)' => 'ArcTic (Cloud)',
+            'IRT' => 'IRT',
+            'TWIN' => 'TWIN',
+            'ERP/BI' => 'ERP/BI'
+        )]);
     }/**
      * {@inheritdoc}
      */
