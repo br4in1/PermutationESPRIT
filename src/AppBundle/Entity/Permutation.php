@@ -19,21 +19,28 @@ class Permutation
 
     /**
      * @var int
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
+
     private $user;
 
     /**
      * @var string
+     * @ORM\Column(type="string")
      */
+
     private $target;
 
     /**
      * @var \DateTime
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
     /**
      * @var int
+     * @ORM\Column(type="integer")
      */
     private $state;
 

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Permutation;
+use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints\Date;
@@ -29,7 +30,7 @@ class PermutationController extends Controller
 
             $permutation->setDate(new \DateTime());
             $permutation->setState(1);
-            $permutation->setUser(1);
+            $permutation->setUser($this->getUser());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($permutation);
