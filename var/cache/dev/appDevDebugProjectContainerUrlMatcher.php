@@ -106,18 +106,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         elseif (0 === strpos($pathinfo, '/permutation')) {
             // permutation_index
             if ('/permutation' === $trimmedPathinfo) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_permutation_index;
-                }
-
                 if (substr($pathinfo, -1) !== '/') {
                     return $this->redirect($rawPathinfo.'/', 'permutation_index');
                 }
 
                 return array (  '_controller' => 'AppBundle\\Controller\\PermutationController::indexAction',  '_route' => 'permutation_index',);
             }
-            not_permutation_index:
 
             // permutation_show
             if (preg_match('#^/permutation/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
@@ -151,6 +145,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_delete')), array (  '_controller' => 'AppBundle\\Controller\\PermutationController::deleteAction',));
             }
             not_permutation_delete:
+
+            // permutation_new
+            if ('/permutation/add' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\PermutationController::addPermutationAction',  '_route' => 'permutation_new',);
+            }
 
         }
 

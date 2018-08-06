@@ -14,6 +14,48 @@ use Symfony\Component\Validator\Constraints\Date;
  */
 class PermutationController extends Controller
 {
+    private static $error;
+    public function addPermutationAction(Request $request){
+        $specs = array('GL','ERP/BI','INFINI','SIM','SLEAM','INFO B','NIDS','TWIN','ARCTIC (Cloud)','IRT','ISEM','DS');
+        $em = $this->getDoctrine()->getManager();
+        $permutations = $em->getRepository('AppBundle:Permutation')->findAll();
+        $em = $this->getDoctrine()->getManager();
+        $test = $em->getRepository('AppBundle:Permutation')->findBy(
+            ['user' => $this->getUser(),
+                'target' => $request->get('target')]);
+        if(!in_array($request->get('target'),$specs)){
+            return $this->render('@App/permutation/index.html.twig', array(
+                'permutations' => $permutations,
+                'error' => 'Spécialité invalide. Veuillez choisir une spécialité de la liste.'
+            ));
+        }
+        else if($request->get('target') == $this->getUser()->getSpecialite()){
+            return $this->render('@App/permutation/index.html.twig', array(
+                'permutations' => $permutations,
+                'error' => 'La spécialité de départ et de destination doivent être différentes'
+            ));
+        }
+        else if($test != NULL){
+            return $this->render('@App/permutation/index.html.twig', array(
+                'permutations' => $permutations,
+                'error' => 'Vous avez déja saisi une permutation vers cette spécialité.'
+            ));
+        }
+        else{
+            $permutation = new Permutation();
+            $permutation->setTarget($request->get('target'));
+            $permutation->setDate(new \DateTime());
+            $permutation->setState(1);
+            $permutation->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($permutation);
+            $em->flush();
+            return $this->render('@App/permutation/index.html.twig', array(
+                'permutations' => $permutations,
+                'error' => ''
+            ));
+        }
+    }
     /**
      * Lists all permutation entities.
      *
@@ -22,42 +64,12 @@ class PermutationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $permutations = $em->getRepository('AppBundle:Permutation')->findAll();
-
-        $permutation = new Permutation();
-        $form = $this->createForm('AppBundle\Form\PermutationType', $permutation);
-        $form->handleRequest($request);
-
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $permutation->setDate(new \DateTime());
-            $permutation->setState(1);
-            $permutation->setUser($this->getUser());
-
-            $test = $em->getRepository('AppBundle:Permutation')->findBy(
-                ['user' => $permutation->getUser(),
-                'target' => $permutation->getTarget()]);
-
-            $user = new User($this->getUser());
-            if($test==NULL) {
-                $em = $this->getDoctrine()->getManager();
-                $em->persist($permutation);
-                $em->flush();
-            }
-
-            // else erreur existe deja
-
-            if($permutation->getTarget()== $user->getSpecialite())
-                // Erreur target=destination
-
-            return $this->redirectToRoute('permutation_index', array( 'permutations' => $permutations,
-                'form' => $form->createView()));
-        }
-
         return $this->render('@App/permutation/index.html.twig', array(
             'permutations' => $permutations,
-            'form' => $form->createView(),
+            'error' => ""
         ));
+        //$form = $this->createForm('AppBundle\Form\PermutationType', $permutation);
+        //$form->handleRequest($request);
     }
 
     /**

@@ -1,7 +1,6 @@
 permutation_index:
     path:     /
     defaults: { _controller: "AppBundle:Permutation:index" }
-    methods:  [GET, POST]
 
 permutation_show:
     path:     /{id}/show
@@ -18,3 +17,7 @@ permutation_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:Permutation:delete" }
     methods:  DELETE
+
+permutation_new:
+    path: /add
+    defaults: { _controller:  "AppBundle:Permutation:addPermutation"  }

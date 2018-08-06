@@ -1,7 +1,12 @@
 {% extends 'base.html.twig' %}
-{% form_theme form 'bootstrap_3_layout.html.twig' %}
+{% block title %} Permutations entre spécialités {% endblock %}
 {% block body %}
     <h1 style="margin: 30px;">Liste des permutations</h1>
+    {% if error|length > 0 %}
+        <div style="margin-left: 30px;margin-right: 30px;" class="alert alert-danger">
+            {{ error }}
+        </div>
+    {% endif %}
     <div id="table_div" style="width: 95%; margin: auto;">
         <table id="permutations_table">
             <thead>
@@ -22,7 +27,7 @@
                     <td>{{ permutation.user.specialite }}</td>
                     <td><i class="fa fa-arrow-right"></i></td>
                     <td>{{ permutation.target }}</td>
-                    <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d H:i') }}{% endif %}</td>
                     <td>{% if permutation.user.phone is defined %} {{ permutation.user.phone }} {% endif %}</td>
                     <td><a href="mailto:{{ permutation.user.email }}">{{ permutation.user.email }}</a></td>
                 </tr>
@@ -38,7 +43,8 @@
     </ul>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -47,16 +53,28 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-
-                    {{ form_start(form) }}
-                    {{ form_widget(form) }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                    <button type="submit" class="btn btn-primary">Confirmer</button>
-                    {{ form_end(form) }}
-                </div>
+                <form action="{{ path('permutation_new') }}" method="post">
+                    <div class="modal-body">
+                        <select name="target" class="form-control">
+                            <option value="GL">GL</option>
+                            <option value="INFINI">INFINI</option>
+                            <option value="DS">DS</option>
+                            <option value="ISEM">ISEM</option>
+                            <option value="SLEAM">SLEAM</option>
+                            <option value="INFO B">INFO B</option>
+                            <option value="NIDS">NIDS</option>
+                            <option value="SIM">SIM</option>
+                            <option value="ARCTIC (Cloud)">ARCTIC (Cloud)</option>
+                            <option value="IRT">IRT</option>
+                            <option value="TWIN">TWIN</option>
+                            <option value="ERP/BI">ERP/BI</option>
+                        </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary">Confirmer</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -66,9 +84,23 @@
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('assets/Datatables/datatables.min.js') }}"></script>
     <script language="JavaScript">
-        $(document).ready( function () {
-            $('#permutations_table').DataTable();
-        } );
+        $(document).ready(function () {
+            $('#permutations_table').DataTable({
+                "language": {
+                    "search": "Spécialité de destination :"
+                },
+                "aoColumns":
+                    [
+                        {"bSearchable": false},
+                        {"bSearchable": false},
+                        {"bSearchable": false},
+                        {"bSearchable": true},
+                        {"bSearchable": false},
+                        {"bSearchable": false},
+                        {"bSearchable": false}
+                    ]
+            });
+        });
 
     </script>
 {% endblock %}

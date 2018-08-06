@@ -529,7 +529,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.9b9c6ed2d935bc509022baad40bbeacb"/>
+      <argument type="service" id="service_locator.38a5759d032ec1786486cbfa27652814"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -675,7 +675,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>fwJSMU+ZsTXYayVQkb0Oow</argument>
+      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -685,7 +685,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>fwJSMU+ZsTXYayVQkb0Oow</argument>
+      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -3087,12 +3087,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5b660658db2e48.11506365</argument>
+      <argument>5b68529a7c4e32.53980817</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5b660658db2e48.11506365</argument>
+      <argument>5b68529a7c4e32.53980817</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4461,7 +4461,7 @@
         <argument key="permutation" type="service" id="autowired.AppBundle\Entity\Permutation"/>
       </argument>
     </service>
-    <service id="service_locator.9b9c6ed2d935bc509022baad40bbeacb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.38a5759d032ec1786486cbfa27652814" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\PermutationController:deleteAction" type="service" id="service_locator.4e097d9236b0975a8124631b2d607944"/>
@@ -4708,7 +4708,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rohCqc2IIt</argument>
       <argument>0</argument>
-      <argument>fwJSMU+ZsTXYayVQkb0Oow</argument>
+      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4716,7 +4716,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Jv1+CHpgke</argument>
       <argument>0</argument>
-      <argument>fwJSMU+ZsTXYayVQkb0Oow</argument>
+      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4724,7 +4724,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uqfJlRQIhK</argument>
       <argument>0</argument>
-      <argument>fwJSMU+ZsTXYayVQkb0Oow</argument>
+      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4732,7 +4732,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uObIR-4jHl</argument>
       <argument>0</argument>
-      <argument>fwJSMU+ZsTXYayVQkb0Oow</argument>
+      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
