@@ -2,7 +2,6 @@
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block body %}
     <h1 style="margin: 30px;">Liste des permutations</h1>
-
     <div id="table_div" style="width: 95%; margin: auto;">
         <table id="permutations_table">
             <thead>
@@ -70,6 +69,7 @@
         $(document).ready( function () {
             $('#permutations_table').DataTable();
         } );
+
     </script>
 {% endblock %}
 

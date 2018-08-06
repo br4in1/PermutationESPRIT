@@ -7,8 +7,8 @@
 {% block body %}
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 
-            <h1 class="display-4 font-weight-normal">Esprit Permutation</h1>
-            <p class="lead font-weight-normal">Interface de permutations entre sections/classes à Esprit.</p>
+            <h1 class="display-4 font-weight-normal">Esprit Entraide</h1>
+            <p class="lead font-weight-normal">Plateforme Communautaire à Esprit.</p>
 
     </div>
 
@@ -27,7 +27,7 @@
                 <img src="{{ asset('assets/white-arrows.png') }}" style="padding-bottom: 40px">
                 <h2 class="display-5">Permutation Entre Sections (4A)  </h2>
                 <hr>
-                <a class="btn btn-outline-success" href="{{ path('permutation_index') }}" >Acceder</a>
+                <a class="btn btn-outline-success" href="{% if is_granted("ROLE_USER") %}{{ path('permutation_index') }}{% else %} {{path('fos_user_registration_register') }} {% endif %}" >Acceder</a>
             </div>
         </div>
     </div>

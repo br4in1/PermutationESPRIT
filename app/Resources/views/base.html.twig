@@ -20,7 +20,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">EspritEntraide</a>
+            <a class="navbar-brand" href="#">Esprit Entraide</a>
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script>
@@ -31,6 +31,8 @@
         </script>
         <ul class="nav navbar-nav">
             <li ><a style="color:white;" href="{{ path('index') }}">Accueil</a></li>
+
+            <li ><a style="color:white;" class="collocation" href="#">Collocation</a></li>
         </ul>
         <ul style="float: right" class="nav navbar-nav ml-auto">
             {% if is_granted("ROLE_USER") %}

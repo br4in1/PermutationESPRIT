@@ -26,17 +26,32 @@ class PermutationController extends Controller
         $permutation = new Permutation();
         $form = $this->createForm('AppBundle\Form\PermutationType', $permutation);
         $form->handleRequest($request);
+
+
         if ($form->isSubmitted() && $form->isValid()) {
 
             $permutation->setDate(new \DateTime());
             $permutation->setState(1);
             $permutation->setUser($this->getUser());
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($permutation);
-            $em->flush();
+            $test = $em->getRepository('AppBundle:Permutation')->findBy(
+                ['user' => $permutation->getUser(),
+                'target' => $permutation->getTarget()]);
 
-            return $this->redirectToRoute('permutation_index', array('id' => $permutation->getId()));
+            $user = new User($this->getUser());
+            if($test==NULL) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($permutation);
+                $em->flush();
+            }
+
+            // else erreur existe deja
+
+            if($permutation->getTarget()== $user->getSpecialite())
+                // Erreur target=destination
+
+            return $this->redirectToRoute('permutation_index', array( 'permutations' => $permutations,
+                'form' => $form->createView()));
         }
 
         return $this->render('@App/permutation/index.html.twig', array(

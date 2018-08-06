@@ -23,7 +23,7 @@ class PermutationType extends AbstractType
             'INFO B' => 'INFO B',
             'NIDS' => 'NIDS',
             'SIM' => 'SIM',
-            'ArcTic (Cloud)' => 'ArcTic (Cloud)',
+            'ARCTIC (Cloud)' => 'ARCTIC (Cloud)',
             'IRT' => 'IRT',
             'TWIN' => 'TWIN',
             'ERP/BI' => 'ERP/BI'
