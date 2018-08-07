@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: 3306
+    database_name: vhcctmvr_esprit
+    database_user: vhcctmvr_admin_db
+    database_password: A1Z2E3R41995
+    mailer_transport: sendmail
+    mailer_host: mail.esprit-entraide.tn
+    mailer_user: contact@esprit-entraide.tn
+    mailer_password: A1Z2E3R41234
+    secret: f364466347ede9c84a00be826673470ed6bb6e52

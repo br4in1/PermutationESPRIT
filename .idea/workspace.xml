@@ -2,53 +2,173 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6afeba2d-455f-4d35-8609-27ab618dde27" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.bootstrap4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.foundation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.foundation.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.jqueryui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.jqueryui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.semanticui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/dataTables.semanticui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/css/jquery.dataTables.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.bootstrap4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.bootstrap4.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.foundation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.foundation.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.jqueryui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.jqueryui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.semanticui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/dataTables.semanticui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/jquery-3.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/assets/jquery-3.3.1.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/console" beforeDir="false" afterPath="$PROJECT_DIR$/bin/console" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing/permutation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/routing/permutation.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/44/44c459110375b2a27404d80b39ef49b1834dd8120a3e930e67fa0ededa4d34c0.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/44/44c459110375b2a27404d80b39ef49b1834dd8120a3e930e67fa0ededa4d34c0.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/annotations.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/0f/0f32a34eaf5512449c6d7ee2eab5fdbf9b3f14eaef8cbb95dbcdc2f27b32869d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/19/19780ca3d48236021578f44841fe80c3a5e16c4f05567410f33df471eaf47cf9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/1a/1a3037b5bf75039e3987e3c715c180b2cba17375e8d2150fd2d4cd045cddb1cc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/1a/1ab69d75348b94801e9a7c01cac2a9a28b1bc1f30ebf1e0cc4deb9088a819532.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/1f/1f6aebfb8db435af917931e623fb621b848b36472c7a5a075af33d299608b7b5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/24/244c8ea6eb82af862bb7d9ae5e5fb764c60f96ed3d0413d5b8b3ea2642201007.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/24/249299f9ddedd9b43fb39e6860835a7da0f6c431a03bdfe3381a0e04dea795e9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/27/278afdba08de2b15dc2095668f35ea464e79c5205544c38cea2706f9754621dc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/34/34258599a617f4fb3a91de07eab3d38a8abef46af342d688ed223d5608119be9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/35/359dbe13fb0a0055a6546277635ab341331af46a289c04a8a22faa35bd1c3c26.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/35/35dd4239468de1f7567a7f708ce518368b96570c62d4334e3b47c5265351549f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/43/43740d8ad857e1bc3accdc5d904e0e0ed9fde1e2f4a1813efdbf58b18c8d8c30.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/44/440f6436ecd745e8a1a56e492ed97f4e4ade60259124af3aa33a86b0f8a078a3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/44/44c459110375b2a27404d80b39ef49b1834dd8120a3e930e67fa0ededa4d34c0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/4e/4ec1accfbcd5b37f443369c55906e17c3e08834696cc6a396fc579e47dcac934.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/51/513b2b2ab1c1e2484515c4cccfe597bb0b9aba5f14deffa6af74e515a7dbcfc9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/52/52362b8944b976fbffb4d551ed57a66e576e6ac6e6feff285ae3379f450aacf3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/52/526ff3e3b2defe343159c216f375cb2a1c75f84701724925be075068411fb89e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/53/53625ea9ae789d650791d41cb49ab25de08c14283c2dd6100d79a20701fe3a80.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/59/59520197b0830f3fca72c7e890fcc107a81acfd9567a8eff0c99bb212bf0d5e6.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/68/685b209d9a1ff1b22d890aae6ffa864210fc13398a4a9ab436c6ad0b7254829e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/7d/7da9e22b7e4922b98ad0b601c388e05506465f0114b2cdfd9847391677f168b1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/87/8714053e8e7caa3a51b33cf2c61407daaaab91f9e23a882ea36d85040921cabd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/89/895e4ff8dac97445b5ef12b13baaeaf0c28dad9e6578fdb89a8ad21a28ebc0d5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/8e/8e2ee86eb63ae2025853ce77be7abf0e8c5edd833a40b7d479c8f196382167ea.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/8f/8fe9fb6f180ab4bd9a12d60e9b8b093a955ca9a75d325fbed1ce020d330fe622.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/a6/a6c1dee1d04b65c89864095af35163972e60f2db21ec777c0459e0ae4b0f55a4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/aa/aa8090ceb272f3965688d3d2a847acba42b7b76a7bb26f3e2626224ff56f7b89.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/ae/aef1e8c819bb569069d03690ecc5c852c0acf2098aa7dfaaf90a28ad6597fc7e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/b0/b09a3da88180ff817032a0458b2e709063e478dc78153450d68adb19fba1cc89.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/b2/b2f605027b348f855e5a0fb30432d4577700ac8226d0700fc350fb28a972527a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/b6/b6ad02672d207004bad1bd9b9655ae2ed0dd7de1f721111e62deec64af4ddad5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/b6/b6b5ac63814f4f66413ffadca6929ce2b923dabc0ccffaacdf8db88432171046.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/bb/bb0074fd1a683f856370b10f7c5bd6ca027a053130d7c6ac46b7b25a13da0aff.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/bc/bca9a50ef453eb946a18ffa7c8452f002250fcb496eb4acc18e89a9a0e8a88b6.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/bd/bd70494ee5b320b4a33bd537ce0a7d652d26fd8b891fa2b9f0a73283b17da757.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/bf/bf7a66b0c1acdd72f5d4bc7b9ea8867148cbbcfb97285755c1d3c99848b6506c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/c6/c65f560bd8be806f3ecf118cda7ba6c01516b93eda20e0f92266085afa39b809.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/d1/d1b50fed73163845d6efc626940e3055b06146c9bbc028df08efd08771669678.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/d6/d6141755480fb7f243f4bc379bc174b225c40f5b6552e58391fbb97b333d59c0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/d7/d76d69a334d2c170ca5aa2b9cf75c9a185cda63ec10614cd3a2bf70b577eac96.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/dd/dd4fce33adb429012b3b09139cceff3cd9ed57609e2bd04b844dd2c4c9e9f609.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/e1/e18479c75315ecdd8ff44568ba38491bbf99f272d42b44dcafa747cc3998e548.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/e4/e45d3df2e5229351c7595c5d9cd005ea140fd4e93d0ea0bfcaa83f99639433c0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/e6/e6997573bb8d3046a3eb450282fd34570c1f385acebfa28b43eb69702ecb3941.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/ec/ec4fd8059649f6211e855f58c556fa520930b3bf2977c1c07521f046ba91ec20.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/f0/f041de2ed0700f68dd6e0e6c2909693943025a6fe53f38e816c8873a1e7b58a1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/f6/f6e466adfefbfe7b64a677b11d1640f95fc8857bcd20f8240e2201fdd3e30f76.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/f8/f8ea8a3f86fb87bccff19992124dcbfab27d0025c37d788e9a9243abf3d7a924.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/fa/fa4243d0cad53d0ce824950eb990cc23cb0b28716bef95fc4379802283187167.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/fa/fa8d41ab44219770d02fa0f7a4be0d6184a38a0996ee286d02139cad20336760.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/fd/fdbe6915e62605c2b8beb08ca5a90faa3cb6474b5983a0e6da519ea6578abe39.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_0aaee4a3930bcd1323b66803acae18cf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_ba5ec65b93fc802f463199a5df20a091" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/doctrine" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/doctrine-dbal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/security-checker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/bin/simple-phpunit" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/bin/doctrine-dbal" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/bin/doctrine-dbal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle/Tests/travis/install-deps.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle/Tests/travis/install-deps.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/doctrine/orm/bin/doctrine" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/orm/bin/doctrine" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/doctrine/orm/docs/bin/generate-docs.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/doctrine/orm/docs/bin/generate-docs.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/build-phar.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/build-phar.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sensio/distribution-bundle/Resources/bin/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sensio/distribution-bundle/Resources/bin/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sensio/distribution-bundle/Resources/bin/build_bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sensio/distribution-bundle/Resources/bin/build_bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sensio/distribution-bundle/Resources/bin/build_demo.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sensio/distribution-bundle/Resources/bin/build_demo.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/sensiolabs/security-checker/security-checker" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/sensiolabs/security-checker/security-checker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/_samples/charsets/iso-2022-jp/one.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/tests/_samples/charsets/iso-2022-jp/one.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/phpunit-bridge/bin/simple-phpunit" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/phpunit-bridge/bin/simple-phpunit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/symfony/link" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/symfony/link" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/symfony/phpunit" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/symfony/phpunit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/bin/simple-phpunit" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/bin/simple-phpunit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Intl/Tests/Data/Bundle/Reader/Fixtures/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Intl/Tests/Data/Bundle/Reader/Fixtures/build.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Serializer/Tests/Normalizer/DataUriNormalizerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Serializer/Tests/Normalizer/DataUriNormalizerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/web/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app_dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app_dev.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/Datatables/datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/Datatables/datatables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap-theme.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap-theme.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap-theme.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/bootstrap/js/npm.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/bootstrap/js/npm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/css/form-elements.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/css/form-elements.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/HELP-US-OUT.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/HELP-US-OUT.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/css/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/css/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/animated.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/animated.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/bordered-pulled.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/core.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/core.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/fixed-width.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/font-awesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/font-awesome.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/icons.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/larger.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/list.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/list.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/mixins.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/path.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/path.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/rotated-flipped.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/stacked.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/less/variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/less/variables.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_animated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_animated.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_bordered-pulled.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_core.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_fixed-width.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_icons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_larger.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_list.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_path.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_path.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_rotated-flipped.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_stacked.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/font-awesome/scss/font-awesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/font-awesome/scss/font-awesome.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-114-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-114-precomposed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-144-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-144-precomposed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-57-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-57-precomposed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-72-precomposed.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/ico/apple-touch-icon-72-precomposed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/ico/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/ico/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/img/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/img/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/jquery-1.11.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/jquery-1.11.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/jquery-1.11.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/jquery-1.11.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/placeholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/placeholder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/popover.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/popover.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/scripts.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,53 +182,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-153">
+              <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-              <folding>
-                <element signature="e#149#194#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="139">
+              <caret line="84" column="79" selection-start-line="84" selection-start-column="79" selection-end-line="84" selection-end-column="79" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register_login.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datatables.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/assets/Datatables/datatables.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="22194" column="28" selection-start-line="22194" selection-start-column="20" selection-end-line="22194" selection-end-column="28" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="69" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-49">
+              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -116,43 +221,43 @@
       <file leaf-file-name="PermutationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+            <state relative-caret-position="1971">
+              <caret line="143" column="23" lean-forward="true" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49">
+              <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/assets/css/bootstrap.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="5" column="46531" selection-start-line="5" selection-start-column="46531" selection-end-line="5" selection-end-column="46531" />
               <folding>
-                <element signature="e#496#519#1#PHP" expanded="true" />
-                <element signature="e#488#511#1#PHP" expanded="true" />
-                <element signature="e#983#1017#0#PHP" expanded="true" />
-                <element signature="e#1416#1450#0#PHP" expanded="true" />
-                <element signature="e#1695#1729#0#PHP" expanded="true" />
-                <element signature="e#2321#2355#0#PHP" expanded="true" />
-                <element signature="e#3182#3205#1#PHP" expanded="true" />
-                <element signature="e#3107#3141#0#PHP" expanded="true" />
-                <element signature="e#3733#3766#0#PHP" expanded="true" />
-                <element signature="e#4516#4549#0#PHP" expanded="true" />
+                <element signature="e#57522#57722#2" expanded="true" />
+                <element signature="e#57930#58079#2" expanded="true" />
+                <element signature="e#58581#58727#2" expanded="true" />
+                <element signature="e#59028#59194#1" expanded="true" />
+                <element signature="e#90349#90539#2" expanded="true" />
+                <element signature="e#90585#90775#2" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.dataTables.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/jquery.dataTables.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
+      <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="permutation.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing/permutation.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+            <state relative-caret-position="263">
+              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -171,16 +276,11 @@
       <find>.btn</find>
       <find>Search</find>
       <find>&quot;Search&quot;</find>
+      <find>dropdown-menu</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:schema:update" />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s server:run " />
-      <command text="s doctrine:database:create" />
-      <command text="s server:run " />
-      <command text="s server:stop" />
       <command text="s server:run " />
       <command text="s server:stop" />
       <command text="s server:run " />
@@ -200,6 +300,12 @@
       <command text="s debug:router " />
       <command text="s server:run " />
       <command text="s doctrine:schema:update --force" />
+      <command text="s server:stop" />
+      <command text="s server:run " />
+      <command text="s cache:clear" />
+      <command text="s doctrine:schema:update --force" />
+      <command text="c update " />
+      <command text="s server:run " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -214,7 +320,6 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/web/assets/js/holder.min.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
@@ -230,13 +335,17 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Form/PermutationType.php" />
         <option value="$PROJECT_DIR$/web/assets/css/base.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig" />
-        <option value="$PROJECT_DIR$/web/assets/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing/permutation.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/assets/jquery-3.3.1.min.js" />
+        <option value="$PROJECT_DIR$/web/assets/jquery-3.3.1.min.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig" />
       </list>
     </option>
   </component>
@@ -306,8 +415,9 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="114" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="14" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="720" />
   </component>
@@ -441,49 +551,6 @@
             <path>
               <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
               <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="friendsofsymfony" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="user-bundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Type" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -491,28 +558,6 @@
               <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bootstrap" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bootstrap" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
@@ -520,6 +565,14 @@
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Datatables" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PermutationESPRIT" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Datatables" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="DataTables-1.10.18" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
@@ -552,6 +605,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/assets" />
+      <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/web/assets/Datatables" />
       <recent name="$PROJECT_DIR$/web/assets/img" />
       <recent name="$PROJECT_DIR$/web/assets/js" />
@@ -586,20 +640,20 @@
       <updated>1533380864042</updated>
       <workItem from="1533380865236" duration="3665000" />
       <workItem from="1533385958589" duration="18215000" />
-      <workItem from="1533410593983" duration="20132000" />
+      <workItem from="1533410593983" duration="28870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35606000" />
+    <option name="totallyTimeSpent" value="44344000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="114" width="1280" height="720" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="720" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="7" weight="0.28500825" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="7" visible="true" weight="0.25864908" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -626,62 +680,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/assets/css/form-elements.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-737">
-          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1606">
-          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1606">
-          <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
@@ -717,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -731,24 +722,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="114" selection-start-line="21" selection-start-column="114" selection-end-line="21" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -856,24 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="5" column="32300" selection-start-line="5" selection-start-column="32300" selection-end-line="5" selection-end-column="32300" />
-          <folding>
-            <element signature="e#91518#91708#2" expanded="true" />
-            <element signature="e#91754#91944#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -900,13 +859,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/PermutationRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -941,25 +893,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding>
-            <element signature="e#496#519#1#PHP" expanded="true" />
-            <element signature="e#488#511#1#PHP" expanded="true" />
-            <element signature="e#983#1017#0#PHP" expanded="true" />
-            <element signature="e#1416#1450#0#PHP" expanded="true" />
-            <element signature="e#1695#1729#0#PHP" expanded="true" />
-            <element signature="e#2321#2355#0#PHP" expanded="true" />
-            <element signature="e#3182#3205#1#PHP" expanded="true" />
-            <element signature="e#3107#3141#0#PHP" expanded="true" />
-            <element signature="e#3733#3766#0#PHP" expanded="true" />
-            <element signature="e#4516#4549#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/Datatables/DataTables-1.10.18/js/jquery.dataTables.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -973,36 +906,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="47" column="65" selection-start-line="47" selection-start-column="65" selection-end-line="47" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="217" selection-start-line="11" selection-start-column="217" selection-end-line="11" selection-end-column="217" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/robots.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="55" column="32" selection-end-line="67" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/jquery-3.3.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="1" column="2392" lean-forward="true" selection-start-line="1" selection-start-column="2392" selection-end-line="1" selection-end-column="2392" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/jquery-3.3.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="1" column="1105" selection-start-line="1" selection-start-column="1105" selection-end-line="1" selection-end-column="1105" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="5" column="46531" selection-start-line="5" selection-start-column="46531" selection-end-line="5" selection-end-column="46531" />
+          <folding>
+            <element signature="e#57522#57722#2" expanded="true" />
+            <element signature="e#57930#58079#2" expanded="true" />
+            <element signature="e#58581#58727#2" expanded="true" />
+            <element signature="e#59028#59194#1" expanded="true" />
+            <element signature="e#90349#90539#2" expanded="true" />
+            <element signature="e#90585#90775#2" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="49">
+          <caret line="57" column="55" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="48" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
-          <folding>
-            <element signature="e#149#194#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="139">
+          <caret line="84" column="79" selection-start-line="84" selection-start-column="79" selection-end-line="84" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+        <state relative-caret-position="263">
+          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1971">
+          <caret line="143" column="23" lean-forward="true" selection-start-line="143" selection-start-column="23" selection-end-line="143" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
         </state>
       </provider>
     </entry>

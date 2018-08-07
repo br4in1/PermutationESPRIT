@@ -11,12 +11,12 @@
     <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/base.css') }}" rel="stylesheet">
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8730686316513863",
-            enable_page_level_ads: true
-        });
-    </script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8730686316513863",
+    enable_page_level_ads: true
+  });
+</script>
     {% block stylesheets %}
     {% endblock %}
 </head>
@@ -27,7 +27,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a style="color: red;font-weight: bold;" class="navbar-brand" href="#">Esprit Entraide</a>
+            <a class="navbar-brand" href="#">Esprit Entraide</a>
         </div>
         <ul class="nav navbar-nav">
             <li ><a style="color:white;" href="{{ path('index') }}">Accueil</a></li>
@@ -40,6 +40,7 @@
                 </ul>
             </li>
             <li ><a style="color:white;" class="collocation" id="cl">Collocation</a></li>
+            <li ><a style="color:white;" class="collocation" id="op">Objets perdus</a></li>
         </ul>
         <ul style="float: right" class="nav navbar-nav ml-auto">
             {% if is_granted("ROLE_USER") %}
@@ -54,7 +55,7 @@
 
 {% block body %}{% endblock %}
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="{{ asset('assets/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/popover.js') }}"></script>
 <script src="{{ asset('assets/bootstrap/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/js/holder.min.js') }}"></script>
@@ -66,7 +67,7 @@
     });
 </script>
 <script language="JavaScript">
-    $('#cl').click(function () {
+    $('#cl').hover(function () {
         if($('#cl').html() === '<strong>Coming Soon !</strong>'){
             $('#cl').html('Collocation');
             $('#cl').css('color','white');
@@ -74,6 +75,16 @@
         else{
             $('#cl').html('<strong>Coming Soon !</strong>');
             $('#cl').css('color','gold');
+        }
+    });
+    $('#op').hover(function () {
+        if($('#op').html() === '<strong>Coming Soon !</strong>'){
+            $('#op').html('Objets perdus');
+            $('#op').css('color','white');
+        }
+        else{
+            $('#op').html('<strong>Coming Soon !</strong>');
+            $('#op').css('color','gold');
         }
     });
 </script>

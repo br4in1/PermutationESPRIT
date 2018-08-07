@@ -6,6 +6,7 @@ use AppBundle\Entity\Permutation;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Validator\Constraints\Date;
 
 /**
@@ -14,33 +15,33 @@ use Symfony\Component\Validator\Constraints\Date;
  */
 class PermutationController extends Controller
 {
-    private static $error;
+
     public function addPermutationAction(Request $request){
+
+        if(!$this->isGranted("ROLE_USER")) return $this->redirectToRoute('fos_user_registration_register');
+        $session= new Session();
+        $flashbag = $session->getFlashBag();
+
+
         $specs = array('GL','ERP/BI','INFINI','SIM','SLEAM','INFO B','NIDS','TWIN','ARCTIC (Cloud)','IRT','ISEM','DS');
         $em = $this->getDoctrine()->getManager();
         $permutations = $em->getRepository('AppBundle:Permutation')->findAll();
         $em = $this->getDoctrine()->getManager();
         $test = $em->getRepository('AppBundle:Permutation')->findBy(
-            ['user' => $this->getUser(),
-                'target' => $request->get('target')]);
+            ['user' => $this->getUser(), 'target' => $request->get('target')]);
+
         if(!in_array($request->get('target'),$specs)){
-            return $this->render('@App/permutation/index.html.twig', array(
-                'permutations' => $permutations,
-                'error' => 'Spécialité invalide. Veuillez choisir une spécialité de la liste.'
-            ));
+        $flashbag->add('error' , 'Spécialité invalide. Veuillez choisir une spécialité de la liste.');
+
         }
+
         else if($request->get('target') == $this->getUser()->getSpecialite()){
-            return $this->render('@App/permutation/index.html.twig', array(
-                'permutations' => $permutations,
-                'error' => 'La spécialité de départ et de destination doivent être différentes'
-            ));
+            $flashbag->add('error' , 'La spécialité de départ et de destination doivent être différentes');
         }
         else if($test != NULL){
-            return $this->render('@App/permutation/index.html.twig', array(
-                'permutations' => $permutations,
-                'error' => 'Vous avez déja saisi une permutation vers cette spécialité.'
-            ));
+            $flashbag->add('error' , 'Vous avez déja saisi une permutation vers cette spécialité.');
         }
+
         else{
             $permutation = new Permutation();
             $permutation->setTarget($request->get('target'));
@@ -50,11 +51,13 @@ class PermutationController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($permutation);
             $em->flush();
-            return $this->render('@App/permutation/index.html.twig', array(
+            return $this->redirectToRoute('permutation_index', array(
                 'permutations' => $permutations,
-                'error' => ''
             ));
         }
+        return $this->redirectToRoute('permutation_index', array(
+            'permutations' => $permutations,
+        ));
     }
     /**
      * Lists all permutation entities.
@@ -62,6 +65,7 @@ class PermutationController extends Controller
      */
     public function indexAction(Request $request)
     {
+        if(!$this->isGranted("ROLE_USER")) return $this->redirectToRoute('fos_user_registration_register');
         $em = $this->getDoctrine()->getManager();
         $permutations = $em->getRepository('AppBundle:Permutation')->findAll();
         return $this->render('@App/permutation/index.html.twig', array(

@@ -103,10 +103,10 @@
     <parameter key="database_name">esprit_entraide</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">root</parameter>
-    <parameter key="mailer_transport">gmail</parameter>
-    <parameter key="mailer_host">127.0.0.1</parameter>
-    <parameter key="mailer_user">houssem.nouira@esprit.tn</parameter>
-    <parameter key="mailer_password">?(sgnFG1"3]&lt;o&amp;g</parameter>
+    <parameter key="mailer_transport">sendmail</parameter>
+    <parameter key="mailer_host">mail.esprit-entraide.tn</parameter>
+    <parameter key="mailer_user">contact@esprit-entraide.tn</parameter>
+    <parameter key="mailer_password">A1Z2E3R41234</parameter>
     <parameter key="secret">f364466347ede9c84a00be826673470ed6bb6e52</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
@@ -206,13 +206,13 @@
     <parameter key="swiftmailer.spool.memory.class">Swift_MemorySpool</parameter>
     <parameter key="swiftmailer.email_sender.listener.class">Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener</parameter>
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">houssem.nouira@esprit.tn</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">?(sgnFG1"3]&lt;o&amp;g</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.name">sendmail</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">mail.esprit-entraide.tn</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">contact@esprit-entraide.tn</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">A1Z2E3R41234</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
@@ -363,7 +363,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="houssem.nouira@esprit.tn">houssem.nouira@esprit.tn</parameter>
+      <parameter key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
@@ -379,7 +379,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="houssem.nouira@esprit.tn">houssem.nouira@esprit.tn</parameter>
+      <parameter key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</parameter>
     </parameter>
     <parameter key="fos_user.resetting.retry_ttl">7200</parameter>
     <parameter key="fos_user.resetting.token_ttl">86400</parameter>
@@ -675,7 +675,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
+      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -685,7 +685,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
+      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2047,6 +2047,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3087,12 +3095,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5b68529a7c4e32.53980817</argument>
+      <argument>5b69a28f4c5862.89113556</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5b68529a7c4e32.53980817</argument>
+      <argument>5b69a28f4c5862.89113556</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3147,12 +3155,12 @@
       <argument type="collection">
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
+        <argument key="cache">false</argument>
         <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">name</argument>
-        <argument key="cache">/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -3571,22 +3579,6 @@
       <argument type="service" id="service_container"/>
     </service>
     <service id="swiftmailer.mailer.default.transport.eventdispatcher" class="Swift_Events_SimpleEventDispatcher" public="false"/>
-    <service id="swiftmailer.mailer.default.transport.authhandler" class="Swift_Transport_Esmtp_AuthHandler" public="false">
-      <argument type="collection">
-        <argument type="service" id="1_1c88c4842349892830bb2316a3329673cd40830543e0ff3fda335dca957c7c42"/>
-        <argument type="service" id="2_1c88c4842349892830bb2316a3329673cd40830543e0ff3fda335dca957c7c42"/>
-        <argument type="service" id="3_1c88c4842349892830bb2316a3329673cd40830543e0ff3fda335dca957c7c42"/>
-      </argument>
-      <call method="setUsername">
-        <argument>houssem.nouira@esprit.tn</argument>
-      </call>
-      <call method="setPassword">
-        <argument>?(sgnFG1"3]&lt;o&amp;g</argument>
-      </call>
-      <call method="setAuthMode">
-        <argument>login</argument>
-      </call>
-    </service>
     <service id="swiftmailer.mailer.default.transport.buffer" class="Swift_Transport_StreamBuffer" public="false">
       <argument type="service" id="swiftmailer.transport.replacementfactory"/>
     </service>
@@ -3594,27 +3586,9 @@
       <argument>null</argument>
       <argument type="service" id="router.request_context" on-invalid="null"/>
     </service>
-    <service id="swiftmailer.mailer.default.transport.smtp" class="Swift_Transport_EsmtpTransport" public="false">
+    <service id="swiftmailer.mailer.default.transport.sendmail" class="Swift_Transport_SendmailTransport" public="false">
       <argument type="service" id="swiftmailer.mailer.default.transport.buffer"/>
-      <argument type="collection">
-        <argument type="service" id="swiftmailer.mailer.default.transport.authhandler"/>
-      </argument>
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
-      <call method="setHost">
-        <argument>smtp.gmail.com</argument>
-      </call>
-      <call method="setPort">
-        <argument>465</argument>
-      </call>
-      <call method="setEncryption">
-        <argument>ssl</argument>
-      </call>
-      <call method="setTimeout">
-        <argument>30</argument>
-      </call>
-      <call method="setSourceIp">
-        <argument>null</argument>
-      </call>
       <configurator service="swiftmailer.transport.configurator.default" method="configure"/>
     </service>
     <service id="swiftmailer.mailer.default" class="Swift_Mailer">
@@ -4086,10 +4060,10 @@
         <argument key="resetting.template">@FOSUser/Resetting/email.txt.twig</argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="houssem.nouira@esprit.tn">houssem.nouira@esprit.tn</argument>
+            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="houssem.nouira@esprit.tn">houssem.nouira@esprit.tn</argument>
+            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
           </argument>
         </argument>
       </argument>
@@ -4106,10 +4080,10 @@
         </argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="houssem.nouira@esprit.tn">houssem.nouira@esprit.tn</argument>
+            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="houssem.nouira@esprit.tn">houssem.nouira@esprit.tn</argument>
+            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
           </argument>
         </argument>
       </argument>
@@ -4708,7 +4682,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rohCqc2IIt</argument>
       <argument>0</argument>
-      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
+      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4716,7 +4690,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Jv1+CHpgke</argument>
       <argument>0</argument>
-      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
+      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4724,7 +4698,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uqfJlRQIhK</argument>
       <argument>0</argument>
-      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
+      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4732,7 +4706,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uObIR-4jHl</argument>
       <argument>0</argument>
-      <argument>9pNl4sEnOIhvsHTekQ+B0l</argument>
+      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4805,9 +4779,9 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
     <service id="swiftmailer.mailer.default.transport" alias="swiftmailer.mailer.default.transport.spool"/>
     <service id="swiftmailer.mailer.default.spool" alias="swiftmailer.mailer.default.spool.memory"/>
-    <service id="swiftmailer.mailer.default.transport.real" alias="swiftmailer.mailer.default.transport.smtp"/>
+    <service id="swiftmailer.mailer.default.transport.real" alias="swiftmailer.mailer.default.transport.sendmail"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool.memory"/>
-    <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.smtp"/>
+    <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.sendmail"/>
     <service id="Swift_Spool" alias="swiftmailer.mailer.default.spool.memory" public="false"/>
     <service id="swiftmailer.plugin.messagelogger" alias="swiftmailer.mailer.default.plugin.messagelogger"/>
     <service id="swiftmailer.mailer" alias="swiftmailer.mailer.default"/>

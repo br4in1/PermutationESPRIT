@@ -1,0 +1,1 @@
+[06-Aug-2018 16:54:15 UTC] PHP Fatal error:  Class 'Symfony\Bundle\FrameworkBundle\Test\WebTestCase' not found in /home/vhcctmvr/public_html/tests/AppBundle/Controller/DefaultControllerTest.php on line 7
