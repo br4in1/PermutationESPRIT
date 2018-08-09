@@ -41,9 +41,9 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.email','class' => 'form-email form-control']))
-            ->add('firstname',TextType::class,array('label' => 'form.firstname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.firstname','class' => 'form-username form-control']))
-            ->add('lastname',TextType::class,array('label' => 'form.lastname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.lastname','class' => 'form-username form-control']))
+            ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.email','class' => 'input-text']))
+            ->add('firstname',TextType::class,array('label' => 'form.firstname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.firstname','class' => 'input-text']))
+            ->add('lastname',TextType::class,array('label' => 'form.lastname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.lastname','class' => 'input-text']))
             ->remove('username')
             //->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(
@@ -58,7 +58,7 @@ class RegistrationFormType extends AbstractType
                 'second_options' => array('label' => 'form.password_confirmation','attr'=>['placeholder'=>'form.password_confirmation','class' => 'form-password form-control']),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('phone',TextType::class,array('label' => 'form.phone', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.phone','class' => 'form-username form-control']))
+            ->add('phone',TextType::class,array('label' => 'form.phone', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.phone','class' => 'input-text']))
             ->add('specialite',ChoiceType::class,array(
                 'label' => 'form.specialite',
                 'translation_domain' => 'FOSUserBundle',
@@ -77,7 +77,7 @@ class RegistrationFormType extends AbstractType
                     'ERP/BI' => 'ERP/BI'
                 ),
                 'placeholder'=>'form.specialite',
-                'attr'=>['class' => 'form-select form-control']
+                'attr'=>['class' => 'chosen-select']
             ))
         ;
     }

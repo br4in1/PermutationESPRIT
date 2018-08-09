@@ -73,7 +73,7 @@ class SecurityController extends Controller
             'error' => $error,
             'csrf_token' => $csrfToken,
         ));*/
-        return $this->render('@App/default/register_login.html.twig', array(
+        return $this->render('@App/default/login.html.twig', array(
             'last_username' => $lastUsername,
             'error' => $error,
             'csrf_token' => $csrfToken,
