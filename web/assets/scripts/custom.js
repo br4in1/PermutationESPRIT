@@ -316,7 +316,7 @@ $(document).ready(function(){
     /*----------------------------------------------------*/
 
     var config = {
-      '.chosen-select'           : {disable_search_threshold: 10, width:"100%"},
+      '.chosen-select'           : {disable_search_threshold: 1000, width:"100%"},
       '.chosen-select-deselect'  : {allow_single_deselect:true, width:"100%"},
       '.chosen-select-no-single' : {disable_search_threshold:100, width:"100%"},
       '.chosen-select-no-single.no-search' : {disable_search_threshold:10, width:"100%"},
@@ -587,7 +587,7 @@ $(document).ready(function(){
 	/*  Tabs
 	/*----------------------------------------------------*/
 
-	var $tabsNav    = $('.tabs-nav'),
+	var $tabsNav    = $('#typical_tabs_nav'),
 	$tabsNavLis = $tabsNav.children('li');
 
 	$tabsNav.each(function() {

@@ -1,38 +1,55 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register register'}}) }}
 
-    <div class="col-md-12">
-        <div class="form-group">
+    <p class="form-row form-row-wide">
+        <label for="username2">
+            <i class="im im-icon-Mail"></i>
             {{ form_widget(form.email) }}
-            {{ form_errors(form.email) }}
-        </div>
-        <div class="form-group">
+            <div class="notification error closeable">{{ form_errors(form.email) }}</div>
+        </label>
+    </p>
+    <p class="form-row form-row-wide">
+        <label>
+            <i class="im im-icon-Male"></i>
             {{ form_widget(form.firstname) }}
-            {{ form_errors(form.firstname) }}
-        </div>
-        <div class="form-group">
+            <div class="notification error closeable">{{ form_errors(form.firstname) }}</div>
+        </label>
+    </p>
+    <p class="form-row form-row-wide">
+        <label>
+            <i class="im im-icon-Male"></i>
             {{ form_widget(form.lastname) }}
-            {{ form_errors(form.lastname) }}
-        </div>
-        <div class="form-group">
+            <div class="notification error closeable">{{ form_errors(form.lastname) }}</div>
+        </label>
+    </p>
+    <p class="form-row form-row-wide">
+        <label>
+            <i class="im im-icon-Lock-2"></i>
             {{ form_widget(form.plainPassword.first) }}
-            {{ form_errors(form.plainPassword.first) }}
-        </div>
-        <div class="form-group">
+            <div class="notification error closeable">{{ form_errors(form.plainPassword.first) }}</div>
+        </label>
+    </p>
+    <p class="form-row form-row-wide">
+        <label>
+            <i class="im im-icon-Lock-2"></i>
             {{ form_widget(form.plainPassword.second) }}
-            {{ form_errors(form.plainPassword.second) }}
-        </div>
-        <div class="form-group">
+            <div class="notification error closeable">{{ form_errors(form.plainPassword.second) }}</div>
+        </label>
+    </p>
+    <p class="form-row form-row-wide">
+        <label>
+            <i class="im im-icon-Phone"></i>
             {{ form_widget(form.phone) }}
-            {{ form_errors(form.phone) }}
-        </div>
-        <div class="form-group">
+            <div class="notification error closeable">{{ form_errors(form.phone) }}</div>
+        </label>
+    </p>
+    <p class="form-row form-row-wide">
+        <label>
+            <i class="im im-icon-Book"></i>
             {{ form_widget(form.specialite) }}
-            {{ form_errors(form.specialite) }}
-        </div>
-    </div>
-    <div>
-        <button type="submit" class="btn">{{ 'registration.submit'|trans }}</button>
-    </div>
+            <div class="notification error closeable">{{ form_errors(form.specialite) }}</div>
+        </label>
+    </p>
+    <button type="submit" class="button border fw margin-top-10">{{ 'registration.submit'|trans }}</button>
 {{ form_end(form) }}

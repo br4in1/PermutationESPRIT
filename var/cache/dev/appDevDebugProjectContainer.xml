@@ -363,7 +363,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
-      <parameter key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</parameter>
+      <parameter key="contact@esprit-entraide.tn">EspritEntraide - Confirmation de compte</parameter>
     </parameter>
     <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
@@ -379,7 +379,7 @@
       <parameter>Default</parameter>
     </parameter>
     <parameter key="fos_user.resetting.email.from_email" type="collection">
-      <parameter key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</parameter>
+      <parameter key="contact@esprit-entraide.tn">EspritEntraide - Password Reset</parameter>
     </parameter>
     <parameter key="fos_user.resetting.retry_ttl">7200</parameter>
     <parameter key="fos_user.resetting.token_ttl">86400</parameter>
@@ -675,7 +675,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
+      <argument>sqGaj79yRn0GkY6PcPSKVc</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -685,7 +685,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
+      <argument>sqGaj79yRn0GkY6PcPSKVc</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2047,14 +2047,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -3095,12 +3087,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5b69a28f4c5862.89113556</argument>
+      <argument>5b6c7c7ed0e5c9.11567948</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5b69a28f4c5862.89113556</argument>
+      <argument>5b6c7c7ed0e5c9.11567948</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4060,10 +4052,10 @@
         <argument key="resetting.template">@FOSUser/Resetting/email.txt.twig</argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
+            <argument key="contact@esprit-entraide.tn">EspritEntraide - Confirmation de compte</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
+            <argument key="contact@esprit-entraide.tn">EspritEntraide - Password Reset</argument>
           </argument>
         </argument>
       </argument>
@@ -4080,10 +4072,10 @@
         </argument>
         <argument key="from_email" type="collection">
           <argument key="confirmation" type="collection">
-            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
+            <argument key="contact@esprit-entraide.tn">EspritEntraide - Confirmation de compte</argument>
           </argument>
           <argument key="resetting" type="collection">
-            <argument key="contact@esprit-entraide.tn">contact@esprit-entraide.tn</argument>
+            <argument key="contact@esprit-entraide.tn">EspritEntraide - Password Reset</argument>
           </argument>
         </argument>
       </argument>
@@ -4682,7 +4674,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rohCqc2IIt</argument>
       <argument>0</argument>
-      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
+      <argument>sqGaj79yRn0GkY6PcPSKVc</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4690,7 +4682,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Jv1+CHpgke</argument>
       <argument>0</argument>
-      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
+      <argument>sqGaj79yRn0GkY6PcPSKVc</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4698,7 +4690,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uqfJlRQIhK</argument>
       <argument>0</argument>
-      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
+      <argument>sqGaj79yRn0GkY6PcPSKVc</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4706,7 +4698,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uObIR-4jHl</argument>
       <argument>0</argument>
-      <argument>LNeYIk9rXsMX-LcoePWVwF</argument>
+      <argument>sqGaj79yRn0GkY6PcPSKVc</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

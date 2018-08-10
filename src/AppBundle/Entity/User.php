@@ -33,6 +33,26 @@ class User extends BaseUser
      * @ORM\Column(type="string")
      */
     private $lastname;
+    /**
+     * @ORM\Column(type="string",nullable=true)
+     */
+    private $classe;
+
+    /**
+     * @return mixed
+     */
+    public function getClasse()
+    {
+        return $this->classe;
+    }
+
+    /**
+     * @param mixed $classe
+     */
+    public function setClasse($classe)
+    {
+        $this->classe = $classe;
+    }
 
     public function __construct()
     {
