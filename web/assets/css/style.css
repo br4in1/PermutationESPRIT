@@ -285,14 +285,14 @@ header.fullwidth .container {
 
 .left-side {
 	float: left;
-	width: 65%;
+	width: 80%;
 	display: inline-block;
 
 }
 
 .right-side {
 	float: right;
-	width: 35%;
+	width: 20%;
 	display: inline-block;
 }
 

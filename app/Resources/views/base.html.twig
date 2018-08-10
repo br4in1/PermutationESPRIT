@@ -31,7 +31,7 @@
 
                     <!-- Logo -->
                     <div id="logo">
-                        <a href="index.html"><img src="images/logo.png" alt=""></a>
+                        <a href="index.html"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
                     </div>
 
                     <!-- Mobile Navigation -->
@@ -47,94 +47,35 @@
                     <nav id="navigation" class="style-1">
                         <ul id="responsive">
 
-                            <li><a class="current" href="#">Home</a>
+                            <li><a class="current--" href="{{ path('index') }}">Accueil</a></li>
+
+                            <li><a href="#">Permutations</a>
                                 <ul>
-                                    <li><a href="index.html">Home 1</a></li>
-                                    <li><a href="index-2.html">Home 2</a></li>
-                                    <li><a href="index-3.html">Home 3</a></li>
-                                    <li><a href="index-4.html">Home 4</a></li>
+                                    <li><a href="#">Entre spécialités</a></li>
+                                    <li><a href="#">Entre classes</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="#">Listings</a>
+                            <li><a href="#">Colocations</a>
                                 <ul>
-                                    <li><a href="#">List Layout</a>
-                                        <ul>
-                                            <li><a href="listings-list-with-sidebar.html">With Sidebar</a></li>
-                                            <li><a href="listings-list-full-width.html">Full Width</a></li>
-                                            <li><a href="listings-list-full-width-with-map.html">Full Width + Map</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Grid Layout</a>
-                                        <ul>
-                                            <li><a href="listings-grid-with-sidebar-1.html">With Sidebar 1</a></li>
-                                            <li><a href="listings-grid-with-sidebar-2.html">With Sidebar 2</a></li>
-                                            <li><a href="listings-grid-full-width.html">Full Width</a></li>
-                                            <li><a href="listings-grid-full-width-with-map.html">Full Width + Map</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Half Screen Map</a>
-                                        <ul>
-                                            <li><a href="listings-half-screen-map-list.html">List Layout</a></li>
-                                            <li><a href="listings-half-screen-map-grid-1.html">Grid Layout 1</a></li>
-                                            <li><a href="listings-half-screen-map-grid-2.html">Grid Layout 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="listings-single-page.html">Single Listing 1</a></li>
-                                    <li><a href="listings-single-page-2.html">Single Listing 2</a></li>
+                                    <li><a href="#">Offres</a></li>
+                                    <li><a href="#">Demandes</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="#">User Panel</a>
+                            <li><a href="#">Objets</a>
                                 <ul>
-                                    <li><a href="dashboard.html">Dashboard</a></li>
-                                    <li><a href="dashboard-messages.html">Messages</a></li>
-                                    <li><a href="dashboard-bookings.html">Bookings</a></li>
-                                    <li><a href="dashboard-my-listings.html">My Listings</a></li>
-                                    <li><a href="dashboard-reviews.html">Reviews</a></li>
-                                    <li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-                                    <li><a href="dashboard-add-listing.html">Add Listing</a></li>
-                                    <li><a href="dashboard-my-profile.html">My Profile</a></li>
-                                    <li><a href="dashboard-invoice.html">Invoice</a></li>
+                                    <li><a href="#">Offres</a></li>
+                                    <li><a href="#">Demandes</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="#">Pages</a>
-                                <div class="mega-menu mobile-styles three-columns">
-
-                                    <div class="mega-menu-section">
-                                        <ul>
-                                            <li class="mega-menu-headline">Pages #1</li>
-                                            <li><a href="pages-user-profile.html"><i class="sl sl-icon-user"></i> User Profile</a></li>
-                                            <li><a href="pages-booking.html"><i class="sl sl-icon-check"></i> Booking Page</a></li>
-                                            <li><a href="pages-add-listing.html"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
-                                            <li><a href="pages-blog.html"><i class="sl sl-icon-docs"></i> Blog</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mega-menu-section">
-                                        <ul>
-                                            <li class="mega-menu-headline">Pages #2</li>
-                                            <li><a href="pages-contact.html"><i class="sl sl-icon-envelope-open"></i> Contact</a></li>
-                                            <li><a href="pages-coming-soon.html"><i class="sl sl-icon-hourglass"></i> Coming Soon</a></li>
-                                            <li><a href="pages-404.html"><i class="sl sl-icon-close"></i> 404 Page</a></li>
-                                            <li><a href="pages-masonry-filtering.html"><i class="sl sl-icon-equalizer"></i> Masonry Filtering</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="mega-menu-section">
-                                        <ul>
-                                            <li class="mega-menu-headline">Other</li>
-                                            <li><a href="pages-elements.html"><i class="sl sl-icon-settings"></i> Elements</a></li>
-                                            <li><a href="pages-pricing-tables.html"><i class="sl sl-icon-tag"></i> Pricing Tables</a></li>
-                                            <li><a href="pages-typography.html"><i class="sl sl-icon-pencil"></i> Typography</a></li>
-                                            <li><a href="pages-icons.html"><i class="sl sl-icon-diamond"></i> Icons</a></li>
-                                        </ul>
-                                    </div>
-
-                                </div>
+                            <li><a href="#">Covoiturages</a>
+                                <ul>
+                                    <li><a href="#">Offres</a></li>
+                                    <li><a href="#">Demandes</a></li>
+                                </ul>
                             </li>
-
                         </ul>
                     </nav>
                     <div class="clearfix"></div>
@@ -147,75 +88,48 @@
                 <!-- Right Side Content / End -->
                 <div class="right-side">
                     <div class="header-widget">
-                        <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Sign In</a>
-                        <a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+                        {% if not is_granted("ROLE_USER") %}
+                            <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-lock-open"></i> Connexion</a>
+                        {% else %}
+                            <a class="sign-in" href="#"><strong>{{ app.user.firstname }}</strong></a> <a class="sign-in">|</a> <a class="sign-in" href="{{ path('fos_user_security_logout') }}"><i class="sl sl-icon-logout"></i></a>
+                        {% endif %}
+                        <!--<a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>-->
                     </div>
                 </div>
                 <!-- Right Side Content / End -->
 
                 <!-- Sign In Popup -->
-                <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+                {% if not is_granted("ROLE_USER") %}
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
 
-                    <div class="small-dialog-header">
-                        <h3>Sign In</h3>
-                    </div>
+                        <div class="small-dialog-header">
+                            <h3>Sign In</h3>
+                        </div>
 
-                    <!--Tabs -->
-                    <div class="sign-in-form style-1">
+                        <!--Tabs -->
+                        <div class="sign-in-form style-1">
 
-                        <ul id="typical_tabs_nav" class="tabs-nav">
-                            <li class=""><a href="#tab1">Connexion</a></li>
-                            <li><a href="#tab2">Inscription</a></li>
-                        </ul>
+                            <ul id="typical_tabs_nav" class="tabs-nav">
+                                <li class=""><a href="#tab1">Connexion</a></li>
+                                <li><a href="#tab2">Inscription</a></li>
+                            </ul>
 
-                        <div class="tabs-container alt">
+                            <div class="tabs-container alt">
 
-                            <!-- Login -->
-                            <div class="tab-content" id="tab1" style="display: none;">
-                                {{ include('@FOSUser/Security/login_content.html.twig') }}
+                                <!-- Login -->
+                                <div class="tab-content" id="tab1" style="display: none;">
+                                    {{ include('@FOSUser/Security/login_content.html.twig') }}
+                                </div>
+
+                                <!-- Register -->
+                                <div class="tab-content" id="tab2" style="display: none;">
+                                    {{ render(controller('AppBundle:Default:register',{'request' : app.request})) }}
+                                </div>
+
                             </div>
-
-                            <!-- Register -->
-                            <div class="tab-content" id="tab2" style="display: none;">
-
-                                <form method="post" class="register">
-
-                                    <p class="form-row form-row-wide">
-                                        <label for="username2">Username:
-                                            <i class="im im-icon-Male"></i>
-                                            <input type="text" class="input-text" name="username" id="username2" value="" />
-                                        </label>
-                                    </p>
-
-                                    <p class="form-row form-row-wide">
-                                        <label for="email2">Email Address:
-                                            <i class="im im-icon-Mail"></i>
-                                            <input type="text" class="input-text" name="email" id="email2" value="" />
-                                        </label>
-                                    </p>
-
-                                    <p class="form-row form-row-wide">
-                                        <label for="password1">Password:
-                                            <i class="im im-icon-Lock-2"></i>
-                                            <input class="input-text" type="password" name="password1" id="password1"/>
-                                        </label>
-                                    </p>
-
-                                    <p class="form-row form-row-wide">
-                                        <label for="password2">Repeat Password:
-                                            <i class="im im-icon-Lock-2"></i>
-                                            <input class="input-text" type="password" name="password2" id="password2"/>
-                                        </label>
-                                    </p>
-
-                                    <input type="submit" class="button border fw margin-top-10" name="register" value="Register" />
-
-                                </form>
-                            </div>
-
                         </div>
                     </div>
-                </div>
+                {% endif %}
                 <!-- Sign In Popup / End -->
 
             </div>
@@ -235,7 +149,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-sm-6">
-                    <img class="footer-logo" src="images/logo2.png" alt="">
+                    <img class="footer-logo" src="{{ asset('assets/images/logo2.png') }}" alt="">
                     <br><br>
                     <p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
                 </div>

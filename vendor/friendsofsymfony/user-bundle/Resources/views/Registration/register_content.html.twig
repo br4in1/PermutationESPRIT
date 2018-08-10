@@ -6,49 +6,49 @@
         <label for="username2">
             <i class="im im-icon-Mail"></i>
             {{ form_widget(form.email) }}
-            <div class="notification error closeable">{{ form_errors(form.email) }}</div>
+            {% if form_errors(form.email) is not empty %}<div class="notification error closeable">{{ form_errors(form.email) }}</div>{% endif %}
         </label>
     </p>
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Male"></i>
             {{ form_widget(form.firstname) }}
-            <div class="notification error closeable">{{ form_errors(form.firstname) }}</div>
+            {% if form_errors(form.firstname) is not empty %}<div class="notification error closeable">{{ form_errors(form.firstname) }}</div>{% endif %}
         </label>
     </p>
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Male"></i>
             {{ form_widget(form.lastname) }}
-            <div class="notification error closeable">{{ form_errors(form.lastname) }}</div>
+            {% if form_errors(form.lastname) is not empty %}<div class="notification error closeable">{{ form_errors(form.lastname) }}</div>{% endif %}
         </label>
     </p>
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Lock-2"></i>
             {{ form_widget(form.plainPassword.first) }}
-            <div class="notification error closeable">{{ form_errors(form.plainPassword.first) }}</div>
+            {% if form_errors(form.plainPassword.first) is not empty %}<div class="notification error closeable">{{ form_errors(form.plainPassword.first) }}</div>{% endif %}
         </label>
     </p>
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Lock-2"></i>
             {{ form_widget(form.plainPassword.second) }}
-            <div class="notification error closeable">{{ form_errors(form.plainPassword.second) }}</div>
+            {% if form_errors(form.plainPassword.second) is not empty %}<div class="notification error closeable">{{ form_errors(form.plainPassword.second) }}</div>{% endif %}
         </label>
     </p>
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Phone"></i>
             {{ form_widget(form.phone) }}
-            <div class="notification error closeable">{{ form_errors(form.phone) }}</div>
+            {% if form_errors(form.phone) is not empty %}<div class="notification error closeable">{{ form_errors(form.phone) }}</div>{% endif %}
         </label>
     </p>
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Book"></i>
             {{ form_widget(form.specialite) }}
-            <div class="notification error closeable">{{ form_errors(form.specialite) }}</div>
+            {% if form_errors(form.specialite) is not empty %}<div class="notification error closeable">{{ form_errors(form.specialite) }}</div>{% endif %}
         </label>
     </p>
     <button type="submit" class="button border fw margin-top-10">{{ 'registration.submit'|trans }}</button>
