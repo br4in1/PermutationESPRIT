@@ -6,7 +6,7 @@
         <div class="alert alert-danger">
             {{ message }}
         </div>
-        {% endfor %}
+    {% endfor %}
     <div id="table_div" style="width: 95%; margin: auto;">
         <table id="permutations_table">
             <thead>
@@ -37,45 +37,36 @@
     </div>
 
     <ul>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <a href="#sign-in-dialog" class="button sign-in popup-with-zoom-anim">
             +
-        </button>
+        </a>
     </ul>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nouvelle Permutation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{ path('permutation_new') }}" method="post">
-                    <div class="modal-body">
-                        <select name="target" class="form-control">
-                            <option value="GL">GL</option>
-                            <option value="INFINI">INFINI</option>
-                            <option value="DS">DS</option>
-                            <option value="ISEM">ISEM</option>
-                            <option value="SLEAM">SLEAM</option>
-                            <option value="INFO B">INFO B</option>
-                            <option value="NIDS">NIDS</option>
-                            <option value="SIM">SIM</option>
-                            <option value="ARCTIC (Cloud)">ARCTIC (Cloud)</option>
-                            <option value="IRT">IRT</option>
-                            <option value="TWIN">TWIN</option>
-                            <option value="ERP/BI">ERP/BI</option>
-                        </select>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <button type="submit" class="btn btn-primary">Confirmer</button>
-                    </div>
-                </form>
-            </div>
+    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+        <div class="small-dialog-header">
+            <h3>Nouvelle Permutation</h3>
+        </div>
+        <div class="sign-in-form style-1">
+            <form class="login" action="{{ path('permutation_new') }}" method="post">
+                <label for="spec">Specialité de destination : </label>
+                <select class="chosen-select" name="target" id="spec">
+                    <option value="GL">GL</option>
+                    <option value="INFINI">INFINI</option>
+                    <option value="DS">DS</option>
+                    <option value="ISEM">ISEM</option>
+                    <option value="SLEAM">SLEAM</option>
+                    <option value="INFO B">INFO B</option>
+                    <option value="NIDS">NIDS</option>
+                    <option value="SIM">SIM</option>
+                    <option value="ARCTIC (Cloud)">ARCTIC (Cloud)</option>
+                    <option value="IRT">IRT</option>
+                    <option value="TWIN">TWIN</option>
+                    <option value="ERP/BI">ERP/BI</option>
+                </select>
+                <br>
+                <button type="submit" class="button border margin-top-10 float-right">Confirmer</button>
+            </form>
         </div>
     </div>
 
@@ -107,6 +98,5 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/Datatables/datatables.min.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}"/>
-    <link href="{{ asset('assets/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/icons.css') }}"/>
 {% endblock %}

@@ -9,20 +9,7 @@
             {% if form_errors(form.email) is not empty %}<div class="notification error closeable">{{ form_errors(form.email) }}</div>{% endif %}
         </label>
     </p>
-    <p class="form-row form-row-wide">
-        <label>
-            <i class="im im-icon-Male"></i>
-            {{ form_widget(form.firstname) }}
-            {% if form_errors(form.firstname) is not empty %}<div class="notification error closeable">{{ form_errors(form.firstname) }}</div>{% endif %}
-        </label>
-    </p>
-    <p class="form-row form-row-wide">
-        <label>
-            <i class="im im-icon-Male"></i>
-            {{ form_widget(form.lastname) }}
-            {% if form_errors(form.lastname) is not empty %}<div class="notification error closeable">{{ form_errors(form.lastname) }}</div>{% endif %}
-        </label>
-    </p>
+
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Lock-2"></i>

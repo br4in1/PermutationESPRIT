@@ -11,6 +11,7 @@
 
 namespace FOS\UserBundle\Controller;
 
+use AppBundle\Entity\User;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -66,15 +67,17 @@ class RegistrationController extends Controller
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
-
+        $user = new User($user);
         $form = $this->formFactory->createForm();
         $form->setData($user);
-        $user->setUsername($user->getEmail());
-        $user->setUsernameCanonical($user->getUsername());
+        $firstname = ucfirst(substr($request->get('fos_user_registration_form')["email"],0,strpos($request->get('fos_user_registration_form')["email"],'.')));
+        $lastname = ucfirst(substr($request->get('fos_user_registration_form')["email"],strpos($request->get('fos_user_registration_form')["email"],'.')+1,strpos($request->get('fos_user_registration_form')["email"],'@')-strpos($request->get('fos_user_registration_form')["email"],'.')-1));
+        $user->setFirstname(preg_replace('/[0-9]+/', '',$firstname));
+        $user->setLastname(preg_replace('/[0-9]+/', '',$lastname));
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-            if ($form->isValid() && substr($user->getEmail(), -strlen("@esprit.tn")) === "@esprit.tn") {
+            if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 

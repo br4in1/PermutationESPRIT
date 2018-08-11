@@ -44,6 +44,10 @@
                     <value>Profile</value>
                 </option>
             </constraint>
+            <constraint name="Regex">
+                <option name="pattern">/[a-zA-z0-9.]+@esprit.tn/</option>
+                <option name="message">fos_user.email.nomatch</option>
+            </constraint>
             <constraint name="Email">
                 <option name="message">fos_user.email.invalid</option>
                 <option name="groups">

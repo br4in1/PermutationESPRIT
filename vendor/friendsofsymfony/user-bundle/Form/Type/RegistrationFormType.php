@@ -42,9 +42,11 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.email','class' => 'input-text']))
-            ->add('firstname',TextType::class,array('label' => 'form.firstname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.firstname','class' => 'input-text']))
-            ->add('lastname',TextType::class,array('label' => 'form.lastname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.lastname','class' => 'input-text']))
+            //->add('firstname',TextType::class,array('label' => 'form.firstname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.firstname','class' => 'input-text']))
+            //->add('lastname',TextType::class,array('label' => 'form.lastname', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.lastname','class' => 'input-text']))
             ->remove('username')
+            ->remove('firstnale')
+            ->remove('lastname')
             //->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,

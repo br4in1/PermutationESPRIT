@@ -45,12 +45,14 @@ class DefaultController extends Controller
 
         $form = $this->get('fos_user.registration.form.factory')->createForm();
         $form->setData($user);
-        $user->setUsername($user->getEmail());
-        $user->setUsernameCanonical($user->getUsername());
+        $firstname = ucfirst(substr($request->get('fos_user_registration_form')["email"],0,strpos($request->get('fos_user_registration_form')["email"],'.')));
+        $lastname = ucfirst(substr($request->get('fos_user_registration_form')["email"],strpos($request->get('fos_user_registration_form')["email"],'.')+1,strpos($request->get('fos_user_registration_form')["email"],'@')-strpos($request->get('fos_user_registration_form')["email"],'.')-1));
+        $user->setFirstname(preg_replace('/[0-9]+/', '',$firstname));
+        $user->setLastname(preg_replace('/[0-9]+/', '',$lastname));
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
-            if ($form->isValid() && substr($user->getEmail(), -strlen("@esprit.tn")) === "@esprit.tn") {
+            if ($form->isValid()) {
                 $event = new FormEvent($form, $request);
                 $this->get('event_dispatcher')->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
