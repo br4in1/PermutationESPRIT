@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Covoiturage</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ covoiturage.id }}</td>
+            </tr>
+            <tr>
+                <th>Depart</th>
+                <td>{{ covoiturage.depart }}</td>
+            </tr>
+            <tr>
+                <th>Destination</th>
+                <td>{{ covoiturage.destination }}</td>
+            </tr>
+            <tr>
+                <th>Cout</th>
+                <td>{{ covoiturage.cout }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ covoiturage.user }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ covoiturage.etat }}</td>
+            </tr>
+            <tr>
+                <th>Fumeur</th>
+                <td>{{ covoiturage.fumeur }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ covoiturage.date }}</td>
+            </tr>
+            <tr>
+                <th>Datepublication</th>
+                <td>{% if covoiturage.datePublication %}{{ covoiturage.datePublication|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ covoiturage.type }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('covoiturage_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('covoiturage_edit', { 'id': covoiturage.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

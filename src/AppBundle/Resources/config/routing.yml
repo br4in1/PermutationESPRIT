@@ -1,6 +1,14 @@
+app_covoiturage:
+    resource: "@AppBundle/Resources/config/routing/covoiturage.yml"
+    prefix:   /covoiturage
+
 app_permutation:
     resource: "@AppBundle/Resources/config/routing/permutation.yml"
     prefix:   /permutation
+
+app_permutation_classes:
+    resource: "@AppBundle/Resources/config/routing/permutation_classes.yml"
+    prefix:   /permutation_classes
 
 index:
     path:     /

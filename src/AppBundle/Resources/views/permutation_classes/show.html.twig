@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Permutation_class</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ permutation_Class.id }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ permutation_Class.niveau }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ permutation_Class.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Classe</th>
+                <td>{{ permutation_Class.classe }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ permutation_Class.user }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if permutation_Class.date %}{{ permutation_Class.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ permutation_Class.state }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('permutation_classes_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('permutation_classes_edit', { 'id': permutation_Class.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

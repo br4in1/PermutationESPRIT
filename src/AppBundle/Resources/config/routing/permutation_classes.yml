@@ -1,0 +1,24 @@
+permutation_classes_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Permutation_Classes:index" }
+    methods:  GET
+
+permutation_classes_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Permutation_Classes:show" }
+    methods:  GET
+
+permutation_classes_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Permutation_Classes:new" }
+    methods:  [GET, POST]
+
+permutation_classes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Permutation_Classes:edit" }
+    methods:  [GET, POST]
+
+permutation_classes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Permutation_Classes:delete" }
+    methods:  DELETE

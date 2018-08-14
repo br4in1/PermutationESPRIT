@@ -34,9 +34,13 @@ class User extends BaseUser
      */
     private $lastname;
     /**
-     * @ORM\Column(type="string",nullable=true)
+     * @ORM\Column(type="integer",nullable=true)
      */
     private $classe;
+    /**
+     * @ORM\Column(type="integer",nullable=true)
+     */
+    private $niveau;
 
     /**
      * @return mixed
@@ -53,6 +57,40 @@ class User extends BaseUser
     {
         $this->classe = $classe;
     }
+
+    /**
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNiveau()
+    {
+        return $this->niveau;
+    }
+
+    /**
+     * @param mixed $niveau
+     */
+    public function setNiveau($niveau)
+    {
+        $this->niveau = $niveau;
+    }
+
+
 
     public function __construct()
     {

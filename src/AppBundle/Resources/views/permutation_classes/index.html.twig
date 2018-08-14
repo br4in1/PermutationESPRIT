@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% block title %} Permutations entre spécialités {% endblock %}
+{% block body %}
+    <h1 style="margin: 30px;">Liste des permutations</h1>
+    {% for message in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div id="table_div" style="width: 95%; margin: auto;">
+        <table id="permutations_table">
+            <thead>
+            <tr>
+                <th>Etudiant</th>
+                <th>Classe depart</th>
+                <th></th>
+                <th>Classe destination</th>
+                <th>Ajoutée le</th>
+                <th><i class="fa fa-phone"></i> Téléphone</th>
+                <th><i class="fa fa-mail-forward"></i> Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for permutation in permutation_Classes %}
+                <tr>
+                    <td>{{ permutation.user.lastname ~ " " ~ permutation.user.firstname }}</td>
+                    <td>{{ permutation.user.niveau ~ "" ~ permutation.user.specialite ~ "" ~  permutation.user.classe }}</td>
+                    <td><i class="fa fa-arrow-right"></i></td>
+                    <td>{{ permutation.niveau ~ "" ~ permutation.specialite ~ "" ~  permutation.classe }}</td>
+                    <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d H:i') }}{% endif %}</td>
+                    <td>{% if permutation.user.phone is defined %} {{ permutation.user.phone }} {% endif %}</td>
+                    <td><a href="mailto:{{ permutation.user.email }}">{{ permutation.user.email }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <ul>
+        <a href="#sign-in-dialog" class="button sign-in popup-with-zoom-anim">
+            +
+        </a>
+    </ul>
+
+    <!-- Modal -->
+    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+        <div class="small-dialog-header">
+            <h3>Nouvelle Permutation</h3>
+        </div>
+        <div class="sign-in-form style-1">
+            <form class="login" action="{{ path('permutation_classes_new') }}" method="post">
+                <label>Classe de destination:{{ app.user.niveau ~ "" ~ app.user.specialite }}</label> <input name="destination" type="number">
+                <br>
+                <button type="submit" class="button border margin-top-10 float-right">Confirmer</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/Datatables/datatables.js') }}"></script>
+    <script language="JavaScript">
+        $(document).ready(function () {
+            $('#permutations_table').DataTable({
+                "language": {
+                    "search": "Spécialité de destination :"
+                },
+                "aoColumns":
+                    [
+                        {"bSearchable": false},
+                        {"bSearchable": false},
+                        {"bSearchable": false},
+                        {"bSearchable": true},
+                        {"bSearchable": false},
+                        {"bSearchable": false},
+                        {"bSearchable": false}
+                    ]
+            });
+        });
+
+    </script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Datatables/datatables.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/icons.css') }}"/>
+{% endblock %}
