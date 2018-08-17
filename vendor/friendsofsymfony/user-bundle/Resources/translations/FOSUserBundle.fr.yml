@@ -91,3 +91,4 @@ form:
     specialite: 'Spécialité'
     firstname:  'Prénom'
     lastname: 'Nom'
+    classe: 'Classe'

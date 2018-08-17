@@ -2,8 +2,10 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\ProfilePrefs;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\UserBundle\FOSUserEvents;
@@ -23,6 +25,33 @@ class DefaultController extends Controller
         return $this->render('@App/default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
+    }
+
+    public function CurrentUserProfileAction(Request $request)
+    {
+        return $this->render('@App/default/profile.html.twig', [
+            'user' => $this->getDoctrine()->getManager()->getRepository("AppBundle:User")->findOneBy(array("id" => $this->getUser()->getId()))
+        ]);
+    }
+
+    public function UserProfileAction(Request $request,$id)
+    {
+        if($id === -1) return $this->render('@App/default/404.html.twig');
+        $user = $this->getDoctrine()->getManager()->getRepository("AppBundle:User")->findOneBy(array("id" => $id));
+        if($user === null) return $this->render('@App/default/404.html.twig');
+        return $this->render('@App/default/profile.html.twig', [
+            'user' => $user
+        ]);
+    }
+
+    public function PhoneNumberAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $prefs = $em->getRepository('AppBundle:ProfilePrefs')->findOneBy(array('user' => $this->getUser()));
+        $prefs->setPhonenumbervisible(!$prefs->isPhonenumbervisible());
+        $em->persist($prefs);
+        $em->flush();
+        return new JsonResponse(array('success' => true));
     }
 
     /**

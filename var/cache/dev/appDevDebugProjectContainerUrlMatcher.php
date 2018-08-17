@@ -103,6 +103,68 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        elseif (0 === strpos($pathinfo, '/covoiturage')) {
+            // covoiturage_index
+            if ('/covoiturage' === $trimmedPathinfo) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_covoiturage_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($rawPathinfo.'/', 'covoiturage_index');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::indexAction',  '_route' => 'covoiturage_index',);
+            }
+            not_covoiturage_index:
+
+            // covoiturage_show
+            if (preg_match('#^/covoiturage/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_covoiturage_show;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_show')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::showAction',));
+            }
+            not_covoiturage_show:
+
+            // covoiturage_new
+            if ('/covoiturage/new' === $pathinfo) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_covoiturage_new;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::newAction',  '_route' => 'covoiturage_new',);
+            }
+            not_covoiturage_new:
+
+            // covoiturage_edit
+            if (preg_match('#^/covoiturage/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_covoiturage_edit;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_edit')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::editAction',));
+            }
+            not_covoiturage_edit:
+
+            // covoiturage_delete
+            if (preg_match('#^/covoiturage/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if ('DELETE' !== $canonicalMethod) {
+                    $allow[] = 'DELETE';
+                    goto not_covoiturage_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_delete')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::deleteAction',));
+            }
+            not_covoiturage_delete:
+
+        }
+
         elseif (0 === strpos($pathinfo, '/permutation')) {
             // permutation_index
             if ('/permutation' === $trimmedPathinfo) {
@@ -151,9 +213,76 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'AppBundle\\Controller\\PermutationController::addPermutationAction',  '_route' => 'permutation_new',);
             }
 
+            if (0 === strpos($pathinfo, '/permutation_classes')) {
+                // permutation_classes_index
+                if ('/permutation_classes' === $trimmedPathinfo) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_permutation_classes_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($rawPathinfo.'/', 'permutation_classes_index');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::indexAction',  '_route' => 'permutation_classes_index',);
+                }
+                not_permutation_classes_index:
+
+                // permutation_classes_show
+                if (preg_match('#^/permutation_classes/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_permutation_classes_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_show')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::showAction',));
+                }
+                not_permutation_classes_show:
+
+                // permutation_classes_new
+                if ('/permutation_classes/new' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_permutation_classes_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::newAction',  '_route' => 'permutation_classes_new',);
+                }
+                not_permutation_classes_new:
+
+                // permutation_classes_edit
+                if (preg_match('#^/permutation_classes/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_permutation_classes_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_edit')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::editAction',));
+                }
+                not_permutation_classes_edit:
+
+                // permutation_classes_delete
+                if (preg_match('#^/permutation_classes/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ('DELETE' !== $canonicalMethod) {
+                        $allow[] = 'DELETE';
+                        goto not_permutation_classes_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_delete')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::deleteAction',));
+                }
+                not_permutation_classes_delete:
+
+            }
+
         }
 
         elseif (0 === strpos($pathinfo, '/profile')) {
+            // current_user_profile
+            if ('/profile' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::CurrentUserProfileAction',  '_route' => 'current_user_profile',);
+            }
+
             // fos_user_profile_show
             if ('/profile' === $trimmedPathinfo) {
                 if ('GET' !== $canonicalMethod) {
@@ -207,6 +336,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'index',);
         }
         not_index:
+
+        // user_profile
+        if (0 === strpos($pathinfo, '/user') && preg_match('#^/user(?:/(?P<id>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_profile')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::UserProfileAction',  'id' => -1,));
+        }
+
+        // show_hide_phone
+        if ('/shpn' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::PhoneNumberAction',  '_route' => 'show_hide_phone',);
+        }
 
         if (0 === strpos($pathinfo, '/login')) {
             // fos_user_security_login

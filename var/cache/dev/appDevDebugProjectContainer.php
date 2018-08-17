@@ -29,17 +29,30 @@ class appDevDebugProjectContainer extends Container
 
         $this->services = array();
         $this->normalizedIds = array(
+            'appbundle\\controller\\covoituragecontroller' => 'AppBundle\\Controller\\CovoiturageController',
             'appbundle\\controller\\defaultcontroller' => 'AppBundle\\Controller\\DefaultController',
+            'appbundle\\controller\\permutation_classescontroller' => 'AppBundle\\Controller\\Permutation_ClassesController',
             'appbundle\\controller\\permutationcontroller' => 'AppBundle\\Controller\\PermutationController',
+            'appbundle\\form\\covoituragetype' => 'AppBundle\\Form\\CovoiturageType',
+            'appbundle\\form\\permutation_classestype' => 'AppBundle\\Form\\Permutation_ClassesType',
             'appbundle\\form\\permutationtype' => 'AppBundle\\Form\\PermutationType',
+            'autowired.appbundle\\entity\\covoiturage' => 'autowired.AppBundle\\Entity\\Covoiturage',
             'autowired.appbundle\\entity\\permutation' => 'autowired.AppBundle\\Entity\\Permutation',
+            'autowired.appbundle\\entity\\permutation_classes' => 'autowired.AppBundle\\Entity\\Permutation_Classes',
+            'sonata\\intlbundle\\templating\\helper\\datetimehelper' => 'Sonata\\IntlBundle\\Templating\\Helper\\DateTimeHelper',
+            'sonata\\intlbundle\\templating\\helper\\localehelper' => 'Sonata\\IntlBundle\\Templating\\Helper\\LocaleHelper',
+            'sonata\\intlbundle\\templating\\helper\\numberhelper' => 'Sonata\\IntlBundle\\Templating\\Helper\\NumberHelper',
         );
         $this->methodMap = array(
             '1_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => 'get1D4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3fService',
             '2_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => 'get2D4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3fService',
+            'AppBundle\\Controller\\CovoiturageController' => 'getAppBundle_Controller_CovoiturageControllerService',
             'AppBundle\\Controller\\DefaultController' => 'getAppBundle_Controller_DefaultControllerService',
             'AppBundle\\Controller\\PermutationController' => 'getAppBundle_Controller_PermutationControllerService',
+            'AppBundle\\Controller\\Permutation_ClassesController' => 'getAppBundle_Controller_PermutationClassesControllerService',
+            'AppBundle\\Form\\CovoiturageType' => 'getAppBundle_Form_CovoiturageTypeService',
             'AppBundle\\Form\\PermutationType' => 'getAppBundle_Form_PermutationTypeService',
+            'AppBundle\\Form\\Permutation_ClassesType' => 'getAppBundle_Form_PermutationClassesTypeService',
             'annotation_reader' => 'getAnnotationReaderService',
             'annotations.cache' => 'getAnnotations_CacheService',
             'annotations.reader' => 'getAnnotations_ReaderService',
@@ -51,7 +64,9 @@ class appDevDebugProjectContainer extends Container
             'argument_resolver.variadic' => 'getArgumentResolver_VariadicService',
             'assets.context' => 'getAssets_ContextService',
             'assets.packages' => 'getAssets_PackagesService',
+            'autowired.AppBundle\\Entity\\Covoiturage' => 'getAutowired_AppBundle_Entity_CovoiturageService',
             'autowired.AppBundle\\Entity\\Permutation' => 'getAutowired_AppBundle_Entity_PermutationService',
+            'autowired.AppBundle\\Entity\\Permutation_Classes' => 'getAutowired_AppBundle_Entity_PermutationClassesService',
             'cache.annotations' => 'getCache_AnnotationsService',
             'cache.annotations.recorder_inner' => 'getCache_Annotations_RecorderInnerService',
             'cache.app' => 'getCache_AppService',
@@ -278,7 +293,11 @@ class appDevDebugProjectContainer extends Container
             'sensio_framework_extra.view.guesser' => 'getSensioFrameworkExtra_View_GuesserService',
             'sensio_framework_extra.view.listener' => 'getSensioFrameworkExtra_View_ListenerService',
             'service_locator.0296870a48ea762e458c72ddf63bb10c' => 'getServiceLocator_0296870a48ea762e458c72ddf63bb10cService',
+            'service_locator.16730661706decc43ea59c5cb6d7f00b' => 'getServiceLocator_16730661706decc43ea59c5cb6d7f00bService',
+            'service_locator.2f644b2e4d28e60df011f1a259393bd3' => 'getServiceLocator_2f644b2e4d28e60df011f1a259393bd3Service',
+            'service_locator.3a21ce69752206a342eb87cbcf8959ca' => 'getServiceLocator_3a21ce69752206a342eb87cbcf8959caService',
             'service_locator.4e097d9236b0975a8124631b2d607944' => 'getServiceLocator_4e097d9236b0975a8124631b2d607944Service',
+            'service_locator.9cda5086429448371ac8e70efe05208c' => 'getServiceLocator_9cda5086429448371ac8e70efe05208cService',
             'service_locator.cc2b70dfe28c491d5d4736dc8913e9ae' => 'getServiceLocator_Cc2b70dfe28c491d5d4736dc8913e9aeService',
             'session' => 'getSessionService',
             'session.handler' => 'getSession_HandlerService',
@@ -288,6 +307,12 @@ class appDevDebugProjectContainer extends Container
             'session.storage.native' => 'getSession_Storage_NativeService',
             'session.storage.php_bridge' => 'getSession_Storage_PhpBridgeService',
             'session_listener' => 'getSessionListenerService',
+            'sonata.intl.locale_detector.request_stack' => 'getSonata_Intl_LocaleDetector_RequestStackService',
+            'sonata.intl.templating.helper.datetime' => 'getSonata_Intl_Templating_Helper_DatetimeService',
+            'sonata.intl.templating.helper.locale' => 'getSonata_Intl_Templating_Helper_LocaleService',
+            'sonata.intl.templating.helper.number' => 'getSonata_Intl_Templating_Helper_NumberService',
+            'sonata.intl.timezone_detector.chain' => 'getSonata_Intl_TimezoneDetector_ChainService',
+            'sonata.intl.timezone_detector.locale' => 'getSonata_Intl_TimezoneDetector_LocaleService',
             'streamed_response_listener' => 'getStreamedResponseListenerService',
             'swiftmailer.email_sender.listener' => 'getSwiftmailer_EmailSender_ListenerService',
             'swiftmailer.mailer.default' => 'getSwiftmailer_Mailer_DefaultService',
@@ -357,7 +382,9 @@ class appDevDebugProjectContainer extends Container
         $this->privates = array(
             '1_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => true,
             '2_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => true,
+            'AppBundle\\Form\\CovoiturageType' => true,
             'AppBundle\\Form\\PermutationType' => true,
+            'AppBundle\\Form\\Permutation_ClassesType' => true,
             'annotations.cache' => true,
             'annotations.reader' => true,
             'argument_resolver.default' => true,
@@ -366,7 +393,9 @@ class appDevDebugProjectContainer extends Container
             'argument_resolver.service' => true,
             'argument_resolver.session' => true,
             'argument_resolver.variadic' => true,
+            'autowired.AppBundle\\Entity\\Covoiturage' => true,
             'autowired.AppBundle\\Entity\\Permutation' => true,
+            'autowired.AppBundle\\Entity\\Permutation_Classes' => true,
             'cache.annotations' => true,
             'cache.annotations.recorder_inner' => true,
             'cache.app.recorder_inner' => true,
@@ -412,7 +441,11 @@ class appDevDebugProjectContainer extends Container
             'security.user_checker' => true,
             'security.user_value_resolver' => true,
             'service_locator.0296870a48ea762e458c72ddf63bb10c' => true,
+            'service_locator.16730661706decc43ea59c5cb6d7f00b' => true,
+            'service_locator.2f644b2e4d28e60df011f1a259393bd3' => true,
+            'service_locator.3a21ce69752206a342eb87cbcf8959ca' => true,
             'service_locator.4e097d9236b0975a8124631b2d607944' => true,
+            'service_locator.9cda5086429448371ac8e70efe05208c' => true,
             'service_locator.cc2b70dfe28c491d5d4736dc8913e9ae' => true,
             'session.storage.metadata_bag' => true,
             'swiftmailer.mailer.default.transport.eventdispatcher' => true,
@@ -420,6 +453,9 @@ class appDevDebugProjectContainer extends Container
             'web_profiler.csp.handler' => true,
         );
         $this->aliases = array(
+            'Sonata\\IntlBundle\\Templating\\Helper\\DateTimeHelper' => 'sonata.intl.templating.helper.datetime',
+            'Sonata\\IntlBundle\\Templating\\Helper\\LocaleHelper' => 'sonata.intl.templating.helper.locale',
+            'Sonata\\IntlBundle\\Templating\\Helper\\NumberHelper' => 'sonata.intl.templating.helper.number',
             'cache.app_clearer' => 'cache.default_clearer',
             'database_connection' => 'doctrine.dbal.default_connection',
             'doctrine.orm.default_metadata_cache' => 'doctrine_cache.providers.doctrine.orm.default_metadata_cache',
@@ -430,6 +466,8 @@ class appDevDebugProjectContainer extends Container
             'fos_user.util.username_canonicalizer' => 'fos_user.util.email_canonicalizer',
             'mailer' => 'swiftmailer.mailer.default',
             'session.storage' => 'session.storage.native',
+            'sonata.intl.locale_detector' => 'sonata.intl.locale_detector.request_stack',
+            'sonata.intl.timezone_detector' => 'sonata.intl.timezone_detector.chain',
             'swiftmailer.mailer' => 'swiftmailer.mailer.default',
             'swiftmailer.plugin.messagelogger' => 'swiftmailer.mailer.default.plugin.messagelogger',
             'swiftmailer.spool' => 'swiftmailer.mailer.default.spool',
@@ -465,6 +503,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the public 'AppBundle\Controller\CovoiturageController' shared autowired service.
+     *
+     * @return \AppBundle\Controller\CovoiturageController
+     */
+    protected function getAppBundle_Controller_CovoiturageControllerService()
+    {
+        return $this->services['AppBundle\Controller\CovoiturageController'] = new \AppBundle\Controller\CovoiturageController();
+    }
+
+    /**
      * Gets the public 'AppBundle\Controller\DefaultController' shared autowired service.
      *
      * @return \AppBundle\Controller\DefaultController
@@ -482,6 +530,16 @@ class appDevDebugProjectContainer extends Container
     protected function getAppBundle_Controller_PermutationControllerService()
     {
         return $this->services['AppBundle\Controller\PermutationController'] = new \AppBundle\Controller\PermutationController();
+    }
+
+    /**
+     * Gets the public 'AppBundle\Controller\Permutation_ClassesController' shared autowired service.
+     *
+     * @return \AppBundle\Controller\Permutation_ClassesController
+     */
+    protected function getAppBundle_Controller_PermutationClassesControllerService()
+    {
+        return $this->services['AppBundle\Controller\Permutation_ClassesController'] = new \AppBundle\Controller\Permutation_ClassesController();
     }
 
     /**
@@ -1439,8 +1497,12 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\ServiceLocator(array('AppBundle\\Form\\PermutationType' => function () {
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\ServiceLocator(array('AppBundle\\Form\\CovoiturageType' => function () {
+            return ${($_ = isset($this->services['AppBundle\Form\CovoiturageType']) ? $this->services['AppBundle\Form\CovoiturageType'] : $this->getAppBundle_Form_CovoiturageTypeService()) && false ?: '_'};
+        }, 'AppBundle\\Form\\PermutationType' => function () {
             return ${($_ = isset($this->services['AppBundle\Form\PermutationType']) ? $this->services['AppBundle\Form\PermutationType'] : $this->getAppBundle_Form_PermutationTypeService()) && false ?: '_'};
+        }, 'AppBundle\\Form\\Permutation_ClassesType' => function () {
+            return ${($_ = isset($this->services['AppBundle\Form\Permutation_ClassesType']) ? $this->services['AppBundle\Form\Permutation_ClassesType'] : $this->getAppBundle_Form_PermutationClassesTypeService()) && false ?: '_'};
         }, 'FOS\\UserBundle\\Form\\Type\\ChangePasswordFormType' => function () {
             return ${($_ = isset($this->services['fos_user.change_password.form.type']) ? $this->services['fos_user.change_password.form.type'] : $this->get('fos_user.change_password.form.type')) && false ?: '_'};
         }, 'FOS\\UserBundle\\Form\\Type\\ProfileFormType' => function () {
@@ -2760,26 +2822,38 @@ class appDevDebugProjectContainer extends Container
 
         $k = new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin/');
 
-        $l = new \Symfony\Component\Security\Http\AccessMap();
-        $l->add($h, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $l->add($i, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $l->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $l->add($k, array(0 => 'ROLE_ADMIN'), NULL);
+        $l = new \Symfony\Component\HttpFoundation\RequestMatcher('^/profile');
 
-        $m = new \Symfony\Component\Security\Http\HttpUtils($e, $e, '{^https?://%s$}i');
+        $m = new \Symfony\Component\HttpFoundation\RequestMatcher('^/user/');
 
-        $n = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $m, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($m, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
-        $n->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(${($_ = isset($this->services['security.csrf.token_storage']) ? $this->services['security.csrf.token_storage'] : $this->getSecurity_Csrf_TokenStorageService()) && false ?: '_'}));
-        $n->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $n = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation');
 
-        $o = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($m, array());
-        $o->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
-        $o->setProviderKey('main');
+        $o = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation_classes');
 
-        $p = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $m, array(), $a);
-        $p->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
+        $p = new \Symfony\Component\Security\Http\AccessMap();
+        $p->add($h, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $p->add($i, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $p->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $p->add($k, array(0 => 'ROLE_ADMIN'), NULL);
+        $p->add($l, array(0 => 'ROLE_USER'), NULL);
+        $p->add($m, array(0 => 'ROLE_USER'), NULL);
+        $p->add($n, array(0 => 'ROLE_USER'), NULL);
+        $p->add($o, array(0 => 'ROLE_USER'), NULL);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($l, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $n, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $m, 'main', $o, $p, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b6d5e3a83db82.87845846', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $l, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $m, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $m, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
+        $q = new \Symfony\Component\Security\Http\HttpUtils($e, $e, '{^https?://%s$}i');
+
+        $r = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $q, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($q, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
+        $r->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(${($_ = isset($this->services['security.csrf.token_storage']) ? $this->services['security.csrf.token_storage'] : $this->getSecurity_Csrf_TokenStorageService()) && false ?: '_'}));
+        $r->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+
+        $s = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($q, array());
+        $s->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
+        $s->setProviderKey('main');
+
+        $t = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $q, array(), $a);
+        $t->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
+
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($p, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $r, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $q, 'main', $s, $t, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b74c844955993.18552004', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $p, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $q, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $q, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
     }
 
     /**
@@ -3007,6 +3081,70 @@ class appDevDebugProjectContainer extends Container
         return $this->services['session_listener'] = new \Symfony\Component\HttpKernel\EventListener\SessionListener(new \Symfony\Component\DependencyInjection\ServiceLocator(array('session' => function () {
             return ${($_ = isset($this->services['session']) ? $this->services['session'] : $this->get('session', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
         })));
+    }
+
+    /**
+     * Gets the public 'sonata.intl.locale_detector.request_stack' shared service.
+     *
+     * @return \Sonata\IntlBundle\Locale\RequestStackDetector
+     */
+    protected function getSonata_Intl_LocaleDetector_RequestStackService()
+    {
+        return $this->services['sonata.intl.locale_detector.request_stack'] = new \Sonata\IntlBundle\Locale\RequestStackDetector(${($_ = isset($this->services['request_stack']) ? $this->services['request_stack'] : $this->get('request_stack')) && false ?: '_'}, 'fr');
+    }
+
+    /**
+     * Gets the public 'sonata.intl.templating.helper.datetime' shared service.
+     *
+     * @return \Sonata\IntlBundle\Templating\Helper\DateTimeHelper
+     */
+    protected function getSonata_Intl_Templating_Helper_DatetimeService()
+    {
+        return $this->services['sonata.intl.templating.helper.datetime'] = new \Sonata\IntlBundle\Templating\Helper\DateTimeHelper(${($_ = isset($this->services['sonata.intl.timezone_detector.chain']) ? $this->services['sonata.intl.timezone_detector.chain'] : $this->get('sonata.intl.timezone_detector.chain')) && false ?: '_'}, 'UTF-8', ${($_ = isset($this->services['sonata.intl.locale_detector.request_stack']) ? $this->services['sonata.intl.locale_detector.request_stack'] : $this->get('sonata.intl.locale_detector.request_stack')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'sonata.intl.templating.helper.locale' shared service.
+     *
+     * @return \Sonata\IntlBundle\Templating\Helper\LocaleHelper
+     */
+    protected function getSonata_Intl_Templating_Helper_LocaleService()
+    {
+        return $this->services['sonata.intl.templating.helper.locale'] = new \Sonata\IntlBundle\Templating\Helper\LocaleHelper('UTF-8', ${($_ = isset($this->services['sonata.intl.locale_detector.request_stack']) ? $this->services['sonata.intl.locale_detector.request_stack'] : $this->get('sonata.intl.locale_detector.request_stack')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'sonata.intl.templating.helper.number' shared service.
+     *
+     * @return \Sonata\IntlBundle\Templating\Helper\NumberHelper
+     */
+    protected function getSonata_Intl_Templating_Helper_NumberService()
+    {
+        return $this->services['sonata.intl.templating.helper.number'] = new \Sonata\IntlBundle\Templating\Helper\NumberHelper('UTF-8', ${($_ = isset($this->services['sonata.intl.locale_detector.request_stack']) ? $this->services['sonata.intl.locale_detector.request_stack'] : $this->get('sonata.intl.locale_detector.request_stack')) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'sonata.intl.timezone_detector.chain' shared service.
+     *
+     * @return \Sonata\IntlBundle\Timezone\ChainTimezoneDetector
+     */
+    protected function getSonata_Intl_TimezoneDetector_ChainService()
+    {
+        $this->services['sonata.intl.timezone_detector.chain'] = $instance = new \Sonata\IntlBundle\Timezone\ChainTimezoneDetector('UTC');
+
+        $instance->addDetector(${($_ = isset($this->services['sonata.intl.timezone_detector.locale']) ? $this->services['sonata.intl.timezone_detector.locale'] : $this->get('sonata.intl.timezone_detector.locale')) && false ?: '_'});
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'sonata.intl.timezone_detector.locale' shared service.
+     *
+     * @return \Sonata\IntlBundle\Timezone\LocaleBasedTimezoneDetector
+     */
+    protected function getSonata_Intl_TimezoneDetector_LocaleService()
+    {
+        return $this->services['sonata.intl.timezone_detector.locale'] = new \Sonata\IntlBundle\Timezone\LocaleBasedTimezoneDetector(${($_ = isset($this->services['sonata.intl.locale_detector.request_stack']) ? $this->services['sonata.intl.locale_detector.request_stack'] : $this->get('sonata.intl.locale_detector.request_stack')) && false ?: '_'}, array());
     }
 
     /**
@@ -3533,6 +3671,9 @@ class appDevDebugProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(array(0 => $this, 1 => 'twig.form.renderer')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\WebLinkExtension($c));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
+        $instance->addExtension(new \Sonata\IntlBundle\Twig\Extension\LocaleExtension(${($_ = isset($this->services['sonata.intl.templating.helper.locale']) ? $this->services['sonata.intl.templating.helper.locale'] : $this->get('sonata.intl.templating.helper.locale')) && false ?: '_'}));
+        $instance->addExtension(new \Sonata\IntlBundle\Twig\Extension\NumberExtension(${($_ = isset($this->services['sonata.intl.templating.helper.number']) ? $this->services['sonata.intl.templating.helper.number'] : $this->get('sonata.intl.templating.helper.number')) && false ?: '_'}));
+        $instance->addExtension(new \Sonata\IntlBundle\Twig\Extension\DateTimeExtension(${($_ = isset($this->services['sonata.intl.templating.helper.datetime']) ? $this->services['sonata.intl.templating.helper.datetime'] : $this->get('sonata.intl.templating.helper.datetime')) && false ?: '_'}));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\DumpExtension(${($_ = isset($this->services['var_dumper.cloner']) ? $this->services['var_dumper.cloner'] : $this->get('var_dumper.cloner')) && false ?: '_'}, $d));
         $instance->addExtension(new \Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension($e));
         $instance->addGlobal('app', $f);
@@ -3602,6 +3743,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Resources/views'), 'Doctrine');
         $instance->addPath(($this->targetDirs[3].'/src/AppBundle/Resources/views'), 'App');
         $instance->addPath(($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle/Resources/views'), 'FOSUser');
+        $instance->addPath(($this->targetDirs[3].'/vendor/sonata-project/intl-bundle/src/Resources/views'), 'SonataIntl');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
         $instance->addPath(($this->targetDirs[3].'/app/Resources/views'));
@@ -3811,6 +3953,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'AppBundle\Form\CovoiturageType' shared autowired service.
+     *
+     * @return \AppBundle\Form\CovoiturageType
+     */
+    protected function getAppBundle_Form_CovoiturageTypeService()
+    {
+        return $this->services['AppBundle\Form\CovoiturageType'] = new \AppBundle\Form\CovoiturageType();
+    }
+
+    /**
      * Gets the private 'AppBundle\Form\PermutationType' shared autowired service.
      *
      * @return \AppBundle\Form\PermutationType
@@ -3818,6 +3970,16 @@ class appDevDebugProjectContainer extends Container
     protected function getAppBundle_Form_PermutationTypeService()
     {
         return $this->services['AppBundle\Form\PermutationType'] = new \AppBundle\Form\PermutationType();
+    }
+
+    /**
+     * Gets the private 'AppBundle\Form\Permutation_ClassesType' shared autowired service.
+     *
+     * @return \AppBundle\Form\Permutation_ClassesType
+     */
+    protected function getAppBundle_Form_PermutationClassesTypeService()
+    {
+        return $this->services['AppBundle\Form\Permutation_ClassesType'] = new \AppBundle\Form\Permutation_ClassesType();
     }
 
     /**
@@ -3884,18 +4046,42 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getArgumentResolver_ServiceService()
     {
-        return $this->services['argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(new \Symfony\Component\DependencyInjection\ServiceLocator(array('AppBundle\\Controller\\PermutationController:deleteAction' => function () {
+        return $this->services['argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(new \Symfony\Component\DependencyInjection\ServiceLocator(array('AppBundle\\Controller\\CovoiturageController:deleteAction' => function () {
+            return ${($_ = isset($this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca']) ? $this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca'] : $this->getServiceLocator_3a21ce69752206a342eb87cbcf8959caService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\CovoiturageController:editAction' => function () {
+            return ${($_ = isset($this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca']) ? $this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca'] : $this->getServiceLocator_3a21ce69752206a342eb87cbcf8959caService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\CovoiturageController:showAction' => function () {
+            return ${($_ = isset($this->services['service_locator.16730661706decc43ea59c5cb6d7f00b']) ? $this->services['service_locator.16730661706decc43ea59c5cb6d7f00b'] : $this->getServiceLocator_16730661706decc43ea59c5cb6d7f00bService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\PermutationController:deleteAction' => function () {
             return ${($_ = isset($this->services['service_locator.4e097d9236b0975a8124631b2d607944']) ? $this->services['service_locator.4e097d9236b0975a8124631b2d607944'] : $this->getServiceLocator_4e097d9236b0975a8124631b2d607944Service()) && false ?: '_'};
         }, 'AppBundle\\Controller\\PermutationController:editAction' => function () {
             return ${($_ = isset($this->services['service_locator.4e097d9236b0975a8124631b2d607944']) ? $this->services['service_locator.4e097d9236b0975a8124631b2d607944'] : $this->getServiceLocator_4e097d9236b0975a8124631b2d607944Service()) && false ?: '_'};
         }, 'AppBundle\\Controller\\PermutationController:showAction' => function () {
             return ${($_ = isset($this->services['service_locator.0296870a48ea762e458c72ddf63bb10c']) ? $this->services['service_locator.0296870a48ea762e458c72ddf63bb10c'] : $this->getServiceLocator_0296870a48ea762e458c72ddf63bb10cService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\Permutation_ClassesController:deleteAction' => function () {
+            return ${($_ = isset($this->services['service_locator.9cda5086429448371ac8e70efe05208c']) ? $this->services['service_locator.9cda5086429448371ac8e70efe05208c'] : $this->getServiceLocator_9cda5086429448371ac8e70efe05208cService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\Permutation_ClassesController:editAction' => function () {
+            return ${($_ = isset($this->services['service_locator.9cda5086429448371ac8e70efe05208c']) ? $this->services['service_locator.9cda5086429448371ac8e70efe05208c'] : $this->getServiceLocator_9cda5086429448371ac8e70efe05208cService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\Permutation_ClassesController:showAction' => function () {
+            return ${($_ = isset($this->services['service_locator.2f644b2e4d28e60df011f1a259393bd3']) ? $this->services['service_locator.2f644b2e4d28e60df011f1a259393bd3'] : $this->getServiceLocator_2f644b2e4d28e60df011f1a259393bd3Service()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\CovoiturageController::deleteAction' => function () {
+            return ${($_ = isset($this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca']) ? $this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca'] : $this->getServiceLocator_3a21ce69752206a342eb87cbcf8959caService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\CovoiturageController::editAction' => function () {
+            return ${($_ = isset($this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca']) ? $this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca'] : $this->getServiceLocator_3a21ce69752206a342eb87cbcf8959caService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\CovoiturageController::showAction' => function () {
+            return ${($_ = isset($this->services['service_locator.16730661706decc43ea59c5cb6d7f00b']) ? $this->services['service_locator.16730661706decc43ea59c5cb6d7f00b'] : $this->getServiceLocator_16730661706decc43ea59c5cb6d7f00bService()) && false ?: '_'};
         }, 'AppBundle\\Controller\\PermutationController::deleteAction' => function () {
             return ${($_ = isset($this->services['service_locator.4e097d9236b0975a8124631b2d607944']) ? $this->services['service_locator.4e097d9236b0975a8124631b2d607944'] : $this->getServiceLocator_4e097d9236b0975a8124631b2d607944Service()) && false ?: '_'};
         }, 'AppBundle\\Controller\\PermutationController::editAction' => function () {
             return ${($_ = isset($this->services['service_locator.4e097d9236b0975a8124631b2d607944']) ? $this->services['service_locator.4e097d9236b0975a8124631b2d607944'] : $this->getServiceLocator_4e097d9236b0975a8124631b2d607944Service()) && false ?: '_'};
         }, 'AppBundle\\Controller\\PermutationController::showAction' => function () {
             return ${($_ = isset($this->services['service_locator.0296870a48ea762e458c72ddf63bb10c']) ? $this->services['service_locator.0296870a48ea762e458c72ddf63bb10c'] : $this->getServiceLocator_0296870a48ea762e458c72ddf63bb10cService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\Permutation_ClassesController::deleteAction' => function () {
+            return ${($_ = isset($this->services['service_locator.9cda5086429448371ac8e70efe05208c']) ? $this->services['service_locator.9cda5086429448371ac8e70efe05208c'] : $this->getServiceLocator_9cda5086429448371ac8e70efe05208cService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\Permutation_ClassesController::editAction' => function () {
+            return ${($_ = isset($this->services['service_locator.9cda5086429448371ac8e70efe05208c']) ? $this->services['service_locator.9cda5086429448371ac8e70efe05208c'] : $this->getServiceLocator_9cda5086429448371ac8e70efe05208cService()) && false ?: '_'};
+        }, 'AppBundle\\Controller\\Permutation_ClassesController::showAction' => function () {
+            return ${($_ = isset($this->services['service_locator.2f644b2e4d28e60df011f1a259393bd3']) ? $this->services['service_locator.2f644b2e4d28e60df011f1a259393bd3'] : $this->getServiceLocator_2f644b2e4d28e60df011f1a259393bd3Service()) && false ?: '_'};
         })));
     }
 
@@ -3920,6 +4106,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'autowired.AppBundle\Entity\Covoiturage' shared autowired service.
+     *
+     * @return \AppBundle\Entity\Covoiturage
+     */
+    protected function getAutowired_AppBundle_Entity_CovoiturageService()
+    {
+        return $this->services['autowired.AppBundle\Entity\Covoiturage'] = new \AppBundle\Entity\Covoiturage();
+    }
+
+    /**
      * Gets the private 'autowired.AppBundle\Entity\Permutation' shared autowired service.
      *
      * @return \AppBundle\Entity\Permutation
@@ -3927,6 +4123,16 @@ class appDevDebugProjectContainer extends Container
     protected function getAutowired_AppBundle_Entity_PermutationService()
     {
         return $this->services['autowired.AppBundle\Entity\Permutation'] = new \AppBundle\Entity\Permutation();
+    }
+
+    /**
+     * Gets the private 'autowired.AppBundle\Entity\Permutation_Classes' shared autowired service.
+     *
+     * @return \AppBundle\Entity\Permutation_Classes
+     */
+    protected function getAutowired_AppBundle_Entity_PermutationClassesService()
+    {
+        return $this->services['autowired.AppBundle\Entity\Permutation_Classes'] = new \AppBundle\Entity\Permutation_Classes();
     }
 
     /**
@@ -3946,7 +4152,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Annotations_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uObIR-4jHl', 0, 'uBQPim3XQg4s8hLp1STYZd', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uObIR-4jHl', 0, 'q6DHDfYmCcJIHD+fsDDhGh', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -3972,7 +4178,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Serializer_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uqfJlRQIhK', 0, 'uBQPim3XQg4s8hLp1STYZd', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uqfJlRQIhK', 0, 'q6DHDfYmCcJIHD+fsDDhGh', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -3982,7 +4188,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_System_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('rohCqc2IIt', 0, 'uBQPim3XQg4s8hLp1STYZd', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('rohCqc2IIt', 0, 'q6DHDfYmCcJIHD+fsDDhGh', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4002,7 +4208,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Validator_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Jv1+CHpgke', 0, 'uBQPim3XQg4s8hLp1STYZd', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Jv1+CHpgke', 0, 'q6DHDfYmCcJIHD+fsDDhGh', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4285,7 +4491,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_Provider_Anonymous_MainService()
     {
-        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b6d5e3a83db82.87845846');
+        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b74c844955993.18552004');
     }
 
     /**
@@ -4409,6 +4615,42 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'service_locator.16730661706decc43ea59c5cb6d7f00b' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function getServiceLocator_16730661706decc43ea59c5cb6d7f00bService()
+    {
+        return $this->services['service_locator.16730661706decc43ea59c5cb6d7f00b'] = new \Symfony\Component\DependencyInjection\ServiceLocator(array('covoiturage' => function () {
+            $f = function (\AppBundle\Entity\Covoiturage $v) { return $v; }; return $f(${($_ = isset($this->services['autowired.AppBundle\Entity\Covoiturage']) ? $this->services['autowired.AppBundle\Entity\Covoiturage'] : $this->getAutowired_AppBundle_Entity_CovoiturageService()) && false ?: '_'});
+        }));
+    }
+
+    /**
+     * Gets the private 'service_locator.2f644b2e4d28e60df011f1a259393bd3' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function getServiceLocator_2f644b2e4d28e60df011f1a259393bd3Service()
+    {
+        return $this->services['service_locator.2f644b2e4d28e60df011f1a259393bd3'] = new \Symfony\Component\DependencyInjection\ServiceLocator(array('permutation_Classes' => function () {
+            $f = function (\AppBundle\Entity\Permutation_Classes $v) { return $v; }; return $f(${($_ = isset($this->services['autowired.AppBundle\Entity\Permutation_Classes']) ? $this->services['autowired.AppBundle\Entity\Permutation_Classes'] : $this->getAutowired_AppBundle_Entity_PermutationClassesService()) && false ?: '_'});
+        }));
+    }
+
+    /**
+     * Gets the private 'service_locator.3a21ce69752206a342eb87cbcf8959ca' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function getServiceLocator_3a21ce69752206a342eb87cbcf8959caService()
+    {
+        return $this->services['service_locator.3a21ce69752206a342eb87cbcf8959ca'] = new \Symfony\Component\DependencyInjection\ServiceLocator(array('covoiturage' => function () {
+            $f = function (\AppBundle\Entity\Covoiturage $v) { return $v; }; return $f(${($_ = isset($this->services['autowired.AppBundle\Entity\Covoiturage']) ? $this->services['autowired.AppBundle\Entity\Covoiturage'] : $this->getAutowired_AppBundle_Entity_CovoiturageService()) && false ?: '_'});
+        }));
+    }
+
+    /**
      * Gets the private 'service_locator.4e097d9236b0975a8124631b2d607944' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
@@ -4417,6 +4659,18 @@ class appDevDebugProjectContainer extends Container
     {
         return $this->services['service_locator.4e097d9236b0975a8124631b2d607944'] = new \Symfony\Component\DependencyInjection\ServiceLocator(array('permutation' => function () {
             $f = function (\AppBundle\Entity\Permutation $v) { return $v; }; return $f(${($_ = isset($this->services['autowired.AppBundle\Entity\Permutation']) ? $this->services['autowired.AppBundle\Entity\Permutation'] : $this->getAutowired_AppBundle_Entity_PermutationService()) && false ?: '_'});
+        }));
+    }
+
+    /**
+     * Gets the private 'service_locator.9cda5086429448371ac8e70efe05208c' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function getServiceLocator_9cda5086429448371ac8e70efe05208cService()
+    {
+        return $this->services['service_locator.9cda5086429448371ac8e70efe05208c'] = new \Symfony\Component\DependencyInjection\ServiceLocator(array('permutation_Classes' => function () {
+            $f = function (\AppBundle\Entity\Permutation_Classes $v) { return $v; }; return $f(${($_ = isset($this->services['autowired.AppBundle\Entity\Permutation_Classes']) ? $this->services['autowired.AppBundle\Entity\Permutation_Classes'] : $this->getAutowired_AppBundle_Entity_PermutationClassesService()) && false ?: '_'});
         }));
     }
 
@@ -4596,6 +4850,11 @@ class appDevDebugProjectContainer extends Container
                     'path' => ($this->targetDirs[3].'/vendor/friendsofsymfony/user-bundle'),
                     'namespace' => 'FOS\\UserBundle',
                 ),
+                'SonataIntlBundle' => array(
+                    'parent' => NULL,
+                    'path' => ($this->targetDirs[3].'/vendor/sonata-project/intl-bundle/src'),
+                    'namespace' => 'Sonata\\IntlBundle',
+                ),
                 'DebugBundle' => array(
                     'parent' => NULL,
                     'path' => ($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle'),
@@ -4653,6 +4912,7 @@ class appDevDebugProjectContainer extends Container
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'AppBundle' => 'AppBundle\\AppBundle',
                 'FOSUserBundle' => 'FOS\\UserBundle\\FOSUserBundle',
+                'SonataIntlBundle' => 'Sonata\\IntlBundle\\SonataIntlBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -4955,6 +5215,20 @@ class appDevDebugProjectContainer extends Container
             'fos_user.resetting.form.validation_groups' => array(
                 0 => 'ResetPassword',
                 1 => 'Default',
+            ),
+            'sonata.intl.locale_detector.request.class' => 'Sonata\\IntlBundle\\Locale\\RequestDetector',
+            'sonata.intl.locale_detector.session.class' => 'Sonata\\IntlBundle\\Locale\\SessionDetector',
+            'sonata.intl.templating.helper.locale.class' => 'Sonata\\IntlBundle\\Templating\\Helper\\LocaleHelper',
+            'sonata.intl.templating.helper.number.class' => 'Sonata\\IntlBundle\\Templating\\Helper\\NumberHelper',
+            'sonata.intl.templating.helper.datetime.class' => 'Sonata\\IntlBundle\\Templating\\Helper\\DateTimeHelper',
+            'sonata.intl.timezone_detector.chain.class' => 'Sonata\\IntlBundle\\Timezone\\ChainTimezoneDetector',
+            'sonata.intl.timezone_detector.user.class' => 'Sonata\\IntlBundle\\Timezone\\UserBasedTimezoneDetector',
+            'sonata.intl.timezone_detector.locale.class' => 'Sonata\\IntlBundle\\Timezone\\LocaleBasedTimezoneDetector',
+            'sonata.intl.twig.helper.locale.class' => 'Sonata\\IntlBundle\\Twig\\Extension\\LocaleExtension',
+            'sonata.intl.twig.helper.number.class' => 'Sonata\\IntlBundle\\Twig\\Extension\\NumberExtension',
+            'sonata.intl.twig.helper.datetime.class' => 'Sonata\\IntlBundle\\Twig\\Extension\\DateTimeExtension',
+            'sonata_intl.timezone.detectors' => array(
+                0 => 'sonata.intl.timezone_detector.locale',
             ),
             'web_profiler.debug_toolbar.position' => 'bottom',
             'web_profiler.debug_toolbar.intercept_redirects' => false,

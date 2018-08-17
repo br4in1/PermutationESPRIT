@@ -29,3 +29,11 @@
         </div>
     </div>
 {% endblock %}
+
+{% block javascripts %}
+    <script language="JavaScript">
+        $('.class-textfield').focus(function () {
+            $('.help-message').text('Veuillez saisir les lettres en majuscule.\nFormats des spécialités pour les 4ème et 5ème année : BI,GL,NIDS,DS,INFINI,CLOUD,TWIN,IRT,ISEM,SIM,SLEAM,INFOB. ').fadeIn();
+        });
+    </script>
+{% endblock %}

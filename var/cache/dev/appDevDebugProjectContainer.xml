@@ -18,6 +18,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="SonataIntlBundle">Sonata\IntlBundle\SonataIntlBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -69,6 +70,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/friendsofsymfony/user-bundle</parameter>
         <parameter key="namespace">FOS\UserBundle</parameter>
+      </parameter>
+      <parameter key="SonataIntlBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/sonata-project/intl-bundle/src</parameter>
+        <parameter key="namespace">Sonata\IntlBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -389,6 +395,20 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="sonata.intl.locale_detector.request.class">Sonata\IntlBundle\Locale\RequestDetector</parameter>
+    <parameter key="sonata.intl.locale_detector.session.class">Sonata\IntlBundle\Locale\SessionDetector</parameter>
+    <parameter key="sonata.intl.templating.helper.locale.class">Sonata\IntlBundle\Templating\Helper\LocaleHelper</parameter>
+    <parameter key="sonata.intl.templating.helper.number.class">Sonata\IntlBundle\Templating\Helper\NumberHelper</parameter>
+    <parameter key="sonata.intl.templating.helper.datetime.class">Sonata\IntlBundle\Templating\Helper\DateTimeHelper</parameter>
+    <parameter key="sonata.intl.timezone_detector.chain.class">Sonata\IntlBundle\Timezone\ChainTimezoneDetector</parameter>
+    <parameter key="sonata.intl.timezone_detector.user.class">Sonata\IntlBundle\Timezone\UserBasedTimezoneDetector</parameter>
+    <parameter key="sonata.intl.timezone_detector.locale.class">Sonata\IntlBundle\Timezone\LocaleBasedTimezoneDetector</parameter>
+    <parameter key="sonata.intl.twig.helper.locale.class">Sonata\IntlBundle\Twig\Extension\LocaleExtension</parameter>
+    <parameter key="sonata.intl.twig.helper.number.class">Sonata\IntlBundle\Twig\Extension\NumberExtension</parameter>
+    <parameter key="sonata.intl.twig.helper.datetime.class">Sonata\IntlBundle\Twig\Extension\DateTimeExtension</parameter>
+    <parameter key="sonata_intl.timezone.detectors" type="collection">
+      <parameter>sonata.intl.timezone_detector.locale</parameter>
+    </parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -504,13 +524,25 @@
   <services>
     <service id="service_container" class="Symfony\Component\DependencyInjection\ContainerInterface" synthetic="true"/>
     <service id="AppBundle\AppBundle" class="AppBundle\AppBundle" public="false" autowire="true" autoconfigure="true"/>
+    <service id="AppBundle\Controller\CovoiturageController" class="AppBundle\Controller\CovoiturageController" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="AppBundle\Controller\PermutationController" class="AppBundle\Controller\PermutationController" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="AppBundle\Controller\Permutation_ClassesController" class="AppBundle\Controller\Permutation_ClassesController" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="AppBundle\Form\CovoiturageType" class="AppBundle\Form\CovoiturageType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="AppBundle\Form\PermutationType" class="AppBundle\Form\PermutationType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="AppBundle\Form\Permutation_ClassesType" class="AppBundle\Form\Permutation_ClassesType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
@@ -529,7 +561,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.f7dca40bd3e90b8f48a06e09c417aaf8"/>
+      <argument type="service" id="service_locator.facb5d35e3ae1b183010ddd344bcf2b3"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -675,7 +707,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>uBQPim3XQg4s8hLp1STYZd</argument>
+      <argument>q6DHDfYmCcJIHD+fsDDhGh</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -685,7 +717,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>uBQPim3XQg4s8hLp1STYZd</argument>
+      <argument>q6DHDfYmCcJIHD+fsDDhGh</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -801,7 +833,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.dcd18b820d0723dc87c0994974a90978"/>
+      <argument type="service" id="service_locator.5252cb1dc99cc08603d4557217cebd8e"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -2671,6 +2703,34 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.a55fc3594d872e95a0cd5d7fe8c9e29d30781743b5a703fd47cba114f09c9a500d6171ff"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.19b3966ea992786a16836a568503c923cad384a920480af874301aee548d544fd28d2eda"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.558e16f2f460f7b55fa05ef71280496436c399c0893a117ba65d82fc66f8165e3c8de7a9"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.bc492ebe7704888b4de9ee1337db76b3394035ab8a8e9c0a1513f5b91d10b438e2cc0ed0"/>
+        <argument type="collection">
+          <argument>ROLE_USER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -3079,12 +3139,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5b6d5e3a83db82.87845846</argument>
+      <argument>5b74c844955993.18552004</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5b6d5e3a83db82.87845846</argument>
+      <argument>5b74c844955993.18552004</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -3126,6 +3186,18 @@
     </service>
     <service id="security.request_matcher.fc1361a081a79d43baa3b010f55efe95a2cf43369ee73dcd2182ec1b9334ab99334e0826" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/admin/</argument>
+    </service>
+    <service id="security.request_matcher.a55fc3594d872e95a0cd5d7fe8c9e29d30781743b5a703fd47cba114f09c9a500d6171ff" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/profile</argument>
+    </service>
+    <service id="security.request_matcher.19b3966ea992786a16836a568503c923cad384a920480af874301aee548d544fd28d2eda" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/user/</argument>
+    </service>
+    <service id="security.request_matcher.558e16f2f460f7b55fa05ef71280496436c399c0893a117ba65d82fc66f8165e3c8de7a9" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/permutation</argument>
+    </service>
+    <service id="security.request_matcher.bc492ebe7704888b4de9ee1337db76b3394035ab8a8e9c0a1513f5b91d10b438e2cc0ed0" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/permutation_classes</argument>
     </service>
     <service id="security.console.user_password_encoder_command" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command"/>
@@ -3202,6 +3274,15 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.intl.twig.extension.locale"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.intl.twig.extension.number"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="sonata.intl.twig.extension.datetime"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.dump"/>
@@ -3284,6 +3365,10 @@
       <call method="addPath">
         <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/sonata-project/intl-bundle/src/Resources/views</argument>
+        <argument>SonataIntl</argument>
       </call>
       <call method="addPath">
         <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -3433,6 +3518,10 @@
       <call method="addPath">
         <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/friendsofsymfony/user-bundle/Resources/views</argument>
         <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/sonata-project/intl-bundle/src/Resources/views</argument>
+        <argument>SonataIntl</argument>
       </call>
       <call method="addPath">
         <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -4207,6 +4296,49 @@
         <argument type="service" id="service_container"/>
       </call>
     </service>
+    <service id="sonata.intl.locale_detector.request_stack" class="Sonata\IntlBundle\Locale\RequestStackDetector">
+      <argument type="service" id="request_stack"/>
+      <argument>fr</argument>
+    </service>
+    <service id="sonata.intl.templating.helper.locale" class="Sonata\IntlBundle\Templating\Helper\LocaleHelper">
+      <tag name="templating.helper" alias="locale"/>
+      <argument>UTF-8</argument>
+      <argument type="service" id="sonata.intl.locale_detector.request_stack"/>
+    </service>
+    <service id="sonata.intl.templating.helper.number" class="Sonata\IntlBundle\Templating\Helper\NumberHelper">
+      <tag name="templating.helper" alias="number"/>
+      <argument>UTF-8</argument>
+      <argument type="service" id="sonata.intl.locale_detector.request_stack"/>
+    </service>
+    <service id="sonata.intl.templating.helper.datetime" class="Sonata\IntlBundle\Templating\Helper\DateTimeHelper">
+      <tag name="templating.helper" alias="datetime"/>
+      <argument type="service" id="sonata.intl.timezone_detector.chain"/>
+      <argument>UTF-8</argument>
+      <argument type="service" id="sonata.intl.locale_detector.request_stack"/>
+    </service>
+    <service id="sonata.intl.twig.extension.locale" class="Sonata\IntlBundle\Twig\Extension\LocaleExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="sonata.intl.templating.helper.locale"/>
+    </service>
+    <service id="sonata.intl.twig.extension.number" class="Sonata\IntlBundle\Twig\Extension\NumberExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="sonata.intl.templating.helper.number"/>
+    </service>
+    <service id="sonata.intl.twig.extension.datetime" class="Sonata\IntlBundle\Twig\Extension\DateTimeExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="sonata.intl.templating.helper.datetime"/>
+    </service>
+    <service id="sonata.intl.timezone_detector.chain" class="Sonata\IntlBundle\Timezone\ChainTimezoneDetector">
+      <argument>UTC</argument>
+      <call method="addDetector">
+        <argument type="service" id="sonata.intl.timezone_detector.locale"/>
+      </call>
+    </service>
+    <service id="sonata.intl.timezone_detector.locale" class="Sonata\IntlBundle\Timezone\LocaleBasedTimezoneDetector">
+      <tag name="sonata_intl.timezone_detector" alias="locale"/>
+      <argument type="service" id="sonata.intl.locale_detector.request_stack"/>
+      <argument type="collection"/>
+    </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
@@ -4386,12 +4518,36 @@
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command"/>
     </service>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\CovoiturageController" class="AppBundle\Controller\CovoiturageController" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\CovoiturageController" class="AppBundle\Controller\CovoiturageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\DefaultController" class="AppBundle\Controller\DefaultController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\PermutationController" class="AppBundle\Controller\PermutationController" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Controller\PermutationController" class="AppBundle\Controller\PermutationController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.AppBundle\Controller\Permutation_ClassesController" class="AppBundle\Controller\Permutation_ClassesController" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Controller\Permutation_ClassesController" class="AppBundle\Controller\Permutation_ClassesController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\CovoiturageType" class="AppBundle\Form\CovoiturageType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\CovoiturageType" class="AppBundle\Form\CovoiturageType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\PermutationType" class="AppBundle\Form\PermutationType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\PermutationType" class="AppBundle\Form\PermutationType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\Permutation_ClassesType" class="AppBundle\Form\Permutation_ClassesType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\Permutation_ClassesType" class="AppBundle\Form\Permutation_ClassesType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="service_locator.43f0a8f23666aa87f29704e9029aa386" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.16730661706decc43ea59c5cb6d7f00b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="covoiturage" type="service" id="autowired.AppBundle\Entity\Covoiturage"/>
+      </argument>
+    </service>
+    <service id="service_locator.3a21ce69752206a342eb87cbcf8959ca" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="covoiturage" type="service" id="autowired.AppBundle\Entity\Covoiturage"/>
+      </argument>
+    </service>
     <service id="service_locator.4f8384c8862c511eefe34301cff90111" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
@@ -4412,15 +4568,43 @@
         <argument key="permutation" type="service" id="autowired.AppBundle\Entity\Permutation"/>
       </argument>
     </service>
-    <service id="service_locator.f7dca40bd3e90b8f48a06e09c417aaf8" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.0f0930b90bcc2bc32fc2b4e7f26669fc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.2f644b2e4d28e60df011f1a259393bd3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="permutation_Classes" type="service" id="autowired.AppBundle\Entity\Permutation_Classes"/>
+      </argument>
+    </service>
+    <service id="service_locator.9cda5086429448371ac8e70efe05208c" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="permutation_Classes" type="service" id="autowired.AppBundle\Entity\Permutation_Classes"/>
+      </argument>
+    </service>
+    <service id="service_locator.facb5d35e3ae1b183010ddd344bcf2b3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="AppBundle\Controller\CovoiturageController:deleteAction" type="service" id="service_locator.3a21ce69752206a342eb87cbcf8959ca"/>
+        <argument key="AppBundle\Controller\CovoiturageController:editAction" type="service" id="service_locator.3a21ce69752206a342eb87cbcf8959ca"/>
+        <argument key="AppBundle\Controller\CovoiturageController:showAction" type="service" id="service_locator.16730661706decc43ea59c5cb6d7f00b"/>
         <argument key="AppBundle\Controller\PermutationController:deleteAction" type="service" id="service_locator.4e097d9236b0975a8124631b2d607944"/>
         <argument key="AppBundle\Controller\PermutationController:editAction" type="service" id="service_locator.4e097d9236b0975a8124631b2d607944"/>
         <argument key="AppBundle\Controller\PermutationController:showAction" type="service" id="service_locator.0296870a48ea762e458c72ddf63bb10c"/>
+        <argument key="AppBundle\Controller\Permutation_ClassesController:deleteAction" type="service" id="service_locator.9cda5086429448371ac8e70efe05208c"/>
+        <argument key="AppBundle\Controller\Permutation_ClassesController:editAction" type="service" id="service_locator.9cda5086429448371ac8e70efe05208c"/>
+        <argument key="AppBundle\Controller\Permutation_ClassesController:showAction" type="service" id="service_locator.2f644b2e4d28e60df011f1a259393bd3"/>
+        <argument key="AppBundle\Controller\CovoiturageController::deleteAction" type="service" id="service_locator.3a21ce69752206a342eb87cbcf8959ca"/>
+        <argument key="AppBundle\Controller\CovoiturageController::editAction" type="service" id="service_locator.3a21ce69752206a342eb87cbcf8959ca"/>
+        <argument key="AppBundle\Controller\CovoiturageController::showAction" type="service" id="service_locator.16730661706decc43ea59c5cb6d7f00b"/>
         <argument key="AppBundle\Controller\PermutationController::deleteAction" type="service" id="service_locator.4e097d9236b0975a8124631b2d607944"/>
         <argument key="AppBundle\Controller\PermutationController::editAction" type="service" id="service_locator.4e097d9236b0975a8124631b2d607944"/>
         <argument key="AppBundle\Controller\PermutationController::showAction" type="service" id="service_locator.0296870a48ea762e458c72ddf63bb10c"/>
+        <argument key="AppBundle\Controller\Permutation_ClassesController::deleteAction" type="service" id="service_locator.9cda5086429448371ac8e70efe05208c"/>
+        <argument key="AppBundle\Controller\Permutation_ClassesController::editAction" type="service" id="service_locator.9cda5086429448371ac8e70efe05208c"/>
+        <argument key="AppBundle\Controller\Permutation_ClassesController::showAction" type="service" id="service_locator.2f644b2e4d28e60df011f1a259393bd3"/>
       </argument>
     </service>
     <service id="service_locator.20ccd3ddf0f78b2202986f924e362585" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4439,10 +4623,12 @@
         <argument key="translation.loader.yml" type="service" id="translation.loader.yml"/>
       </argument>
     </service>
-    <service id="service_locator.dcd18b820d0723dc87c0994974a90978" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.5252cb1dc99cc08603d4557217cebd8e" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="AppBundle\Form\CovoiturageType" type="service" id="AppBundle\Form\CovoiturageType"/>
         <argument key="AppBundle\Form\PermutationType" type="service" id="AppBundle\Form\PermutationType"/>
+        <argument key="AppBundle\Form\Permutation_ClassesType" type="service" id="AppBundle\Form\Permutation_ClassesType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\RegistrationFormType" type="service" id="fos_user.registration.form.type"/>
@@ -4635,7 +4821,9 @@
         <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
+    <service id="autowired.AppBundle\Entity\Covoiturage" class="AppBundle\Entity\Covoiturage" public="false" autowire="true"/>
     <service id="autowired.AppBundle\Entity\Permutation" class="AppBundle\Entity\Permutation" public="false" autowire="true"/>
+    <service id="autowired.AppBundle\Entity\Permutation_Classes" class="AppBundle\Entity\Permutation_Classes" public="false" autowire="true"/>
     <service id="service_locator.39e66930232432ca5ba91e98fdd8a17b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -4659,7 +4847,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rohCqc2IIt</argument>
       <argument>0</argument>
-      <argument>uBQPim3XQg4s8hLp1STYZd</argument>
+      <argument>q6DHDfYmCcJIHD+fsDDhGh</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4667,7 +4855,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Jv1+CHpgke</argument>
       <argument>0</argument>
-      <argument>uBQPim3XQg4s8hLp1STYZd</argument>
+      <argument>q6DHDfYmCcJIHD+fsDDhGh</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4675,7 +4863,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uqfJlRQIhK</argument>
       <argument>0</argument>
-      <argument>uBQPim3XQg4s8hLp1STYZd</argument>
+      <argument>q6DHDfYmCcJIHD+fsDDhGh</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4683,7 +4871,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uObIR-4jHl</argument>
       <argument>0</argument>
-      <argument>uBQPim3XQg4s8hLp1STYZd</argument>
+      <argument>q6DHDfYmCcJIHD+fsDDhGh</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4793,6 +4981,11 @@
     <service id="fos_user.user_manager" alias="fos_user.user_manager.default"/>
     <service id="fos_user.mailer" alias="fos_user.mailer.default"/>
     <service id="fos_user.session" alias="session" public="false"/>
+    <service id="Sonata\IntlBundle\Templating\Helper\DateTimeHelper" alias="sonata.intl.templating.helper.datetime"/>
+    <service id="Sonata\IntlBundle\Templating\Helper\LocaleHelper" alias="sonata.intl.templating.helper.locale"/>
+    <service id="Sonata\IntlBundle\Templating\Helper\NumberHelper" alias="sonata.intl.templating.helper.number"/>
+    <service id="sonata.intl.timezone_detector" alias="sonata.intl.timezone_detector.chain"/>
+    <service id="sonata.intl.locale_detector" alias="sonata.intl.locale_detector.request_stack"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand" alias="security.console.user_password_encoder_command"/>

@@ -61,7 +61,8 @@ class RegistrationFormType extends AbstractType
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
             ->add('phone',TextType::class,array('label' => 'form.phone', 'translation_domain' => 'FOSUserBundle','attr'=>['placeholder'=>'form.phone','class' => 'input-text']))
-            ->add('specialite',ChoiceType::class,array(
+            ->add('classe',TextType::class,array('label' => 'form.classe', 'translation_domain' => 'FOSUserBundle', 'attr' => ['placeholder' => 'form.classe','class' => 'input-text class-textfield']))
+            /*->add('specialite',ChoiceType::class,array(
                 'label' => 'form.specialite',
                 'translation_domain' => 'FOSUserBundle',
                 'choices' => array(
@@ -80,7 +81,7 @@ class RegistrationFormType extends AbstractType
                 ),
                 'placeholder'=>'form.specialite',
                 'attr'=>['class' => 'chosen-select']
-            ))
+            ))*/
         ;
     }
 

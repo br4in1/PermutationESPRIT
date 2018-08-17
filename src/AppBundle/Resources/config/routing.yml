@@ -14,3 +14,15 @@ index:
     path:     /
     defaults: { _controller: "AppBundle:Default:index" }
     methods:  GET
+
+current_user_profile:
+    path:   /profile
+    defaults:   {   _controller:    "AppBundle:Default:CurrentUserProfile"  }
+
+user_profile:
+    path:   /user/{id}
+    defaults:   {   _controller:    "AppBundle:Default:UserProfile",id: -1  }
+
+show_hide_phone:
+    path:   /shpn
+    defaults:   {   _controller:    "AppBundle:Default:PhoneNumber" }

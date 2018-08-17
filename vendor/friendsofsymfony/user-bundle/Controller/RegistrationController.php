@@ -11,6 +11,7 @@
 
 namespace FOS\UserBundle\Controller;
 
+use AppBundle\Entity\ProfilePrefs;
 use AppBundle\Entity\User;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
@@ -74,6 +75,10 @@ class RegistrationController extends Controller
         $lastname = ucfirst(substr($request->get('fos_user_registration_form')["email"],strpos($request->get('fos_user_registration_form')["email"],'.')+1,strpos($request->get('fos_user_registration_form')["email"],'@')-strpos($request->get('fos_user_registration_form')["email"],'.')-1));
         $user->setFirstname(preg_replace('/[0-9]+/', '',$firstname));
         $user->setLastname(preg_replace('/[0-9]+/', '',$lastname));
+        $user->setRegistrationdate(new \DateTime("now"));
+        $prefs = new ProfilePrefs();
+        $prefs->setUser($user);
+        $prefs->setPhonenumbervisible(true); $prefs->setFacebooklinkvisible(true);
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
@@ -89,7 +94,8 @@ class RegistrationController extends Controller
                 }
 
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
-
+                $this->getDoctrine()->getManager()->persist($prefs);
+                $this->getDoctrine()->getManager()->flush();
                 return $response;
             }
 

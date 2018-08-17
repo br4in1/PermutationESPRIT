@@ -1,4 +1,7 @@
 fos_user:
+    classe:
+        blank:  'Vous devez saisir votre classe.'
+        nomatch:    'Classe invalide. Veuillez respecter le format.'
     username:
         already_used: 'Le nom d''utilisateur est déjà utilisé.'
         blank: 'Entrez un nom d''utilisateur s''il vous plait.'

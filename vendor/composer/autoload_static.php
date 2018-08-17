@@ -11,11 +11,11 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
-        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '776d11858c76dade973fb30360827c04' => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
     );
 
@@ -33,6 +33,7 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Polyfill\\Apcu\\' => 22,
+            'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\' => 18,
             'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
@@ -42,6 +43,7 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'Sonata\\IntlBundle\\' => 18,
             'Sensio\\Bundle\\GeneratorBundle\\' => 30,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
@@ -117,6 +119,10 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-apcu',
         ),
+        'Symfony\\Component\\Intl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/intl',
+        ),
         'Symfony\\Component\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component',
@@ -152,6 +158,10 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Bridge/Doctrine',
+        ),
+        'Sonata\\IntlBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/intl-bundle/src',
         ),
         'Sensio\\Bundle\\GeneratorBundle\\' => 
         array (

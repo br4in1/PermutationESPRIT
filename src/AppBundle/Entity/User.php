@@ -18,13 +18,14 @@ class User extends BaseUser
      */
     protected $id;
     /**
-     * @ORM\Column(type="string")
+     * @var \DateTime
+     * @ORM\Column(type="date")
      */
-    private $phone;
+    private $registrationdate;
     /**
      * @ORM\Column(type="string")
      */
-    private $specialite;
+    private $phone;
     /**
      * @ORM\Column(type="string")
      */
@@ -34,13 +35,15 @@ class User extends BaseUser
      */
     private $lastname;
     /**
-     * @ORM\Column(type="integer",nullable=true)
+     * @ORM\Column(type="string")
      */
     private $classe;
-    /**
-     * @ORM\Column(type="integer",nullable=true)
-     */
-    private $niveau;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
 
     /**
      * @return mixed
@@ -77,30 +80,6 @@ class User extends BaseUser
     /**
      * @return mixed
      */
-    public function getNiveau()
-    {
-        return $this->niveau;
-    }
-
-    /**
-     * @param mixed $niveau
-     */
-    public function setNiveau($niveau)
-    {
-        $this->niveau = $niveau;
-    }
-
-
-
-    public function __construct()
-    {
-        parent::__construct();
-        // your own logic
-    }
-
-    /**
-     * @return mixed
-     */
     public function getPhone()
     {
         return $this->phone;
@@ -124,22 +103,6 @@ class User extends BaseUser
     {
         $this->setUsername($email);
         return parent::setEmail($email);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSpecialite()
-    {
-        return $this->specialite;
-    }
-
-    /**
-     * @param mixed $specialite
-     */
-    public function setSpecialite($specialite)
-    {
-        $this->specialite = $specialite;
     }
 
     /**
@@ -174,5 +137,19 @@ class User extends BaseUser
         $this->lastname = $lastname;
     }
 
+    /**
+     * @return \DateTime
+     */
+    public function getRegistrationdate(): \DateTime
+    {
+        return $this->registrationdate;
+    }
 
+    /**
+     * @param \DateTime $registrationdate
+     */
+    public function setRegistrationdate(\DateTime $registrationdate): void
+    {
+        $this->registrationdate = $registrationdate;
+    }
 }

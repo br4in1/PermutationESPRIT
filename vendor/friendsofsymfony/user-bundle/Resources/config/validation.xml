@@ -4,8 +4,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
         http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
 
-    <class name="FOS\UserBundle\Model\User">
-
+    <!--<class name="FOS\UserBundle\Model\User">-->
+    <class name="AppBundle\Entity\User">
         <property name="username">
             <constraint name="NotBlank">
                 <option name="message">fos_user.username.blank</option>
@@ -54,6 +54,20 @@
                     <value>Registration</value>
                     <value>Profile</value>
                 </option>
+            </constraint>
+        </property>
+
+        <property name="classe">
+            <constraint name="NotBlank">
+                <option name="message">fos_user.classe.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Regex">
+                <option name="pattern">/1A[0-9]+$|1GC[0-9]+$|1EM[0-9]+$|2A[0-9]+$|2P[0-9]+$|2GC[0-9]+$|2EM[0-9]+$|3A[0-9]+$|3B[0-9]+$|3GC[0-9]+$|3EM[0-9]+$|3SIGMA[0-9]*$|(4|5)(BI|GL|DS|INFINI|INFOB|CLOUD|SIM|SLEAM|IRT|ISEM|TWIN|NIDS)[0-9]*$/</option>
+                <option name="message">fos_user.classe.nomatch</option>
             </constraint>
         </property>
 

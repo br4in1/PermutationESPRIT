@@ -34,8 +34,9 @@
     <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Book"></i>
-            {{ form_widget(form.specialite) }}
-            {% if form_errors(form.specialite) is not empty %}<div class="notification error closeable">{{ form_errors(form.specialite) }}</div>{% endif %}
+            {{ form_widget(form.classe) }}
+            <div class="notification warning closeable help-message" style="display:none;"></div>
+            {% if form_errors(form.classe) is not empty %}<div class="notification error closeable">{{ form_errors(form.classe) }}</div>{% endif %}
         </label>
     </p>
     <button type="submit" class="button border fw margin-top-10">{{ 'registration.submit'|trans }}</button>

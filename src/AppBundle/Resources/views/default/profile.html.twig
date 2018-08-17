@@ -9,15 +9,17 @@
                 <div class="col-md-12">
 
                     <div class="user-profile-titlebar">
-                        <div class="user-profile-avatar"><img src="images/user-profile-avatar.jpg" alt=""></div>
-                        <div class="user-profile-name">
-                            <h2>Tom Perrin</h2>
-                            <div class="star-rating" data-rating="5">
-                                <div class="rating-counter"><a href="#listing-reviews">(60 reviews)</a></div>
-                            </div>
+                        <div class="user-profile-avatar"><img src="{{ asset('assets/images/user-profile-avatar.jpg') }}" alt=""></div>
+                        <div class="user-profile-name list-inline">
+                            <li class="list-inline-item"><h1 style="font-weight: bolder;">{{ user.firstname~" "~user.lastname }}</h1></li>
+                            <li class="list-inline-item"><h4>({{ user.classe }})</h4></li>
                         </div>
                     </div>
-
+                    {% if user.email is same as(app.user.email)  %}
+                        <div class="user-profile-name">
+                            <a href="{{ path('fos_user_profile_edit') }}" class="button"><i class="fa fa-pencil"></i> Modifier</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -34,38 +36,40 @@
             <!-- Sidebar
             ================================================== -->
             <div class="col-lg-4 col-md-4 margin-top-0">
-
-                <!-- Verified Badge -->
-                <div class="verified-badge with-tip" data-tip-content="Account has been verified and belongs to the person or organization represented.">
-                    <i class="sl sl-icon-user-following"></i> Verified Account
-                </div>
-
                 <!-- Contact -->
                 <div class="boxed-widget margin-top-30 margin-bottom-50">
-                    <h3>Contact</h3>
+                    <h3>Coordonnées</h3>
                     <ul class="listing-details-sidebar">
-                        <li><i class="sl sl-icon-phone"></i> (123) 123-456</li>
-                        <li><i class="fa fa-envelope-o"></i> <a href="#">tom@example.com</a></li>
+                        <li><i class="sl sl-icon-phone"></i> {{ user.phone }}
+                            {% if user.email is same as(app.user.email) %}
+                                <a title="Afficher ou masquer mon numéro au public." id="show-hide-phone" href="#"><i id="eye-container" class="sl sl-icon-eye" style="{% if prefs.phonenumbervisible %} color: rgb(0, 128, 0); {% else %} color: rgb(139, 0, 0); {% endif %} font-weight:bolder; margin-left: 90%;"></i></a>
+                            {% endif %}
+                        </li>
+                        <li><i class="fa fa-envelope-o"></i> <a href="#"> {{ user.email }}</a></li>
+                        <li><i class="fa fa-calendar"></i> Membre depuis : {{ user.registrationdate|date("d F Y") }}</li>
                     </ul>
 
                     <ul class="listing-details-sidebar social-profiles">
-                        <li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-                        <li><a href="#" class="twitter-profile"><i class="fa fa-twitter"></i> Twitter</a></li>
-                        <!-- <li><a href="#" class="gplus-profile"><i class="fa fa-google-plus"></i> Google Plus</a></li> -->
+                        {% if false %}
+                            <li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                        {% endif %}
                     </ul>
 
-                    <!-- Reply to review popup -->
-                    <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                        <div class="small-dialog-header">
-                            <h3>Send Message</h3>
+                    {% if user.email is not same as(app.user.email) %}
+                        <!-- Reply to review popup -->
+                        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                            <div class="small-dialog-header">
+                                <h3>Envoyer un message</h3>
+                            </div>
+                            <div class="message-reply margin-top-0">
+                                <textarea cols="40" rows="3" placeholder="Votre message pour {{ user.firstname }}"></textarea>
+                                <button class="button">Envoyer</button>
+                            </div>
                         </div>
-                        <div class="message-reply margin-top-0">
-                            <textarea cols="40" rows="3" placeholder="Your message to Tom"></textarea>
-                            <button class="button">Send Message</button>
-                        </div>
-                    </div>
-
-                    <a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
+                    {% endif %}
+                    {% if user.email is not same as(app.user.email) %}
+                        <a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
+                    {% endif %}
                 </div>
                 <!-- Contact / End-->
 
@@ -268,4 +272,21 @@
 
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script language="JavaScript">
+        $('#show-hide-phone').click(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url:    "{{ path('show_hide_phone') }}",
+                method: "post"
+            }).done(function (data) {
+                if(data.success === true){
+                    if($('#eye-container').css('color') == 'rgb(0, 128, 0)') $('#eye-container').css('color','darkred');
+                    else $('#eye-container').css('color','green');
+                }
+            });
+        })
+    </script>
 {% endblock %}
