@@ -165,7 +165,12 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/permutation')) {
+        // change_user_photo
+        if ('/cppic' === $pathinfo) {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::changeUserPhotoAction',  '_route' => 'change_user_photo',);
+        }
+
+        if (0 === strpos($pathinfo, '/permutation')) {
             // permutation_index
             if ('/permutation' === $trimmedPathinfo) {
                 if (substr($pathinfo, -1) !== '/') {

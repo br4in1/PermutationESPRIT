@@ -8,8 +8,18 @@
             <div class="row">
                 <div class="col-md-12">
 
-                    <div class="user-profile-titlebar">
-                        <div class="user-profile-avatar"><img src="{{ asset('assets/images/user-profile-avatar.jpg') }}" alt=""></div>
+                    <div style="margin-top: -95px;" class="user-profile-titlebar">
+                        {% if user.id is same as(app.user.id) %}
+                            <input type="file" hidden id="imgupload" name="imgupload">
+                            <figure style="top: 95px;" class="imghvr-fade">
+                                <img style="height: 110px; width: 110px;" id="user-img" src="{{ asset('assets/images/users_pics/' ~ user.picture) }}" alt="">
+                                <figcaption id="OpenImgUpload" style="padding-left: 43%; padding-top: 43%; cursor:pointer;">
+                                    <div><i class="fa fa-upload"></i></div>
+                                </figcaption>
+                            </figure>
+                        {% else %}
+                            <img class="user-profile-avatar" src="{{ asset('assets/images/users_pics/' ~ user.picture) }}" alt="">
+                        {% endif %}
                         <div class="user-profile-name list-inline">
                             <li class="list-inline-item"><h1 style="font-weight: bolder;">{{ user.firstname~" "~user.lastname }}</h1></li>
                             <li class="list-inline-item"><h4>({{ user.classe }})</h4></li>
@@ -287,6 +297,34 @@
                     else $('#eye-container').css('color','green');
                 }
             });
-        })
+        });
+        {% if user.email is same as(app.user.email) %}
+            $('#OpenImgUpload').click(function () {
+                $('#imgupload').trigger('click');
+            });
+            $('#imgupload').on('change', function (e) {
+                var data = new FormData();
+                $.each($('#imgupload')[0].files, function (i, file) {
+                    data.append('file-' + i, file);
+                });
+                $.ajax({
+                    url: "{{ path('change_user_photo') }}",
+                    type: "post",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    success: function (data) {
+                        if (data.success === true) {
+                            $('#user-img').attr('src', data.url);
+                        }
+                    }
+                });
+            });
+        {% endif %}
     </script>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/imagehover.css') }}">
 {% endblock %}

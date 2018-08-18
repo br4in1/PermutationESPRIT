@@ -3360,12 +3360,11 @@ button.fs-map-btn.button {
 	display: inline-block;
 }
 
-.user-profile-avatar {
-	max-width: 100px;
+#user-img {
+	/*max-width: 100px;*/
 	height: auto;
 	overflow: hidden;
 	border-radius: 50%;
-	position: absolute;
 	left: 0;
 	top: -12px;
 	image-rendering: -webkit-optimize-contrast;

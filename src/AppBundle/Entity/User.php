@@ -35,6 +35,10 @@ class User extends BaseUser
      */
     private $lastname;
     /**
+     * @ORM\Column(type="string",options={"default" : "_1.png"})
+     */
+    private $picture;
+    /**
      * @ORM\Column(type="string")
      */
     private $classe;
@@ -43,6 +47,22 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     */
+    public function setPicture($picture): void
+    {
+        $this->picture = $picture;
     }
 
     /**
