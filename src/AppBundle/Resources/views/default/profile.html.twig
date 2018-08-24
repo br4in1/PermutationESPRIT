@@ -1,5 +1,11 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}
+    {% if user.id == app.user.id %} Mon profil
+    {% else %} {{ user.firstname~" "~user.lastname }}
+    {% endif %}
+{% endblock %}
+
 {% block body %}
     <!-- Titlebar
     ================================================== -->
@@ -64,22 +70,6 @@
                             <li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
                         {% endif %}
                     </ul>
-
-                    {% if user.email is not same as(app.user.email) %}
-                        <!-- Reply to review popup -->
-                        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                            <div class="small-dialog-header">
-                                <h3>Envoyer un message</h3>
-                            </div>
-                            <div class="message-reply margin-top-0">
-                                <textarea cols="40" rows="3" placeholder="Votre message pour {{ user.firstname }}"></textarea>
-                                <button class="button">Envoyer</button>
-                            </div>
-                        </div>
-                    {% endif %}
-                    {% if user.email is not same as(app.user.email) %}
-                        <a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
-                    {% endif %}
                 </div>
                 <!-- Contact / End-->
 
@@ -91,193 +81,26 @@
             ================================================== -->
             <div class="col-lg-8 col-md-8 padding-left-30">
 
-                <h3 class="margin-top-0 margin-bottom-40">Tom's Listings</h3>
+                <div class="style-1">
 
-                <!-- Listings Container -->
-                <div class="row">
+                    <!-- Tabs Navigation -->
+                    <ul id="typical_tabs_nav" class="tabs-nav">
+                        <li class="active"><a href="#tab1b"><i class="fa fa-home"></i>Colocations</a></li>
+                        <li><a href="#tab2b"><i class="fa fa-car"></i>Covoiturages</a></li>
+                    </ul>
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-12 col-md-12">
-                        <div class="listing-item-container list-layout">
-                            <a href="listings-single-page.html" class="listing-item">
-
-                                <!-- Image -->
-                                <div class="listing-item-image">
-                                    <img src="images/listing-item-01.jpg" alt="">
-                                    <span class="tag">Eat & Drink</span>
-                                </div>
-
-                                <!-- Content -->
-                                <div class="listing-item-content">
-                                    <div class="listing-badge now-open">Now Open</div>
-
-                                    <div class="listing-item-inner">
-                                        <h3>Tom's Restaurant</h3>
-                                        <span>964 School Street, New York</span>
-                                        <div class="star-rating" data-rating="3.5">
-                                            <div class="rating-counter">(12 reviews)</div>
-                                        </div>
-                                    </div>
-
-                                    <span class="like-icon"></span>
-                                </div>
-                            </a>
+                    <!-- Tabs Content -->
+                    <div class="tabs-container">
+                        <div class="tab-content" id="tab1b">
+                            Lorem ipsum pharetra lorem felis. Aliquam egestas consectetur elementum class aptentea taciti sociosqu ad litora torquent perea conubia nostra lorem consectetur adipiscing elit. Donec vestibulum justo a diam ultricies pellentesque.
                         </div>
-                    </div>
-                    <!-- Listing Item / End -->
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-12 col-md-12">
-                        <div class="listing-item-container list-layout">
-                            <a href="listings-single-page.html" class="listing-item">
-
-                                <!-- Image -->
-                                <div class="listing-item-image">
-                                    <img src="images/listing-item-03.jpg" alt="">
-                                    <span class="tag">Hotels</span>
-                                </div>
-
-                                <!-- Content -->
-                                <div class="listing-item-content">
-
-                                    <div class="listing-item-inner">
-                                        <h3>Hotel Govendor</h3>
-                                        <span>778 Country Street, New York</span>
-                                        <div class="star-rating" data-rating="2.0">
-                                            <div class="rating-counter">(17 reviews)</div>
-                                        </div>
-                                    </div>
-
-                                    <span class="like-icon"></span>
-
-                                    <div class="listing-item-details">Starting from $59 per night</div>
-                                </div>
-                            </a>
+                        <div class="tab-content" id="tab2b">
+                            Aenean dolor mi, luctus et laoreet hendrerit, condimentum faucibus mi. Nam et sem eros. Sed sed eros nec massa pellentesque accumsan in nec magna. Donec sollicitudin enim nec justo mollis bibendum. Nulla eleifend mollis velit. Ut sed risus eget metus egestas sagittis. Etiam vestibulum interdum turpis.
                         </div>
-                    </div>
-                    <!-- Listing Item / End -->
-
-                    <!-- Listing Item -->
-                    <div class="col-lg-12 col-md-12">
-                        <div class="listing-item-container list-layout">
-                            <a href="listings-single-page.html" class="listing-item">
-
-                                <!-- Image -->
-                                <div class="listing-item-image">
-                                    <img src="images/listing-item-04.jpg" alt="">
-                                    <span class="tag">Eat & Drink</span>
-                                </div>
-
-                                <!-- Content -->
-                                <div class="listing-item-content">
-                                    <div class="listing-badge now-open">Now Open</div>
-
-                                    <div class="listing-item-inner">
-                                        <h3>Burger House</h3>
-                                        <span>2726 Shinn Street, New York</span>
-                                        <div class="star-rating" data-rating="5.0">
-                                            <div class="rating-counter">(31 reviews)</div>
-                                        </div>
-                                    </div>
-
-                                    <span class="like-icon"></span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Listing Item / End -->
-
-                    <div class="col-md-12 browse-all-user-listings">
-                        <a href="#">Browse All Listings <i class="fa fa-angle-right"></i> </a>
                     </div>
 
                 </div>
-                <!-- Listings Container / End -->
-
-
-                <!-- Reviews -->
-                <div id="listing-reviews" class="listing-section">
-                    <h3 class="margin-top-60 margin-bottom-20">Reviews</h3>
-
-                    <div class="clearfix"></div>
-
-                    <!-- Reviews -->
-                    <section class="comments listing-reviews">
-
-                        <ul>
-                            <li>
-                                <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
-                                <div class="comment-content"><div class="arrow-comment"></div>
-                                    <div class="comment-by">Kathy Brown <div class="comment-by-listing">on <a href="#">Burger House</a></div> <span class="date">June 2017</span>
-                                        <div class="star-rating" data-rating="5"></div>
-                                    </div>
-                                    <p>Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus</p>
-
-                                    <div class="review-images mfp-gallery-container">
-                                        <a href="images/review-image-01.jpg" class="mfp-gallery"><img src="images/review-image-01.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /> </div>
-                                <div class="comment-content"><div class="arrow-comment"></div>
-                                    <div class="comment-by">John Doe <div class="comment-by-listing">on <a href="#">Tom's Restaurant</a></div> <span class="date">May 2017</span>
-                                        <div class="star-rating" data-rating="4"></div>
-                                    </div>
-                                    <p>Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.</p>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
-                                <div class="comment-content"><div class="arrow-comment"></div>
-                                    <div class="comment-by">Kathy Brown <div class="comment-by-listing">on <a href="#">Burger House</a></div> <span class="date">June 2017</span>
-                                        <div class="star-rating" data-rating="5"></div>
-                                    </div>
-                                    <p>Morbi velit eros, sagittis in facilisis non, rhoncus et erat. Nam posuere tristique sem, eu ultricies tortor imperdiet vitae. Curabitur lacinia neque non metus</p>
-
-                                    <div class="review-images mfp-gallery-container">
-                                        <a href="images/review-image-02.jpg" class="mfp-gallery"><img src="images/review-image-02.jpg" alt=""></a>
-                                        <a href="images/review-image-03.jpg" class="mfp-gallery"><img src="images/review-image-03.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /> </div>
-                                <div class="comment-content"><div class="arrow-comment"></div>
-                                    <div class="comment-by">John Doe <div class="comment-by-listing">on <a href="#">Hotel Govendor</a></div> <span class="date">May 2017</span>
-                                        <div class="star-rating" data-rating="5"></div>
-                                    </div>
-                                    <p>Commodo est luctus eget. Proin in nunc laoreet justo volutpat blandit enim. Sem felis, ullamcorper vel aliquam non, varius eget justo. Duis quis nunc tellus sollicitudin mauris.</p>
-                                </div>
-
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- Pagination -->
-                    <div class="clearfix"></div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- Pagination -->
-                            <div class="pagination-container margin-top-30">
-                                <nav class="pagination">
-                                    <ul>
-                                        <li><a href="#" class="current-page">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <!-- Pagination / End -->
-                </div>
-
-
             </div>
 
         </div>

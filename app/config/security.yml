@@ -29,3 +29,5 @@ security:
         - { path: ^/user/, role: ROLE_USER }
         - { path: ^/permutation, role: ROLE_USER }
         - { path: ^/permutation_classes, role: ROLE_USER }
+        - { path: ^/covoiturage, role: ROLE_USER }
+        - { path: ^/colocations, role: ROLE_USER }

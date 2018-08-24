@@ -103,74 +103,126 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/covoiturage')) {
-            // covoiturage_index
-            if ('/covoiturage' === $trimmedPathinfo) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_covoiturage_index;
-                }
+        elseif (0 === strpos($pathinfo, '/c')) {
+            if (0 === strpos($pathinfo, '/covoiturage')) {
+                // covoiturage_index
+                if ('/covoiturage' === $trimmedPathinfo) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_covoiturage_index;
+                    }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($rawPathinfo.'/', 'covoiturage_index');
-                }
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($rawPathinfo.'/', 'covoiturage_index');
+                    }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::indexAction',  '_route' => 'covoiturage_index',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::indexAction',  '_route' => 'covoiturage_index',);
+                }
+                not_covoiturage_index:
+
+                // covoiturage_show
+                if (preg_match('#^/covoiturage/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    if ('GET' !== $canonicalMethod) {
+                        $allow[] = 'GET';
+                        goto not_covoiturage_show;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_show')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::showAction',));
+                }
+                not_covoiturage_show:
+
+                // covoiturage_new
+                if ('/covoiturage/new' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_covoiturage_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::newAction',  '_route' => 'covoiturage_new',);
+                }
+                not_covoiturage_new:
+
+                // covoiturage_edit
+                if (preg_match('#^/covoiturage/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_covoiturage_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_edit')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::editAction',));
+                }
+                not_covoiturage_edit:
+
+                // covoiturage_delete
+                if (preg_match('#^/covoiturage/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    if ('DELETE' !== $canonicalMethod) {
+                        $allow[] = 'DELETE';
+                        goto not_covoiturage_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_delete')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::deleteAction',));
+                }
+                not_covoiturage_delete:
+
             }
-            not_covoiturage_index:
 
-            // covoiturage_show
-            if (preg_match('#^/covoiturage/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                if ('GET' !== $canonicalMethod) {
-                    $allow[] = 'GET';
-                    goto not_covoiturage_show;
+            elseif (0 === strpos($pathinfo, '/colocations')) {
+                // colocations_new
+                if ('/colocations/new' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_colocations_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\ColocationController::newAction',  '_route' => 'colocations_new',);
+                }
+                not_colocations_new:
+
+                // colocation_upload_pictures
+                if ('/colocations/upload_colpics' === $pathinfo) {
+                    return array (  '_controller' => 'AppBundle\\Controller\\ColocationController::uploadPicturesAction',  '_route' => 'colocation_upload_pictures',);
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_show')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::showAction',));
-            }
-            not_covoiturage_show:
+                // colocations_add
+                if ('/colocations/add' === $pathinfo) {
+                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                        $allow = array_merge($allow, array('GET', 'POST'));
+                        goto not_colocations_add;
+                    }
 
-            // covoiturage_new
-            if ('/covoiturage/new' === $pathinfo) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_covoiturage_new;
+                    return array (  '_controller' => 'AppBundle\\Controller\\ColocationController::addAction',  '_route' => 'colocations_add',);
+                }
+                not_colocations_add:
+
+                // colocations_index
+                if ('/colocations' === $trimmedPathinfo) {
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($rawPathinfo.'/', 'colocations_index');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\ColocationController::indexAction',  '_route' => 'colocations_index',);
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::newAction',  '_route' => 'covoiturage_new',);
-            }
-            not_covoiturage_new:
-
-            // covoiturage_edit
-            if (preg_match('#^/covoiturage/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                    $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_covoiturage_edit;
+                // colocations_single
+                if (0 === strpos($pathinfo, '/colocations/details') && preg_match('#^/colocations/details/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'colocations_single')), array (  '_controller' => 'AppBundle\\Controller\\ColocationController::singleAction',));
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_edit')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::editAction',));
-            }
-            not_covoiturage_edit:
-
-            // covoiturage_delete
-            if (preg_match('#^/covoiturage/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                if ('DELETE' !== $canonicalMethod) {
-                    $allow[] = 'DELETE';
-                    goto not_covoiturage_delete;
+                // colocations_delete
+                if (0 === strpos($pathinfo, '/colocations/delete') && preg_match('#^/colocations/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'colocations_delete')), array (  '_controller' => 'AppBundle\\Controller\\ColocationController::deleteAction',));
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'covoiturage_delete')), array (  '_controller' => 'AppBundle\\Controller\\CovoiturageController::deleteAction',));
             }
-            not_covoiturage_delete:
+
+            // change_user_photo
+            if ('/cppic' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::changeUserPhotoAction',  '_route' => 'change_user_photo',);
+            }
 
         }
 
-        // change_user_photo
-        if ('/cppic' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::changeUserPhotoAction',  '_route' => 'change_user_photo',);
-        }
-
-        if (0 === strpos($pathinfo, '/permutation')) {
+        elseif (0 === strpos($pathinfo, '/permutation')) {
             // permutation_index
             if ('/permutation' === $trimmedPathinfo) {
                 if (substr($pathinfo, -1) !== '/') {
@@ -325,6 +377,15 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             }
             not_fos_user_change_password:
 
+        }
+
+        // objets_perdus_index
+        if ('/objetsperdus' === $trimmedPathinfo) {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($rawPathinfo.'/', 'objets_perdus_index');
+            }
+
+            return array (  '_controller' => 'AppBundle\\Controller\\ObjetsPerdusController::indexAction',  '_route' => 'objets_perdus_index',);
         }
 
         // index

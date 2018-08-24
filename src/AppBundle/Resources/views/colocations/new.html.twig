@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ajouter une colocation {% endblock %}
+
+{% block body %}
+    <div id="titlebar" class="padding-left-25 padding-right-25 margin-bottom-0">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Ajouter une colocation</h2>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: #f8f8f8;" class="row padding-left-25 padding-right-25 padding-bottom-25">
+        <div class="col-lg-12">
+            <form id="addForm" method="post">
+                <!-- Section -->
+                <div class="add-listing-section">
+
+                    <!-- Headline -->
+                    <div class="add-listing-headline">
+                        <h3><i class="sl sl-icon-doc"></i> Informations de base</h3>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="row with-forms">
+                        <div class="col-md-6">
+                            <h5>Titre <i class="tip" data-tip-content="Veuillez choisir un titre significatif"></i></h5>
+                            <input class="search-field" required name="title" id="title" type="text" value=""/>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Cité</h5>
+                            <input class="search-field" required name="title" id="city" type="text" value=""/>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="form">
+                        <h5>Description</h5>
+                        <textarea class="WYSIWYG" required name="summary" id="description" cols="40" rows="3" spellcheck="true"></textarea>
+                    </div>
+                </div>
+                <!-- Section / End -->
+
+                <!-- Section -->
+                <div class="add-listing-section margin-top-45">
+
+                    <!-- Headline -->
+                    <div class="add-listing-headline">
+                        <h3><i class="sl sl-icon-picture"></i> Photos</h3>
+                    </div>
+
+                    <!-- Dropzone -->
+                    <div class="submit-section">
+                        <div class="dropzone" id="my-awesome-dropzone"></div>
+                    </div>
+
+                </div>
+                <!-- Section / End -->
+
+
+                <!-- Section -->
+                <div class="add-listing-section margin-top-45">
+
+                    <!-- Headline -->
+                    <div class="add-listing-headline">
+                        <h3><i class="sl sl-icon-docs"></i> Détails</h3>
+                    </div>
+                    <!-- Checkboxes -->
+                    <h5 class="margin-top-30 margin-bottom-10">Équipements <span>(optionnel)</span></h5>
+                    <div class="checkboxes in-row margin-bottom-20">
+
+                        {% for a in amenities %}
+                            <input id="check-{{ a.id }}" name="amenities[]" value="{{ a.id }}" type="checkbox" name="check">
+                            <label for="check-{{ a.id }}">{{ a.title }}</label>
+                        {% endfor %}
+
+                    </div>
+                    <!-- Checkboxes / End -->
+
+                </div>
+                <!-- Section / End -->
+
+
+                <!-- Section -->
+                <div class="add-listing-section margin-top-45">
+
+                    <!-- Headline -->
+                    <div class="add-listing-headline">
+                        <h3><i class="im im-icon-Pricing"></i> Coût</h3>
+                    </div>
+                    <div class="row">
+                        <div class="row with-forms">
+                            <div class="col-md-3">
+                                <h5>Nombre de personnes <i class="tip" data-tip-content="Manquantes"></i></h5>
+                                <input class="search-field" required id="nbper" type="number" value=""/>
+                            </div>
+                            <div class="col-md-3">
+                                <h5>Part de l'individu</h5>
+                                <div class="fm-input pricing-price"><input type="number" required id="prix" data-unit="TND" /></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Section / End -->
+            </form>
+            <a href="#" id="submit-link" class="button preview">Ajouter <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('assets/scripts/dropzone.js') }}"></script>
+    <script language="JavaScript">
+        Dropzone.autoDiscover = false;
+        jQuery(document).ready(function() {
+
+            $("div#my-awesome-dropzone").dropzone({
+                url: "{{ path('colocation_upload_pictures') }}",
+                autoProcessQueue: false,
+                parallelUploads: 6,
+                uploadMultiple: true,
+                addRemoveLinks: true,
+                successmultiple: function(file,responsenew) {
+                    var response = jQuery.parseJSON(responsenew);
+                    formData = new FormData();
+                    formData.append('title',$('#title').val());
+                    formData.append('city',$('#city').val());
+                    formData.append('description',$('#description').val());
+                    formData.append('pics',response);
+                    formData.append('nbper',$('#nbper').val());
+                    formData.append('prix',$('#prix').val());
+                    var checkbox = $("#addForm").find("input[type=checkbox]");
+                    $.each(checkbox, function(key, val){
+                        if($(this).is(":checked")){
+                            formData.append($(val).attr('id'), true);
+                        }else{
+                            formData.append($(val).attr('id'), false);
+                        }
+                    });
+                    $.ajax({
+                        url: "{{ path('colocations_add') }}",
+                        type: "post",
+                        data: formData,
+                        processData: false,
+                        contentType:false,
+                    }).done(function (data) {
+                        //window.location = "{{ path('colocations_new') }}";
+                    });
+                },
+                init: function () {
+                    var myDropzone = this;
+                    $("#submit-link").click(function (e) {
+                        e.preventDefault();
+                        if(myDropzone.getQueuedFiles().length > 0)
+                            myDropzone.processQueue();
+                        else{
+                            formData = new FormData();
+                            formData.append('title',$('#title').val());
+                            formData.append('city',$('#city').val());
+                            formData.append('description',$('#description').val());
+                            formData.append('pics',[]);
+                            formData.append('nbper',$('#nbper').val());
+                            formData.append('prix',$('#prix').val());
+                            var checkbox = $("#addForm").find("input[type=checkbox]");
+                            $.each(checkbox, function(key, val){
+                                if($(this).is(":checked")){
+                                    formData.append($(val).attr('id'), true);
+                                }else{
+                                    formData.append($(val).attr('id'), false);
+                                }
+                            });
+                            $.ajax({
+                                url: "{{ path('colocations_add') }}",
+                                type: "post",
+                                data: formData,
+                                processData: false,
+                                contentType:false,
+                            }).done(function (data) {
+                                //window.location = "{{ path('colocations_new') }}";
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

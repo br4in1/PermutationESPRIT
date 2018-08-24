@@ -6,7 +6,10 @@
             <div class="col-md-3">
 
             </div>
-            <div class="col-md-6">
+            <div class="sign-in-form col-md-6">
+                {% if app.session.get('classError') is defined %}
+                    <div class="notification warning closeable">Merci de saisir votre classe pour pouvoir utiliser la permutation.</div>
+                {% endif %}
                 {% include "@FOSUser/Profile/edit_content.html.twig" %}
             </div>
             <div class="col-md-3">
@@ -14,4 +17,12 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script language="JavaScript">
+        $('.class-textfield').focus(function () {
+            $('.help-message').text('Veuillez saisir les lettres en majuscule.\nFormats des spécialités pour les 4ème et 5ème année : BI,GL,NIDS,DS,INFINI,CLOUD,TWIN,IRT,ISEM,SIM,SLEAM,INFOB. ').fadeIn();
+        });
+    </script>
 {% endblock %}

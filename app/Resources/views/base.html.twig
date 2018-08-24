@@ -3,7 +3,7 @@
 <head>
     <!-- Basic Page Needs
     ================================================== -->
-    <title>Esprit Entraide</title>
+    <title>{% block title %}Accueil{% endblock %} - Esprit Entraide</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -52,21 +52,17 @@
                             <li><a href="#">Permutations</a>
                                 <ul>
                                     <li><a href="#">Entre spécialités</a></li>
-                                    <li><a href="#">Entre classes</a></li>
+                                    <li><a href="{{ path('permutation_classes_index') }}">Entre classes</a></li>
                                 </ul>
                             </li>
 
-                            <li><a href="#">Colocations</a>
-                                <ul>
-                                    <li><a href="#">Offres</a></li>
-                                    <li><a href="#">Demandes</a></li>
-                                </ul>
+                            <li><a href="{{ path('colocations_index') }}">Colocations</a>
                             </li>
 
                             <li><a href="#">Objets</a>
                                 <ul>
-                                    <li><a href="#">Offres</a></li>
-                                    <li><a href="#">Demandes</a></li>
+                                    <li><a href="{{ path('objets_perdus_index') }}">Trouvés</a></li>
+                                    <li><a href="{{ path('objets_perdus_index') }}">Perdus</a></li>
                                 </ul>
                             </li>
 

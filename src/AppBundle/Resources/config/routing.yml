@@ -10,6 +10,14 @@ app_permutation_classes:
     resource: "@AppBundle/Resources/config/routing/permutation_classes.yml"
     prefix:   /permutation_classes
 
+app_permutation_colocations:
+    resource: "@AppBundle/Resources/config/routing/colocation.yml"
+    prefix:   /colocations
+
+app_permutation_objets_perdus:
+    resource: "@AppBundle/Resources/config/routing/objets_perdus.yml"
+    prefix:   /objetsperdus
+
 index:
     path:     /
     defaults: { _controller: "AppBundle:Default:index" }

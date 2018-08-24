@@ -19,7 +19,7 @@ class User extends BaseUser
     protected $id;
     /**
      * @var \DateTime
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date",nullable=true)
      */
     private $registrationdate;
     /**

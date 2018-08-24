@@ -22,23 +22,9 @@ class Permutation_Classes
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="niveau", type="integer")
-     */
-    private $niveau;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="specialite", type="string", length=255, nullable=true)
-     */
-    private $specialite;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="classe", type="integer")
+     * @ORM\Column(name="classe", type="string")
      */
     private $classe;
 
@@ -73,57 +59,9 @@ class Permutation_Classes
     }
 
     /**
-     * Set niveau.
-     *
-     * @param int $niveau
-     *
-     * @return Permutation_Classes
-     */
-    public function setNiveau($niveau)
-    {
-        $this->niveau = $niveau;
-
-        return $this;
-    }
-
-    /**
-     * Get niveau.
-     *
-     * @return int
-     */
-    public function getNiveau()
-    {
-        return $this->niveau;
-    }
-
-    /**
-     * Set specialite.
-     *
-     * @param string|null $specialite
-     *
-     * @return Permutation_Classes
-     */
-    public function setSpecialite($specialite = null)
-    {
-        $this->specialite = $specialite;
-
-        return $this;
-    }
-
-    /**
-     * Get specialite.
-     *
-     * @return string|null
-     */
-    public function getSpecialite()
-    {
-        return $this->specialite;
-    }
-
-    /**
      * Set classe.
      *
-     * @param int $classe
+     * @param string $classe
      *
      * @return Permutation_Classes
      */
@@ -137,7 +75,7 @@ class Permutation_Classes
     /**
      * Get classe.
      *
-     * @return int
+     * @return string
      */
     public function getClasse()
     {

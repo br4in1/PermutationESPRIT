@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ c.title }} {% endblock %}
+
+{% block body %}
+    <!-- Slider
+    ================================================== -->
+    {% if c.picture1 is not null and c.picture1|length > 0 %}
+        <div class="listing-slider mfp-gallery-container margin-bottom-0">
+            <a href="{{ asset('assets/images/colocs_pics/' ~ c.picture1) }}" data-background-image="{{ asset('assets/images/colocs_pics/' ~ c.picture1) }}"
+               class="item mfp-gallery" title=""></a>
+            {% if c.picture2 is not null %}
+                <a href="{{ asset('assets/images/colocs_pics/' ~ c.picture2) }}" data-background-image="{{ asset('assets/images/colocs_pics/' ~ c.picture2) }}"
+                   class="item mfp-gallery" title=""></a>
+            {% endif %}
+            {% if c.picture3 is not null %}
+                <a href="{{ asset('assets/images/colocs_pics/' ~ c.picture3) }}" data-background-image="{{ asset('assets/images/colocs_pics/' ~ c.picture3) }}"
+                   class="item mfp-gallery" title=""></a>
+            {% endif %}
+            {% if c.picture4 is not null %}
+                <a href="{{ asset('assets/images/colocs_pics/' ~ c.picture4) }}" data-background-image="{{ asset('assets/images/colocs_pics/' ~ c.picture4) }}"
+                   class="item mfp-gallery" title=""></a>
+            {% endif %}
+            {% if c.picture5 is not null %}
+                <a href="{{ asset('assets/images/colocs_pics/' ~ c.picture5) }}" data-background-image="{{ asset('assets/images/colocs_pics/' ~ c.picture5) }}"
+                   class="item mfp-gallery" title=""></a>
+            {% endif %}
+            {% if c.picture6 is not null %}
+                <a href="{{ asset('assets/images/colocs_pics/' ~ c.picture6) }}" data-background-image="{{ asset('assets/images/colocs_pics/' ~ c.picture6) }}"
+                   class="item mfp-gallery" title=""></a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+
+    <!-- Content
+    ================================================== -->
+    <div class="container">
+        <div class="row sticky-wrapper">
+            <div class="col-lg-8 col-md-8 padding-right-30">
+
+                <!-- Titlebar -->
+                <div id="titlebar" class="listing-titlebar">
+                    <div class="listing-titlebar-title">
+                        <h2>{{ c.title }} <span class="listing-tag">{{ c.city }}</span></h2>
+                        <span>
+                            <a class="listing-address">
+                                <i class="fa fa-calendar-plus-o"></i>
+                                {{ c.added|date('d F Y') }}
+                            </a>
+					    </span>
+                    </div>
+                </div>
+
+                <!-- Listing Nav -->
+                <div id="listing-nav" class="listing-nav-container">
+                    <ul class="listing-nav">
+                        <li><a href="#listing-overview" class="active">Overview</a></li>
+                        <li><a href="#listing-pricing-list">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Overview -->
+                <div id="listing-overview" class="listing-section">
+
+                    <!-- Description -->
+
+                    <p>
+                        {{ c.description }}
+                    </p>
+
+                    <!-- Amenities -->
+                    <h3 class="listing-desc-headline">Amenities</h3>
+                    <ul class="listing-features checkboxes margin-top-0">
+                        {% for a in amenities %}
+                            {% if a.valid is same as(true) %}
+                                <li>{{ a.amenity.title }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <ul class="listing-features uncheckboxes margin-top-0">
+                        {% for a in amenities %}
+                            {% if a.valid is same as(false) %}
+                                <li>{{ a.amenity.title }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+
+                <!-- Food Menu -->
+                <div id="listing-pricing-list" class="listing-section">
+                    <h3 class="listing-desc-headline margin-top-70 margin-bottom-30">Coût</h3>
+
+                    <div class="show-more">
+                        <div class="pricing-list-container">
+                            <ul>
+                                <li>
+                                    <h5>Part à payer</h5>
+                                    <p>Nombre de personnes manquantes : {{ c.nbpersonnes }}</p>
+                                    <span>{{ c.cost }}<sup>DT</sup></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="show-more-button" data-more-title="Show More" data-less-title="Show Less"><i
+                                class="fa fa-angle-down"></i></a>
+                </div>
+            </div>
+
+
+            <!-- Sidebar
+            ================================================== -->
+            <div class="col-lg-4 col-md-4 margin-top-75 sticky">
+
+
+                <!-- Verified Badge -->
+                <div class="verified-badge">
+                    <i class="sl sl-icon-check"></i> Vérifié.
+                </div>
+                <!-- Contact -->
+                <div class="boxed-widget margin-top-35">
+                    <div class="hosted-by-title">
+                        <h4><span>Ajouté par</span> <a href="{{ path('user_profile',{ 'id' : c.user.id }) }}">{{ c.user.firstname~" "~c.user.lastname }}</a></h4>
+                        <a href="{{ path('user_profile',{ 'id' : c.user.id }) }}" class="hosted-by-avatar"><img
+                                    src="{{ asset('assets/images/users_pics/'~c.user.picture) }}" alt=""></a>
+                    </div>
+                    <ul class="listing-details-sidebar">
+                        <li><i class="sl sl-icon-phone"></i> {{ c.user.phone }}</li>
+                        <!-- <li><i class="sl sl-icon-globe"></i> <a href="#">http://example.com</a></li> -->
+                        <li><i class="fa fa-envelope-o"></i> <a href="mailto:{{ c.user.email }}">{{ c.user.email }}</a></li>
+                    </ul>
+                    {% if c.user.email is same as(app.user.email) %}
+                        <a href="{{ path('colocations_delete',{ 'id' : c.id }) }}" class="send-message-to-owner button"><i
+                                    class="sl sl-icon-trash"></i> Supprimer</a>
+                    {% endif %}
+                </div>
+                <!-- Contact / End-->
+
+
+                <!-- Share / Like -->
+                <div class="listing-share margin-top-40 margin-bottom-40 no-border">
+                    <!-- Share Buttons -->
+                    <ul class="share-buttons margin-top-40 margin-bottom-0">
+                        <li><a class="fb-share" href="#"><i class="fa fa-facebook"></i> Partager</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            <!-- Sidebar / End -->
+
+        </div>
+    </div>
+{% endblock %}

@@ -29,10 +29,13 @@ class appDevDebugProjectContainer extends Container
 
         $this->services = array();
         $this->normalizedIds = array(
+            'appbundle\\controller\\colocationcontroller' => 'AppBundle\\Controller\\ColocationController',
             'appbundle\\controller\\covoituragecontroller' => 'AppBundle\\Controller\\CovoiturageController',
             'appbundle\\controller\\defaultcontroller' => 'AppBundle\\Controller\\DefaultController',
+            'appbundle\\controller\\objetsperduscontroller' => 'AppBundle\\Controller\\ObjetsPerdusController',
             'appbundle\\controller\\permutation_classescontroller' => 'AppBundle\\Controller\\Permutation_ClassesController',
             'appbundle\\controller\\permutationcontroller' => 'AppBundle\\Controller\\PermutationController',
+            'appbundle\\form\\colocationtype' => 'AppBundle\\Form\\ColocationType',
             'appbundle\\form\\covoituragetype' => 'AppBundle\\Form\\CovoiturageType',
             'appbundle\\form\\permutation_classestype' => 'AppBundle\\Form\\Permutation_ClassesType',
             'appbundle\\form\\permutationtype' => 'AppBundle\\Form\\PermutationType',
@@ -46,10 +49,13 @@ class appDevDebugProjectContainer extends Container
         $this->methodMap = array(
             '1_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => 'get1D4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3fService',
             '2_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => 'get2D4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3fService',
+            'AppBundle\\Controller\\ColocationController' => 'getAppBundle_Controller_ColocationControllerService',
             'AppBundle\\Controller\\CovoiturageController' => 'getAppBundle_Controller_CovoiturageControllerService',
             'AppBundle\\Controller\\DefaultController' => 'getAppBundle_Controller_DefaultControllerService',
+            'AppBundle\\Controller\\ObjetsPerdusController' => 'getAppBundle_Controller_ObjetsPerdusControllerService',
             'AppBundle\\Controller\\PermutationController' => 'getAppBundle_Controller_PermutationControllerService',
             'AppBundle\\Controller\\Permutation_ClassesController' => 'getAppBundle_Controller_PermutationClassesControllerService',
+            'AppBundle\\Form\\ColocationType' => 'getAppBundle_Form_ColocationTypeService',
             'AppBundle\\Form\\CovoiturageType' => 'getAppBundle_Form_CovoiturageTypeService',
             'AppBundle\\Form\\PermutationType' => 'getAppBundle_Form_PermutationTypeService',
             'AppBundle\\Form\\Permutation_ClassesType' => 'getAppBundle_Form_PermutationClassesTypeService',
@@ -382,6 +388,7 @@ class appDevDebugProjectContainer extends Container
         $this->privates = array(
             '1_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => true,
             '2_d4548c453dd195ea25c10abb6527d834b9a37260c36b8c1689bc856f7e3c0d3f' => true,
+            'AppBundle\\Form\\ColocationType' => true,
             'AppBundle\\Form\\CovoiturageType' => true,
             'AppBundle\\Form\\PermutationType' => true,
             'AppBundle\\Form\\Permutation_ClassesType' => true,
@@ -503,6 +510,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the public 'AppBundle\Controller\ColocationController' shared autowired service.
+     *
+     * @return \AppBundle\Controller\ColocationController
+     */
+    protected function getAppBundle_Controller_ColocationControllerService()
+    {
+        return $this->services['AppBundle\Controller\ColocationController'] = new \AppBundle\Controller\ColocationController();
+    }
+
+    /**
      * Gets the public 'AppBundle\Controller\CovoiturageController' shared autowired service.
      *
      * @return \AppBundle\Controller\CovoiturageController
@@ -520,6 +537,16 @@ class appDevDebugProjectContainer extends Container
     protected function getAppBundle_Controller_DefaultControllerService()
     {
         return $this->services['AppBundle\Controller\DefaultController'] = new \AppBundle\Controller\DefaultController();
+    }
+
+    /**
+     * Gets the public 'AppBundle\Controller\ObjetsPerdusController' shared autowired service.
+     *
+     * @return \AppBundle\Controller\ObjetsPerdusController
+     */
+    protected function getAppBundle_Controller_ObjetsPerdusControllerService()
+    {
+        return $this->services['AppBundle\Controller\ObjetsPerdusController'] = new \AppBundle\Controller\ObjetsPerdusController();
     }
 
     /**
@@ -1497,7 +1524,9 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\ServiceLocator(array('AppBundle\\Form\\CovoiturageType' => function () {
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension(new \Symfony\Component\DependencyInjection\ServiceLocator(array('AppBundle\\Form\\ColocationType' => function () {
+            return ${($_ = isset($this->services['AppBundle\Form\ColocationType']) ? $this->services['AppBundle\Form\ColocationType'] : $this->getAppBundle_Form_ColocationTypeService()) && false ?: '_'};
+        }, 'AppBundle\\Form\\CovoiturageType' => function () {
             return ${($_ = isset($this->services['AppBundle\Form\CovoiturageType']) ? $this->services['AppBundle\Form\CovoiturageType'] : $this->getAppBundle_Form_CovoiturageTypeService()) && false ?: '_'};
         }, 'AppBundle\\Form\\PermutationType' => function () {
             return ${($_ = isset($this->services['AppBundle\Form\PermutationType']) ? $this->services['AppBundle\Form\PermutationType'] : $this->getAppBundle_Form_PermutationTypeService()) && false ?: '_'};
@@ -2830,30 +2859,36 @@ class appDevDebugProjectContainer extends Container
 
         $o = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation_classes');
 
-        $p = new \Symfony\Component\Security\Http\AccessMap();
-        $p->add($h, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $p->add($i, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $p->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $p->add($k, array(0 => 'ROLE_ADMIN'), NULL);
-        $p->add($l, array(0 => 'ROLE_USER'), NULL);
-        $p->add($m, array(0 => 'ROLE_USER'), NULL);
-        $p->add($n, array(0 => 'ROLE_USER'), NULL);
-        $p->add($o, array(0 => 'ROLE_USER'), NULL);
+        $p = new \Symfony\Component\HttpFoundation\RequestMatcher('^/covoiturage');
 
-        $q = new \Symfony\Component\Security\Http\HttpUtils($e, $e, '{^https?://%s$}i');
+        $q = new \Symfony\Component\HttpFoundation\RequestMatcher('^/colocations');
 
-        $r = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $q, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($q, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
-        $r->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(${($_ = isset($this->services['security.csrf.token_storage']) ? $this->services['security.csrf.token_storage'] : $this->getSecurity_Csrf_TokenStorageService()) && false ?: '_'}));
-        $r->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $r = new \Symfony\Component\Security\Http\AccessMap();
+        $r->add($h, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $r->add($i, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $r->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $r->add($k, array(0 => 'ROLE_ADMIN'), NULL);
+        $r->add($l, array(0 => 'ROLE_USER'), NULL);
+        $r->add($m, array(0 => 'ROLE_USER'), NULL);
+        $r->add($n, array(0 => 'ROLE_USER'), NULL);
+        $r->add($o, array(0 => 'ROLE_USER'), NULL);
+        $r->add($p, array(0 => 'ROLE_USER'), NULL);
+        $r->add($q, array(0 => 'ROLE_USER'), NULL);
 
-        $s = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($q, array());
-        $s->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
-        $s->setProviderKey('main');
+        $s = new \Symfony\Component\Security\Http\HttpUtils($e, $e, '{^https?://%s$}i');
 
-        $t = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $q, array(), $a);
-        $t->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
+        $t = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $s, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($s, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
+        $t->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(${($_ = isset($this->services['security.csrf.token_storage']) ? $this->services['security.csrf.token_storage'] : $this->getSecurity_Csrf_TokenStorageService()) && false ?: '_'}));
+        $t->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($p, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $r, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $q, 'main', $s, $t, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b7753adca6090.63403149', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $p, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $q, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $q, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
+        $u = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($s, array());
+        $u->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
+        $u->setProviderKey('main');
+
+        $v = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $s, array(), $a);
+        $v->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
+
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($r, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $t, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $s, 'main', $u, $v, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b7fe39a9cf252.05392060', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $r, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $s, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $s, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
     }
 
     /**
@@ -3953,6 +3988,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the private 'AppBundle\Form\ColocationType' shared autowired service.
+     *
+     * @return \AppBundle\Form\ColocationType
+     */
+    protected function getAppBundle_Form_ColocationTypeService()
+    {
+        return $this->services['AppBundle\Form\ColocationType'] = new \AppBundle\Form\ColocationType();
+    }
+
+    /**
      * Gets the private 'AppBundle\Form\CovoiturageType' shared autowired service.
      *
      * @return \AppBundle\Form\CovoiturageType
@@ -4152,7 +4197,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Annotations_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uObIR-4jHl', 0, 'zmDJ28AMIG8zDnJkMPHBuQ', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uObIR-4jHl', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4178,7 +4223,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Serializer_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uqfJlRQIhK', 0, 'zmDJ28AMIG8zDnJkMPHBuQ', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uqfJlRQIhK', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4188,7 +4233,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_System_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('rohCqc2IIt', 0, 'zmDJ28AMIG8zDnJkMPHBuQ', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('rohCqc2IIt', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4208,7 +4253,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Validator_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Jv1+CHpgke', 0, 'zmDJ28AMIG8zDnJkMPHBuQ', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Jv1+CHpgke', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4491,7 +4536,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_Provider_Anonymous_MainService()
     {
-        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b7753adca6090.63403149');
+        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b7fe39a9cf252.05392060');
     }
 
     /**

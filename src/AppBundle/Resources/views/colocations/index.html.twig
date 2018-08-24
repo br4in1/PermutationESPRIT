@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Colocations{% endblock %}
+
+{% block body %}
+    <!-- Titlebar
+================================================== -->
+    <div id="titlebar" class="gradient">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <h2>Colocations</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Content
+    ================================================== -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    {% for c in colocs %}
+                        <div class="col-lg-12 col-md-12">
+                            <div class="listing-item-container list-layout">
+                                <a href="{{ path('colocations_single',{ 'id': c.id}) }}" class="listing-item">
+
+                                    <!-- Image -->
+                                    <div class="listing-item-image">
+                                        {% if c.picture1|length > 0 %}
+                                            <img src="{{ asset('assets/images/colocs_pics/'~c.picture1) }}" alt="">
+                                        {% else %}
+                                            <img src="{{ asset('assets/images/Unknown.png') }}" alt="">
+                                        {% endif %}
+                                        <span class="tag">{{ c.city }}</span>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div class="listing-item-content">
+                                        <div class="listing-badge now-open">Part : {{ c.cost }} DT</div>
+
+                                        <div class="listing-item-inner">
+                                            <h3>{{ c.title }}<i class="verified-icon"></i></h3>
+                                            <span style="width: 300px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ c.description }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Pagination -->
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Pagination -->
+                        <div class="pagination-container margin-top-20 margin-bottom-40">
+                            <nav class="pagination">
+                                <ul>
+                                    <li><a href="#" class="current-page">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination / End -->
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .actions li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 5px;
+            font-size: 1.2em;
+        }
+    </style>
+{% endblock %}

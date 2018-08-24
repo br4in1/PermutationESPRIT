@@ -17,8 +17,12 @@ class Permutation_ClassesController extends Controller
      * Lists all permutation_Class entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        if($this->getUser()->getClasse() === "" || $this->getUser()->getClasse() === null){
+            $request->getSession()->set('classError',1);
+            return $this->redirectToRoute('fos_user_profile_edit');
+        }
         $em = $this->getDoctrine()->getManager();
 
         $permutation_Classes = $em->getRepository('AppBundle:Permutation_Classes')->findAll();
@@ -34,7 +38,7 @@ class Permutation_ClassesController extends Controller
      */
     public function newAction(Request $request)
     {
-        if(!$this->isGranted("ROLE_USER")) return $this->redirectToRoute('fos_user_registration_register');
+        $spec = strtoupper(preg_replace('/[0-9]/','',$this->getUser()->getClasse()));
         $session= new Session();
         $flashbag = $session->getFlashBag();
         $em = $this->getDoctrine()->getManager();
@@ -44,30 +48,27 @@ class Permutation_ClassesController extends Controller
             ['user' => $this->getUser(), 'classe' => $request->get('destination')]);
 
         if($request->get('destination') == $this->getUser()->getClasse()){
-        $flashbag->add('error' , 'La classe de départ et de destination doivent être différentes');
-    }
-    else if($test != NULL){
-        $flashbag->add('error' , 'Vous avez déja saisi une permutation vers cette classe.');
-    }
-    else if($request->get('destination')>30 || $request->get('destination')<1){
-        $flashbag->add('error' , 'Classe invalide');
-    }
-
-    else{
-        $permutation = new Permutation_Classes();
-        $permutation->setClasse($request->get('destination'));
-        $permutation->setNiveau($this->getUser()->getNiveau());
-        $permutation->setSpecialite($this->getUser()->getSpecialite());
-        $permutation->setDate(new \DateTime());
-        $permutation->setState(1);
-        $permutation->setUser($this->getUser());
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($permutation);
-        $em->flush();
-        return $this->redirectToRoute('permutation_classes_index', array(
-            'permutations' => $permutations,
-        ));
-    }
+            $flashbag->add('error' , 'La classe de départ et de destination doivent être différentes');
+        }
+        else if($test != NULL){
+            $flashbag->add('error' , 'Vous avez déja saisi une permutation vers cette classe.');
+        }
+        else if(!preg_match("/".$this->getUser()->getClasse()[0].$spec."[0-9]+$/",$request->get('destination'))){
+            $flashbag->add('error' , "Soit la classe est invalide soit vous êtes en train d'effectuer une permutation vers une autre specialité ou niveau.");
+        }
+        else{
+            $permutation = new Permutation_Classes();
+            $permutation->setClasse($request->get('destination'));
+            $permutation->setDate(new \DateTime("now"));
+            $permutation->setState(1);
+            $permutation->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($permutation);
+            $em->flush();
+            return $this->redirectToRoute('permutation_classes_index', array(
+                'permutations' => $permutations,
+            ));
+        }
         return $this->redirectToRoute('permutation_classes_index', array(
             'permutations' => $permutations,
         ));

@@ -91,6 +91,7 @@ class ProfileController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            if($request->getSession()->has('classError')) $request->getSession()->remove('classError');
             $event = new FormEvent($form, $request);
             $this->eventDispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_SUCCESS, $event);
 
