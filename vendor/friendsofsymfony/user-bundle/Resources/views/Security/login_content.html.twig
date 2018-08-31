@@ -4,7 +4,9 @@
     <div class="notification error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" class="login" method="post">
+<div class="notification error error_login" style="display: none;"></div>
+
+<form id="loginForm_fos" action="{{ path("fos_user_security_check") }}" class="login" method="post">
     {% if csrf_token is defined and csrf_token %}
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
     {% endif %}

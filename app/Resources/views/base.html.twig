@@ -11,6 +11,7 @@
     ================================================== -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/colors/main.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/favicon.png') }}"/>
     {% block stylesheets %}{% endblock %}
 </head>
 
@@ -31,7 +32,7 @@
 
                     <!-- Logo -->
                     <div id="logo">
-                        <a href="index.html"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
+                        <a href="{{ path('index') }}"><img src="{{ asset('assets/images/logo.png') }}" alt=""></a>
                     </div>
 
                     <!-- Mobile Navigation -->
@@ -51,7 +52,6 @@
 
                             <li><a href="#">Permutations</a>
                                 <ul>
-                                    <li><a href="#">Entre spécialités</a></li>
                                     <li><a href="{{ path('permutation_classes_index') }}">Entre classes</a></li>
                                 </ul>
                             </li>
@@ -80,53 +80,54 @@
                 </div>
                 <!-- Left Side Content / End -->
 
-
-                <!-- Right Side Content / End -->
-                <div class="right-side">
-                    <div class="header-widget">
-                        {% if not is_granted("ROLE_USER") %}
-                            <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-lock-open"></i> Connexion</a>
-                        {% else %}
-                            <a class="sign-in" href="{{ path('fos_user_profile_show') }}"><strong>{{ app.user.firstname }}</strong></a> <a class="sign-in">|</a> <a class="sign-in" href="{{ path('fos_user_security_logout') }}"><i class="sl sl-icon-logout"></i></a>
-                        {% endif %}
-                        <!--<a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>-->
-                    </div>
-                </div>
-                <!-- Right Side Content / End -->
-
-                <!-- Sign In Popup -->
-                {% if not is_granted("ROLE_USER") %}
-                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-
-                        <div class="small-dialog-header">
-                            <h3>Sign In</h3>
+                {% if app.request.attributes.get('_route') != 'fos_user_security_login' and app.request.attributes.get('_route') != 'fos_user_registration_register' %}
+                    <!-- Right Side Content / End -->
+                    <div class="right-side">
+                        <div class="header-widget">
+                            {% if not is_granted("ROLE_USER") %}
+                                <a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-lock-open"></i> Connexion</a>
+                            {% else %}
+                                <a class="sign-in" href="{{ path('fos_user_profile_show') }}"><strong>{{ app.user.firstname }}</strong></a> <a class="sign-in">|</a> <a class="sign-in" href="{{ path('fos_user_security_logout') }}"><i class="sl sl-icon-logout"></i></a>
+                            {% endif %}
+                            <!--<a href="dashboard-add-listing.html" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>-->
                         </div>
+                    </div>
+                    <!-- Right Side Content / End -->
 
-                        <!--Tabs -->
-                        <div class="sign-in-form style-1">
+                    <!-- Sign In Popup -->
+                    {% if not is_granted("ROLE_USER") %}
+                        <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
 
-                            <ul id="typical_tabs_nav" class="tabs-nav">
-                                <li class=""><a href="#tab1">Connexion</a></li>
-                                <li><a href="#tab2">Inscription</a></li>
-                            </ul>
+                            <div class="small-dialog-header">
+                                <h3>Authentification</h3>
+                            </div>
 
-                            <div class="tabs-container alt">
+                            <!--Tabs -->
+                            <div class="sign-in-form style-1">
 
-                                <!-- Login -->
-                                <div class="tab-content" id="tab1" style="display: none;">
-                                    {{ include('@FOSUser/Security/login_content.html.twig') }}
+                                <ul id="typical_tabs_nav" class="tabs-nav">
+                                    <li class=""><a href="#tab1">Connexion</a></li>
+                                    <li><a href="#tab2">Inscription</a></li>
+                                </ul>
+
+                                <div class="tabs-container alt">
+
+                                    <!-- Login -->
+                                    <div class="tab-content" id="tab1" style="display: none;">
+                                        {{ include('@FOSUser/Security/login_content.html.twig') }}
+                                    </div>
+
+                                    <!-- Register -->
+                                    <div class="tab-content" id="tab2" style="display: none;">
+                                        {{ render(controller('AppBundle:Default:register',{'request' : app.request})) }}
+                                    </div>
+
                                 </div>
-
-                                <!-- Register -->
-                                <div class="tab-content" id="tab2" style="display: none;">
-                                    {{ render(controller('AppBundle:Default:register',{'request' : app.request})) }}
-                                </div>
-
                             </div>
                         </div>
-                    </div>
+                    {% endif %}
+                    <!-- Sign In Popup / End -->
                 {% endif %}
-                <!-- Sign In Popup / End -->
 
             </div>
         </div>
@@ -223,5 +224,24 @@
 <script type="text/javascript" src="{{ asset('assets/scripts/jquery-ui.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('assets/scripts/tooltips.min.js')}}"></script>
 <script type="text/javascript" src="{{ asset('assets/scripts/custom.js')}}"></script>
+<script language="JavaScript">
+    $('.login').submit(function (e) {
+        e.preventDefault();
+        $('#error_login').hide();
+        $.ajax({
+            type: $('.login').attr('method'),
+            url: $('.login').attr('action'),
+            data: $('.login').serialize(),
+            success: function (data, status, object) {
+                if (data.success == false) {
+                    $('.error_login').html(data.message);
+                    $('.error_login').show();
+                } else {
+                    window.location.href = data.targetUrl;
+                }
+            }
+        });
+    });
+</script>
 {% block javascripts %}{% endblock %}
 </body>

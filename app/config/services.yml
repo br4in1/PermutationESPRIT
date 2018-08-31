@@ -33,3 +33,11 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    app.security.authentication_handler:
+        class: AppBundle\Handler\AuthenticationHandler
+        public: false
+        arguments:
+        - "@router"
+        - "@session"
+        - "@translator"

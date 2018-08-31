@@ -52,15 +52,20 @@ class ProfileController extends Controller
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
+        $em = $this->getDoctrine()->getManager();
+        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $this->getUser()));
+        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $this->getUser()));
 
         /*return $this->render('@FOSUser/Profile/show.html.twig', array(
             'user' => $user,
         ));*/
-        $prefs = $this->getDoctrine()->getManager()->getRepository('AppBundle:ProfilePrefs')->findOneBy(array('user' => $this->getUser()));
+        $prefs = $em->getRepository('AppBundle:ProfilePrefs')->findOneBy(array('user' => $this->getUser()));
 
         return $this->render('@App/default/profile.html.twig', array(
             'user' => $user,
-            'prefs' => $prefs
+            'prefs' => $prefs,
+            'colocs' => $colocs,
+            'covs' => $covs
         ));
     }
 

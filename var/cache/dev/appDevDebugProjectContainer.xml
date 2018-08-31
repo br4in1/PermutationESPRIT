@@ -371,7 +371,7 @@
     <parameter key="fos_user.registration.confirmation.from_email" type="collection">
       <parameter key="contact@esprit-entraide.tn">EspritEntraide - Confirmation de compte</parameter>
     </parameter>
-    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">true</parameter>
     <parameter key="fos_user.registration.form.type">FOS\UserBundle\Form\Type\RegistrationFormType</parameter>
     <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
     <parameter key="fos_user.registration.form.validation_groups" type="collection">
@@ -554,6 +554,16 @@
     <service id="AppBundle\Form\Permutation_ClassesType" class="AppBundle\Form\Permutation_ClassesType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="AppBundle\Handler\AuthenticationHandler" class="AppBundle\Handler\AuthenticationHandler" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
+    <service id="app.security.authentication_handler" class="AppBundle\Handler\AuthenticationHandler" public="false" autowire="true" autoconfigure="true">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="translator.data_collector"/>
+    </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -570,7 +580,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.5eff47b038bfeabd75a1be9f21ca52fc"/>
+      <argument type="service" id="service_locator.a1d7816c5906d4b23d9579c9c9201ca9"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -716,7 +726,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>lKkngFDRMG8k27qYWADI4m</argument>
+      <argument>wdTBFjpCrpnwr-JvmzuCOl</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -726,7 +736,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>lKkngFDRMG8k27qYWADI4m</argument>
+      <argument>wdTBFjpCrpnwr-JvmzuCOl</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -2336,6 +2346,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>fos_user.registration.success</argument>
+        <argument type="collection">
+          <argument type="service" id="fos_user.listener.email_confirmation"/>
+          <argument>onRegistrationSuccess</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>fos_user.resetting.reset.initialize</argument>
         <argument type="collection">
           <argument type="service" id="fos_user.listener.resetting"/>
@@ -3101,35 +3119,25 @@
       <argument type="service" id="security.encoder_factory.generic"/>
       <argument>true</argument>
     </service>
-    <service id="security.authentication.success_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
-      <argument type="service" id="security.http_utils"/>
-      <argument type="collection"/>
-      <call method="setOptions">
-        <argument type="collection">
-          <argument key="always_use_default_target_path">false</argument>
-          <argument key="default_target_path">/</argument>
-          <argument key="login_path">/login</argument>
-          <argument key="target_path_parameter">_target_path</argument>
-          <argument key="use_referer">false</argument>
-        </argument>
-      </call>
-      <call method="setProviderKey">
-        <argument>main</argument>
-      </call>
+    <service id="security.authentication.success_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationSuccessHandler" public="false">
+      <argument type="service" id="app.security.authentication_handler"/>
+      <argument type="collection">
+        <argument key="always_use_default_target_path">false</argument>
+        <argument key="default_target_path">/</argument>
+        <argument key="login_path">/login</argument>
+        <argument key="target_path_parameter">_target_path</argument>
+        <argument key="use_referer">false</argument>
+      </argument>
+      <argument>main</argument>
     </service>
-    <service id="security.authentication.failure_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
-      <argument type="service" id="http_kernel"/>
-      <argument type="service" id="security.http_utils"/>
-      <argument type="collection"/>
-      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-      <call method="setOptions">
-        <argument type="collection">
-          <argument key="login_path">/login</argument>
-          <argument key="failure_path">null</argument>
-          <argument key="failure_forward">false</argument>
-          <argument key="failure_path_parameter">_failure_path</argument>
-        </argument>
-      </call>
+    <service id="security.authentication.failure_handler.main.form_login" class="Symfony\Component\Security\Http\Authentication\CustomAuthenticationFailureHandler" public="false">
+      <argument type="service" id="app.security.authentication_handler"/>
+      <argument type="collection">
+        <argument key="login_path">/login</argument>
+        <argument key="failure_path">null</argument>
+        <argument key="failure_forward">false</argument>
+        <argument key="failure_path_parameter">_failure_path</argument>
+      </argument>
     </service>
     <service id="security.authentication.listener.form.main" class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
       <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.fos_userbundle"/>
@@ -3162,12 +3170,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5b7fe39a9cf252.05392060</argument>
+      <argument>5b84389af23bc9.00318256</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5b7fe39a9cf252.05392060</argument>
+      <argument>5b84389af23bc9.00318256</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -4275,6 +4283,13 @@
         <argument type="service" id="service_container"/>
       </call>
     </service>
+    <service id="fos_user.listener.email_confirmation" class="FOS\UserBundle\EventListener\EmailConfirmationListener">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="fos_user.mailer.default"/>
+      <argument type="service" id="fos_user.util.token_generator.default"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="session"/>
+    </service>
     <service id="fos_user.change_password.form.factory" class="FOS\UserBundle\Form\Factory\FormFactory">
       <argument type="service" id="form.factory"/>
       <argument>fos_user_change_password_form</argument>
@@ -4623,7 +4638,7 @@
         <argument key="permutation_Classes" type="service" id="autowired.AppBundle\Entity\Permutation_Classes"/>
       </argument>
     </service>
-    <service id="service_locator.5eff47b038bfeabd75a1be9f21ca52fc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.a1d7816c5906d4b23d9579c9c9201ca9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Controller\CovoiturageController:deleteAction" type="service" id="service_locator.3a21ce69752206a342eb87cbcf8959ca"/>
@@ -4887,7 +4902,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>rohCqc2IIt</argument>
       <argument>0</argument>
-      <argument>lKkngFDRMG8k27qYWADI4m</argument>
+      <argument>wdTBFjpCrpnwr-JvmzuCOl</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4895,7 +4910,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Jv1+CHpgke</argument>
       <argument>0</argument>
-      <argument>lKkngFDRMG8k27qYWADI4m</argument>
+      <argument>wdTBFjpCrpnwr-JvmzuCOl</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4903,7 +4918,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uqfJlRQIhK</argument>
       <argument>0</argument>
-      <argument>lKkngFDRMG8k27qYWADI4m</argument>
+      <argument>wdTBFjpCrpnwr-JvmzuCOl</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -4911,7 +4926,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>uObIR-4jHl</argument>
       <argument>0</argument>
-      <argument>lKkngFDRMG8k27qYWADI4m</argument>
+      <argument>wdTBFjpCrpnwr-JvmzuCOl</argument>
       <argument>/Applications/MAMP/htdocs/WEB3A/PermutationESPRIT/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>

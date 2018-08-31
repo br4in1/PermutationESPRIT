@@ -7,17 +7,29 @@ use AppBundle\Entity\Colocation_Amenity;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use \Sightengine\SightengineClient;
 
 class ColocationController extends Controller
 {
-    public function deleteAction(Request $request,$id){
+    public function disableAction(Request $request,$id){
         $em = $this->getDoctrine()->getManager();
         $coloc = $em->getRepository('AppBundle:Colocation')->findOneBy(array('id' => $id));
         if($coloc === null || $coloc->getUser()->getEmail() !== $this->getUser()->getEmail()) return $this->render('@App/default/404.html.twig');
         else {
-            $em->remove($coloc);
+            $coloc->setAvailable(false);
             $em->flush();
-            return $this->redirectToRoute('colocations_index');
+            return $this->redirectToRoute('colocations_single',array('id' => $coloc->getId()));
+        }
+    }
+
+    public function enableAction(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $coloc = $em->getRepository('AppBundle:Colocation')->findOneBy(array('id' => $id));
+        if($coloc === null || $coloc->getUser()->getEmail() !== $this->getUser()->getEmail()) return $this->render('@App/default/404.html.twig');
+        else {
+            $coloc->setAvailable(true);
+            $em->flush();
+            return $this->redirectToRoute('colocations_single',array('id' => $coloc->getId()));
         }
     }
 
@@ -34,10 +46,33 @@ class ColocationController extends Controller
         }
     }
 
-    public function indexAction(){
+    public function indexAction(Request $request){
         $em = $this->getDoctrine()->getManager();
-        $colocs = $em->getRepository('AppBundle:Colocation')->findAll();
-        return $this->render('@App/colocations/index.html.twig',array('colocs' => $colocs));
+        if($request->isXmlHttpRequest()){
+           $colocs = $em->getRepository('AppBundle:Colocation')->findByCity($request->get('city'));
+            $amenities = [];
+           foreach ($colocs as $c){
+               $amenities[$c->getId()] = $em->getRepository('AppBundle:Colocation_Amenity')->findBy(array('colocation' => $c));
+           }
+            return new JsonResponse(
+                array(
+                    'html' => $this->renderView('@App/colocations/index_content.html.twig',
+                        ['colocs' => $colocs,'amenities' => $amenities]
+                    )
+                )
+            );
+        }
+        else{
+            $colocs = $em->getRepository('AppBundle:Colocation')->findAll();
+            $amenities = [];
+            foreach ($colocs as $c){
+                $amenities[$c->getId()] = $em->getRepository('AppBundle:Colocation_Amenity')->findBy(array('colocation' => $c));
+            }
+            return $this->render('@App/colocations/index.html.twig',
+                array('colocs' => $colocs,
+                    'amenities' => $amenities
+                ));
+        }
     }
 
     public function newAction()
@@ -51,15 +86,21 @@ class ColocationController extends Controller
 
     public function uploadPicturesAction(Request $request)
     {
+        $client = new SightengineClient('1093368', 'gpP6JhRwskt4SoJuWwov');
         $files = $request->files->get("file");
         $response = [];
         foreach ($files as $file){
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
-            $file->move(
-                'assets/images/colocs_pics',
-                $fileName
-            );
-            $response[] = $fileName;
+            $output = $client->check(['nudity'])->set_file($file->getRealPath());
+            $output = json_decode(json_encode($output,true),true);
+            dump($output);
+            if($output["nudity"]["safe"] > 0.5){
+                $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+                $file->move(
+                    'assets/images/colocs_pics',
+                    $fileName
+                );
+                $response[] = $fileName;
+            }
         }
         return new JsonResponse(json_encode($response));
     }
@@ -71,6 +112,7 @@ class ColocationController extends Controller
         $coloc->setTitle($request->get('title'));
         $coloc->setCity($request->get('city'));
         $coloc->setCost($request->get('prix'));
+        $coloc->setAvailable(true);
         $coloc->setNbpersonnes($request->get('nbper'));
         $coloc->setDescription($request->get('description'));
         $pics = explode(',',$request->get('pics'));

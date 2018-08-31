@@ -35,7 +35,7 @@ class User extends BaseUser
      */
     private $lastname;
     /**
-     * @ORM\Column(type="string",options={"default" : "_1.png"})
+     * @ORM\Column(type="string",options={"default" : "_1.png"},nullable=true)
      */
     private $picture;
     /**

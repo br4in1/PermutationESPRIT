@@ -1,0 +1,62 @@
+{% if colocs|length == 0 %}
+    <div class="row" style="margin-bottom: 100px;">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div align="center" style="margin-top:30px;">
+                <center><h1 align="center" class="fa fa-frown-o" style="font-size:1500%;color:lightgray;"></h1></center>
+                <div style="margin-top: 40px;text-align: center">
+                    <span style="color:lightgray;font-size: 35px;margin-top: 50px;font-weight: normal">Désolé, aucune colocation n'est disponible.</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+    </div>
+{% else %}
+    {% for c in colocs %}
+        <div class="col-lg-12 col-md-12">
+            <div class="listing-item-container list-layout">
+                <a href="{{ path('colocations_single',{ 'id': c.id}) }}" class="listing-item">
+
+                    <!-- Image -->
+                    <div class="listing-item-image">
+                        {% if c.picture1|length > 0 %}
+                            <img src="{{ asset('assets/images/colocs_pics/'~c.picture1) }}" alt="">
+                        {% else %}
+                            <img src="{{ asset('assets/images/Unknown.png') }}" alt="">
+                        {% endif %}
+                        <span class="tag">{{ c.city }}</span>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="listing-item-content">
+                        <div style="font-weight: bolder;font-size: 100%;" class="listing-badge now-open">Part : {{ c.cost }} DT</div>
+
+                        <div class="listing-item-inner">
+                            <h3>{{ c.title }}<i class="verified-icon"></i></h3>
+                            <span style="width: 300px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ c.description }}</span>
+                            <br>
+                            <ul class="listing-features checkboxes margin-top-0">
+                                {% for a in amenities[c.id] %}
+                                    {% if a.valid is same as(true) %}
+                                        <li>{{ a.amenity.title }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <ul class="listing-features uncheckboxes margin-top-0">
+                                {% for a in amenities[c.id] %}
+                                    {% if a.valid is same as(false) %}
+                                        <li>{{ a.amenity.title }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}

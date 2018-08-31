@@ -20,6 +20,10 @@ colocations_single:
     path: /details/{id}
     defaults:   {   _controller:    "AppBundle:Colocation:single"  }
 
-colocations_delete:
-    path: /delete/{id}
-    defaults:   {   _controller:    "AppBundle:Colocation:delete"  }
+colocations_disable:
+    path: /disable/{id}
+    defaults:   {   _controller:    "AppBundle:Colocation:disable"  }
+
+colocations_enable:
+    path: /enable/{id}
+    defaults:   {   _controller:    "AppBundle:Colocation:enable"  }

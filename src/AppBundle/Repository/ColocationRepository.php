@@ -12,6 +12,14 @@ class ColocationRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findAll()
     {
-        return $this->findBy(array(), array('added' => 'DESC'));
+        return $this->findBy(array('available' => true), array('added' => 'DESC'));
+    }
+
+    public function findByCity($city)
+    {
+        $em = $this->getEntityManager();
+        $result = $em->createQuery("select c from AppBundle:Colocation c where c.city like :s order by c.added DESC ")
+            ->setParameter(':s','%'.$city.'%');
+        return $result->getResult();
     }
 }

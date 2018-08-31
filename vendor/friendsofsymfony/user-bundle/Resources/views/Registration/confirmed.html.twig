@@ -1,10 +1,68 @@
-{% extends "@FOSUser/layout.html.twig" %}
-
 {% trans_default_domain 'FOSUserBundle' %}
+<!DOCTYPE html>
+<head>
 
-{% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
-{% endblock fos_user_content %}
+    <!-- Basic Page Needs
+    ================================================== -->
+    <title>Confirmez votre compte - Esprit Entraide</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/colors/main.css') }}" id="colors">
+
+</head>
+
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+
+    <!-- Content
+    ================================================== -->
+
+    <!-- Coming Soon Page -->
+    <div class="coming-soon-page" style="background-image: url({{ asset('assets/images/main-search-background-01.jpg') }})">
+        <div class="container">
+            <!-- Search -->
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <img src="{{ asset('assets/images/logo2.png') }}" alt="">
+
+                    <h3>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</h3>
+                    <h4><a style="color:white;" href="{{ path('index') }}">Page d'accueil</a></h4>
+                    <br>
+
+                </div>
+            </div>
+            <!-- Search Section / End -->
+        </div>
+    </div>
+    <!-- Coming Soon Page / End -->
+
+</div>
+<!-- Wrapper / End -->
+
+
+
+<!-- Scripts
+================================================== -->
+<script type="text/javascript" src="{{ asset('assets/scripts/jquery-2.2.0.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/mmenu.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/chosen.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/slick.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/rangeslider.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/magnific-popup.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/waypoints.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/counterup.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/tooltips.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/scripts/custom.js') }}"></script>
+
+
+</body>
+</html>
+

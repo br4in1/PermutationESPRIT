@@ -99,6 +99,29 @@ class Colocation
     private $cost;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="available",options={"default" : true}, type="boolean",nullable=true)
+     */
+    private $available;
+
+    /**
+     * @return bool
+     */
+    public function isAvailable(): bool
+    {
+        return $this->available;
+    }
+
+    /**
+     * @param bool $available
+     */
+    public function setAvailable(bool $available): void
+    {
+        $this->available = $available;
+    }
+
+    /**
      * @var int
      *
      * @ORM\Column(name="number_of_individuals", type="integer")

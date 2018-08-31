@@ -69,6 +69,7 @@ class RegistrationController extends Controller
             return $event->getResponse();
         }
         $user = new User($user);
+        $user->setEnabled(true);
         $form = $this->formFactory->createForm();
         $form->setData($user);
         $firstname = ucfirst(substr($request->get('fos_user_registration_form')["email"],0,strpos($request->get('fos_user_registration_form')["email"],'.')));

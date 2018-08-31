@@ -1833,7 +1833,7 @@ em.mm-counter+a.mm-fullsubopen+span {
 	padding-right: 30px;
 }
 
-.main-search-input  .main-search-input-item:nth-last-child(2) {
+.main-search-input  .main-search-input-item:nth-last-child(1) {
 	border-right: none;
 	padding-left: 15px;
 	padding-right: 15px;
@@ -3342,6 +3342,59 @@ button.fs-map-btn.button {
 }
 
 .verified-badge .tip-content:after {
+	font-family: "FontAwesome";
+	content:"\f0d8";
+	position: absolute;
+	top: -3px;
+	bottom: auto;
+	left: 50%;
+	font-size: 22px;
+	color: #333;
+	transform: translate(-50%,-50%);
+}
+
+/* unVerified Badge */
+.unverified-badge {
+	background-color: #b41918;
+	border-radius: 4px;
+	color: #fff;
+	text-align: center;
+	padding: 12px 20px;
+	font-size: 17px;
+	font-weight: 500;
+	cursor: help;
+	position: relative;
+	transition: 0.3s;
+	display: block;
+}
+
+.unverified-badge i {
+	font-size: 22px;
+	padding: 0 4px 0 0;
+	position: relative;
+	top: 3px;
+}
+
+.unverified-badge .tip-content {
+	transform: translate(-50%, 100%);
+	-ms-transform: translate(-50%, 100%);
+	padding: 20px;
+	border-radius: 0 0 4px 4px;
+	max-width: auto;
+	top: auto;
+	bottom: 0;
+}
+
+.unverified-badge:hover { border-radius: 4px 4px 0 0; }
+
+.unverified-badge:hover .tip-content {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(-50%, 100%);
+	-ms-transform: translate(-50%, 100%);
+}
+
+.unverified-badge .tip-content:after {
 	font-family: "FontAwesome";
 	content:"\f0d8";
 	position: absolute;

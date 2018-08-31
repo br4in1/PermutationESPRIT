@@ -92,3 +92,5 @@ form:
     firstname:  'Prénom'
     lastname: 'Nom'
     classe: 'Classe'
+
+Bad credentials.: 'Veuillez vérifier votre adresse e-mail et votre mot de passe.'

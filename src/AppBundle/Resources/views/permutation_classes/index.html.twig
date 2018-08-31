@@ -9,7 +9,7 @@
             </div>
         {% endfor %}
         <div id="table_div" style="width: 95%; margin: auto;">
-            <table id="permutations_table">
+            <table class="basic-table" id="permutations_table">
                 <thead>
                 <tr>
                     <th>Etudiant</th>
@@ -24,11 +24,15 @@
                 <tbody>
                 {% for permutation in permutation_Classes %}
                     <tr>
-                        <td>{{ permutation.user.lastname ~ " " ~ permutation.user.firstname }}</td>
+                        {% if app.user.id == permutation.user.id %}
+                            <td><a href="{{ path('fos_user_profile_show') }}">{{ permutation.user.lastname ~ " " ~ permutation.user.firstname }}</a></td>
+                        {% else %}
+                            <td><a href="{{ path('user_profile',{ 'id' : permutation.user.id }) }}">{{ permutation.user.lastname ~ " " ~ permutation.user.firstname }}</a></td>
+                        {% endif %}
                         <td>{{ permutation.user.classe }}</td>
                         <td><i class="fa fa-arrow-right"></i></td>
                         <td>{{ permutation.classe }}</td>
-                        <td>{% if permutation.date %}{{ permutation.date|date('Y-m-d H:i') }}{% endif %}</td>
+                        <td>{% if permutation.date %}{{ permutation.date|date('d F Y H:i') }}{% endif %}</td>
                         <td>{% if permutation.user.phone is defined %} {{ permutation.user.phone }} {% endif %}</td>
                         <td><a href="mailto:{{ permutation.user.email }}">{{ permutation.user.email }}</a></td>
                     </tr>

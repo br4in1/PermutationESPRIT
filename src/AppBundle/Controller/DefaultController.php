@@ -29,18 +29,28 @@ class DefaultController extends Controller
 
     public function CurrentUserProfileAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $this->getUser()));
+        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $this->getUser()));
         return $this->render('@App/default/profile.html.twig', [
-            'user' => $this->getDoctrine()->getManager()->getRepository("AppBundle:User")->findOneBy(array("id" => $this->getUser()->getId()))
+            'user' => $em->getRepository("AppBundle:User")->findOneBy(array("id" => $this->getUser()->getId())),
+            'colocs' => $colocs,
+            'covs' => $covs
         ]);
     }
 
     public function UserProfileAction(Request $request,$id)
     {
         if($id === -1) return $this->render('@App/default/404.html.twig');
-        $user = $this->getDoctrine()->getManager()->getRepository("AppBundle:User")->findOneBy(array("id" => $id));
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository("AppBundle:User")->findOneBy(array("id" => $id));
+        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $user));
+        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $user));
         if($user === null) return $this->render('@App/default/404.html.twig');
         return $this->render('@App/default/profile.html.twig', [
-            'user' => $user
+            'user' => $user,
+            'colocs' => $colocs,
+            'covs' => $covs
         ]);
     }
 

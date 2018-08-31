@@ -206,6 +206,7 @@ class appDevDebugProjectContainer extends Container
             'fos_user.command.demote_user' => 'getFosUser_Command_DemoteUserService',
             'fos_user.command.promote_user' => 'getFosUser_Command_PromoteUserService',
             'fos_user.listener.authentication' => 'getFosUser_Listener_AuthenticationService',
+            'fos_user.listener.email_confirmation' => 'getFosUser_Listener_EmailConfirmationService',
             'fos_user.listener.flash' => 'getFosUser_Listener_FlashService',
             'fos_user.listener.resetting' => 'getFosUser_Listener_ResettingService',
             'fos_user.mailer' => 'getFosUser_MailerService',
@@ -1005,6 +1006,9 @@ class appDevDebugProjectContainer extends Container
         $instance->addListener('fos_user.resetting.reset.completed', array(0 => function () {
             return ${($_ = isset($this->services['fos_user.listener.flash']) ? $this->services['fos_user.listener.flash'] : $this->get('fos_user.listener.flash')) && false ?: '_'};
         }, 1 => 'addSuccessFlash'), 0);
+        $instance->addListener('fos_user.registration.success', array(0 => function () {
+            return ${($_ = isset($this->services['fos_user.listener.email_confirmation']) ? $this->services['fos_user.listener.email_confirmation'] : $this->get('fos_user.listener.email_confirmation')) && false ?: '_'};
+        }, 1 => 'onRegistrationSuccess'), 0);
         $instance->addListener('fos_user.resetting.reset.initialize', array(0 => function () {
             return ${($_ = isset($this->services['fos_user.listener.resetting']) ? $this->services['fos_user.listener.resetting'] : $this->get('fos_user.listener.resetting')) && false ?: '_'};
         }, 1 => 'onResettingResetInitialize'), 0);
@@ -2105,6 +2109,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the public 'fos_user.listener.email_confirmation' shared service.
+     *
+     * @return \FOS\UserBundle\EventListener\EmailConfirmationListener
+     */
+    protected function getFosUser_Listener_EmailConfirmationService()
+    {
+        return $this->services['fos_user.listener.email_confirmation'] = new \FOS\UserBundle\EventListener\EmailConfirmationListener(${($_ = isset($this->services['fos_user.mailer']) ? $this->services['fos_user.mailer'] : $this->get('fos_user.mailer')) && false ?: '_'}, ${($_ = isset($this->services['fos_user.util.token_generator']) ? $this->services['fos_user.util.token_generator'] : $this->get('fos_user.util.token_generator')) && false ?: '_'}, ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router')) && false ?: '_'}, ${($_ = isset($this->services['session']) ? $this->services['session'] : $this->get('session')) && false ?: '_'});
+    }
+
+    /**
      * Gets the public 'fos_user.listener.flash' shared service.
      *
      * @return \FOS\UserBundle\EventListener\FlashListener
@@ -2839,56 +2853,52 @@ class appDevDebugProjectContainer extends Container
         $b = ${($_ = isset($this->services['security.token_storage']) ? $this->services['security.token_storage'] : $this->get('security.token_storage')) && false ?: '_'};
         $c = ${($_ = isset($this->services['debug.event_dispatcher']) ? $this->services['debug.event_dispatcher'] : $this->get('debug.event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
         $d = ${($_ = isset($this->services['security.authentication.trust_resolver']) ? $this->services['security.authentication.trust_resolver'] : $this->getSecurity_Authentication_TrustResolverService()) && false ?: '_'};
-        $e = ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'};
-        $f = ${($_ = isset($this->services['http_kernel']) ? $this->services['http_kernel'] : $this->get('http_kernel')) && false ?: '_'};
-        $g = ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'};
+        $e = ${($_ = isset($this->services['router']) ? $this->services['router'] : $this->get('router')) && false ?: '_'};
+        $f = ${($_ = isset($this->services['session']) ? $this->services['session'] : $this->get('session')) && false ?: '_'};
+        $g = ${($_ = isset($this->services['translator']) ? $this->services['translator'] : $this->get('translator')) && false ?: '_'};
+        $h = ${($_ = isset($this->services['security.authentication.manager']) ? $this->services['security.authentication.manager'] : $this->getSecurity_Authentication_ManagerService()) && false ?: '_'};
 
-        $h = new \Symfony\Component\HttpFoundation\RequestMatcher('^/login$');
+        $i = new \Symfony\Component\HttpFoundation\RequestMatcher('^/login$');
 
-        $i = new \Symfony\Component\HttpFoundation\RequestMatcher('^/register');
+        $j = new \Symfony\Component\HttpFoundation\RequestMatcher('^/register');
 
-        $j = new \Symfony\Component\HttpFoundation\RequestMatcher('^/resetting');
+        $k = new \Symfony\Component\HttpFoundation\RequestMatcher('^/resetting');
 
-        $k = new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin/');
+        $l = new \Symfony\Component\HttpFoundation\RequestMatcher('^/admin/');
 
-        $l = new \Symfony\Component\HttpFoundation\RequestMatcher('^/profile');
+        $m = new \Symfony\Component\HttpFoundation\RequestMatcher('^/profile');
 
-        $m = new \Symfony\Component\HttpFoundation\RequestMatcher('^/user/');
+        $n = new \Symfony\Component\HttpFoundation\RequestMatcher('^/user/');
 
-        $n = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation');
+        $o = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation');
 
-        $o = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation_classes');
+        $p = new \Symfony\Component\HttpFoundation\RequestMatcher('^/permutation_classes');
 
-        $p = new \Symfony\Component\HttpFoundation\RequestMatcher('^/covoiturage');
+        $q = new \Symfony\Component\HttpFoundation\RequestMatcher('^/covoiturage');
 
-        $q = new \Symfony\Component\HttpFoundation\RequestMatcher('^/colocations');
+        $r = new \Symfony\Component\HttpFoundation\RequestMatcher('^/colocations');
 
-        $r = new \Symfony\Component\Security\Http\AccessMap();
-        $r->add($h, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $r->add($i, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $r->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
-        $r->add($k, array(0 => 'ROLE_ADMIN'), NULL);
-        $r->add($l, array(0 => 'ROLE_USER'), NULL);
-        $r->add($m, array(0 => 'ROLE_USER'), NULL);
-        $r->add($n, array(0 => 'ROLE_USER'), NULL);
-        $r->add($o, array(0 => 'ROLE_USER'), NULL);
-        $r->add($p, array(0 => 'ROLE_USER'), NULL);
-        $r->add($q, array(0 => 'ROLE_USER'), NULL);
+        $s = new \Symfony\Component\Security\Http\AccessMap();
+        $s->add($i, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $s->add($j, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $s->add($k, array(0 => 'IS_AUTHENTICATED_ANONYMOUSLY'), NULL);
+        $s->add($l, array(0 => 'ROLE_ADMIN'), NULL);
+        $s->add($m, array(0 => 'ROLE_USER'), NULL);
+        $s->add($n, array(0 => 'ROLE_USER'), NULL);
+        $s->add($o, array(0 => 'ROLE_USER'), NULL);
+        $s->add($p, array(0 => 'ROLE_USER'), NULL);
+        $s->add($q, array(0 => 'ROLE_USER'), NULL);
+        $s->add($r, array(0 => 'ROLE_USER'), NULL);
 
-        $s = new \Symfony\Component\Security\Http\HttpUtils($e, $e, '{^https?://%s$}i');
+        $t = new \Symfony\Component\Security\Http\HttpUtils($e, $e, '{^https?://%s$}i');
 
-        $t = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $s, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($s, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
-        $t->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(${($_ = isset($this->services['security.csrf.token_storage']) ? $this->services['security.csrf.token_storage'] : $this->getSecurity_Csrf_TokenStorageService()) && false ?: '_'}));
-        $t->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
+        $u = new \Symfony\Component\Security\Http\Firewall\LogoutListener($b, $t, new \Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler($t, '/'), array('csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'logout', 'logout_path' => '/logout'));
+        $u->addHandler(new \Symfony\Component\Security\Http\Logout\CsrfTokenClearingLogoutHandler(${($_ = isset($this->services['security.csrf.token_storage']) ? $this->services['security.csrf.token_storage'] : $this->getSecurity_Csrf_TokenStorageService()) && false ?: '_'}));
+        $u->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
 
-        $u = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($s, array());
-        $u->setOptions(array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false));
-        $u->setProviderKey('main');
+        $v = new \AppBundle\Handler\AuthenticationHandler($e, $f, $g);
 
-        $v = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($f, $s, array(), $a);
-        $v->setOptions(array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'));
-
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($r, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $t, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $s, 'main', $u, $v, array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b7fe39a9cf252.05392060', $a, $g), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $r, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $s, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $s, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($s, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => ${($_ = isset($this->services['fos_user.user_provider.username']) ? $this->services['fos_user.user_provider.username'] : $this->getFosUser_UserProvider_UsernameService()) && false ?: '_'}), 'main', $a, $c, $d), 2 => $u, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $h, ${($_ = isset($this->services['security.authentication.session_strategy']) ? $this->services['security.authentication.session_strategy'] : $this->getSecurity_Authentication_SessionStrategyService()) && false ?: '_'}, $t, 'main', new \Symfony\Component\Security\Http\Authentication\CustomAuthenticationSuccessHandler($v, array('always_use_default_target_path' => false, 'default_target_path' => '/', 'login_path' => '/login', 'target_path_parameter' => '_target_path', 'use_referer' => false), 'main'), new \Symfony\Component\Security\Http\Authentication\CustomAuthenticationFailureHandler($v, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path')), array('check_path' => '/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'csrf_token_id' => 'authenticate', 'post_only' => true), $a, $c, NULL), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5b84389af23bc9.00318256', $a, $h), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, ${($_ = isset($this->services['debug.security.access.decision_manager']) ? $this->services['debug.security.access.decision_manager'] : $this->getDebug_Security_Access_DecisionManagerService()) && false ?: '_'}, $s, $h)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $d, $t, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint(${($_ = isset($this->services['http_kernel']) ? $this->services['http_kernel'] : $this->get('http_kernel')) && false ?: '_'}, $t, '/login', false), NULL, NULL, $a, false), new \Symfony\Bundle\SecurityBundle\Security\FirewallConfig('main', 'security.user_checker', 'security.request_matcher.a64d671f18e5575531d76c1d1154fdc4476cb8a79c02ed7a3469178c6d7b96b5ed4e60db', true, false, 'fos_user.user_provider.username', 'main', 'security.authentication.form_entry_point.main', NULL, NULL, array(0 => 'logout', 1 => 'form_login', 2 => 'anonymous')));
     }
 
     /**
@@ -4197,7 +4207,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Annotations_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uObIR-4jHl', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.annotations.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uObIR-4jHl', 0, 'wdTBFjpCrpnwr-JvmzuCOl', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4223,7 +4233,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Serializer_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uqfJlRQIhK', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.serializer.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('uqfJlRQIhK', 0, 'wdTBFjpCrpnwr-JvmzuCOl', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4233,7 +4243,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_System_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('rohCqc2IIt', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.system.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('rohCqc2IIt', 0, 'wdTBFjpCrpnwr-JvmzuCOl', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4253,7 +4263,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getCache_Validator_RecorderInnerService($lazyLoad = true)
     {
-        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Jv1+CHpgke', 0, 'lKkngFDRMG8k27qYWADI4m', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
+        return $this->services['cache.validator.recorder_inner'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('Jv1+CHpgke', 0, 'wdTBFjpCrpnwr-JvmzuCOl', (__DIR__.'/pools'), ${($_ = isset($this->services['monolog.logger.cache']) ? $this->services['monolog.logger.cache'] : $this->get('monolog.logger.cache', ContainerInterface::NULL_ON_INVALID_REFERENCE)) && false ?: '_'});
     }
 
     /**
@@ -4536,7 +4546,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_Provider_Anonymous_MainService()
     {
-        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b7fe39a9cf252.05392060');
+        return $this->services['security.authentication.provider.anonymous.main'] = new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5b84389af23bc9.00318256');
     }
 
     /**
@@ -5237,7 +5247,7 @@ class appDevDebugProjectContainer extends Container
             'fos_user.registration.confirmation.from_email' => array(
                 'contact@esprit-entraide.tn' => 'EspritEntraide - Confirmation de compte',
             ),
-            'fos_user.registration.confirmation.enabled' => false,
+            'fos_user.registration.confirmation.enabled' => true,
             'fos_user.registration.form.type' => 'FOS\\UserBundle\\Form\\Type\\RegistrationFormType',
             'fos_user.registration.form.name' => 'fos_user_registration_form',
             'fos_user.registration.form.validation_groups' => array(

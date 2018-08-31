@@ -208,9 +208,14 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $this->mergeDefaults(array_replace($matches, array('_route' => 'colocations_single')), array (  '_controller' => 'AppBundle\\Controller\\ColocationController::singleAction',));
                 }
 
-                // colocations_delete
-                if (0 === strpos($pathinfo, '/colocations/delete') && preg_match('#^/colocations/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'colocations_delete')), array (  '_controller' => 'AppBundle\\Controller\\ColocationController::deleteAction',));
+                // colocations_disable
+                if (0 === strpos($pathinfo, '/colocations/disable') && preg_match('#^/colocations/disable/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'colocations_disable')), array (  '_controller' => 'AppBundle\\Controller\\ColocationController::disableAction',));
+                }
+
+                // colocations_enable
+                if (0 === strpos($pathinfo, '/colocations/enable') && preg_match('#^/colocations/enable/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'colocations_enable')), array (  '_controller' => 'AppBundle\\Controller\\ColocationController::enableAction',));
                 }
 
             }
@@ -223,114 +228,64 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/permutation')) {
-            // permutation_index
+            // permutation_classes_index
             if ('/permutation' === $trimmedPathinfo) {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($rawPathinfo.'/', 'permutation_index');
+                if ('GET' !== $canonicalMethod) {
+                    $allow[] = 'GET';
+                    goto not_permutation_classes_index;
                 }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\PermutationController::indexAction',  '_route' => 'permutation_index',);
-            }
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($rawPathinfo.'/', 'permutation_classes_index');
+                }
 
-            // permutation_show
+                return array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::indexAction',  '_route' => 'permutation_classes_index',);
+            }
+            not_permutation_classes_index:
+
+            // permutation_classes_show
             if (preg_match('#^/permutation/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
                 if ('GET' !== $canonicalMethod) {
                     $allow[] = 'GET';
-                    goto not_permutation_show;
+                    goto not_permutation_classes_show;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_show')), array (  '_controller' => 'AppBundle\\Controller\\PermutationController::showAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_show')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::showAction',));
             }
-            not_permutation_show:
+            not_permutation_classes_show:
 
-            // permutation_edit
+            // permutation_classes_new
+            if ('/permutation/new' === $pathinfo) {
+                if (!in_array($canonicalMethod, array('GET', 'POST'))) {
+                    $allow = array_merge($allow, array('GET', 'POST'));
+                    goto not_permutation_classes_new;
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::newAction',  '_route' => 'permutation_classes_new',);
+            }
+            not_permutation_classes_new:
+
+            // permutation_classes_edit
             if (preg_match('#^/permutation/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 if (!in_array($canonicalMethod, array('GET', 'POST'))) {
                     $allow = array_merge($allow, array('GET', 'POST'));
-                    goto not_permutation_edit;
+                    goto not_permutation_classes_edit;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_edit')), array (  '_controller' => 'AppBundle\\Controller\\PermutationController::editAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_edit')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::editAction',));
             }
-            not_permutation_edit:
+            not_permutation_classes_edit:
 
-            // permutation_delete
+            // permutation_classes_delete
             if (preg_match('#^/permutation/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
                 if ('DELETE' !== $canonicalMethod) {
                     $allow[] = 'DELETE';
-                    goto not_permutation_delete;
+                    goto not_permutation_classes_delete;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_delete')), array (  '_controller' => 'AppBundle\\Controller\\PermutationController::deleteAction',));
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_delete')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::deleteAction',));
             }
-            not_permutation_delete:
-
-            // permutation_new
-            if ('/permutation/add' === $pathinfo) {
-                return array (  '_controller' => 'AppBundle\\Controller\\PermutationController::addPermutationAction',  '_route' => 'permutation_new',);
-            }
-
-            if (0 === strpos($pathinfo, '/permutation_classes')) {
-                // permutation_classes_index
-                if ('/permutation_classes' === $trimmedPathinfo) {
-                    if ('GET' !== $canonicalMethod) {
-                        $allow[] = 'GET';
-                        goto not_permutation_classes_index;
-                    }
-
-                    if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($rawPathinfo.'/', 'permutation_classes_index');
-                    }
-
-                    return array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::indexAction',  '_route' => 'permutation_classes_index',);
-                }
-                not_permutation_classes_index:
-
-                // permutation_classes_show
-                if (preg_match('#^/permutation_classes/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                    if ('GET' !== $canonicalMethod) {
-                        $allow[] = 'GET';
-                        goto not_permutation_classes_show;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_show')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::showAction',));
-                }
-                not_permutation_classes_show:
-
-                // permutation_classes_new
-                if ('/permutation_classes/new' === $pathinfo) {
-                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                        $allow = array_merge($allow, array('GET', 'POST'));
-                        goto not_permutation_classes_new;
-                    }
-
-                    return array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::newAction',  '_route' => 'permutation_classes_new',);
-                }
-                not_permutation_classes_new:
-
-                // permutation_classes_edit
-                if (preg_match('#^/permutation_classes/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                    if (!in_array($canonicalMethod, array('GET', 'POST'))) {
-                        $allow = array_merge($allow, array('GET', 'POST'));
-                        goto not_permutation_classes_edit;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_edit')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::editAction',));
-                }
-                not_permutation_classes_edit:
-
-                // permutation_classes_delete
-                if (preg_match('#^/permutation_classes/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                    if ('DELETE' !== $canonicalMethod) {
-                        $allow[] = 'DELETE';
-                        goto not_permutation_classes_delete;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'permutation_classes_delete')), array (  '_controller' => 'AppBundle\\Controller\\Permutation_ClassesController::deleteAction',));
-                }
-                not_permutation_classes_delete:
-
-            }
+            not_permutation_classes_delete:
 
         }
 

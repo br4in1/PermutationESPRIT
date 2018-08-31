@@ -55,8 +55,8 @@
                 <!-- Listing Nav -->
                 <div id="listing-nav" class="listing-nav-container">
                     <ul class="listing-nav">
-                        <li><a href="#listing-overview" class="active">Overview</a></li>
-                        <li><a href="#listing-pricing-list">Pricing</a></li>
+                        <li><a href="#listing-overview" class="active">Vue d'ensemble</a></li>
+                        <li><a href="#listing-pricing-list">Coût</a></li>
                     </ul>
                 </div>
 
@@ -70,7 +70,7 @@
                     </p>
 
                     <!-- Amenities -->
-                    <h3 class="listing-desc-headline">Amenities</h3>
+                    <h3 class="listing-desc-headline">Équipements</h3>
                     <ul class="listing-features checkboxes margin-top-0">
                         {% for a in amenities %}
                             {% if a.valid is same as(true) %}
@@ -97,8 +97,8 @@
                             <ul>
                                 <li>
                                     <h5>Part à payer</h5>
-                                    <p>Nombre de personnes manquantes : {{ c.nbpersonnes }}</p>
-                                    <span>{{ c.cost }}<sup>DT</sup></span>
+                                    <p style="font-weight: bolder;">Nombre de personnes manquantes : {{ c.nbpersonnes }}</p>
+                                    <span style="font-weight: bolder;">{{ c.cost }}<sup>DT</sup></span>
                                 </li>
                             </ul>
                         </div>
@@ -114,10 +114,15 @@
             <div class="col-lg-4 col-md-4 margin-top-75 sticky">
 
 
-                <!-- Verified Badge -->
-                <div class="verified-badge">
-                    <i class="sl sl-icon-check"></i> Vérifié.
-                </div>
+                {% if c.available %}
+                    <div class="verified-badge">
+                        <i class="sl sl-icon-check"></i> Disponible.
+                    </div>
+                {% else %}
+                    <div class="unverified-badge">
+                        <i class="sl sl-icon-close"></i> Indisponible.
+                    </div>
+                {% endif %}
                 <!-- Contact -->
                 <div class="boxed-widget margin-top-35">
                     <div class="hosted-by-title">
@@ -131,8 +136,13 @@
                         <li><i class="fa fa-envelope-o"></i> <a href="mailto:{{ c.user.email }}">{{ c.user.email }}</a></li>
                     </ul>
                     {% if c.user.email is same as(app.user.email) %}
-                        <a href="{{ path('colocations_delete',{ 'id' : c.id }) }}" class="send-message-to-owner button"><i
-                                    class="sl sl-icon-trash"></i> Supprimer</a>
+                        {% if c.available %}
+                            <a href="{{ path('colocations_disable',{ 'id' : c.id }) }}" class="send-message-to-owner button"><i
+                                        class="sl sl-icon-close"></i> Marquer comme indisponible</a>
+                        {% else %}
+                            <a href="{{ path('colocations_enable',{ 'id' : c.id }) }}" class="send-message-to-owner button"><i
+                                        class="sl sl-icon-check"></i> Marquer comme disponible</a>
+                        {% endif %}
                     {% endif %}
                 </div>
                 <!-- Contact / End-->
@@ -142,7 +152,7 @@
                 <div class="listing-share margin-top-40 margin-bottom-40 no-border">
                     <!-- Share Buttons -->
                     <ul class="share-buttons margin-top-40 margin-bottom-0">
-                        <li><a class="fb-share" href="#"><i class="fa fa-facebook"></i> Partager</a></li>
+                        <li><a class="fb-share" href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}"><i class="fa fa-facebook"></i> Partager</a></li>
                     </ul>
                     <div class="clearfix"></div>
                 </div>

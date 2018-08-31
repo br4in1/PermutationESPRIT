@@ -62,7 +62,9 @@
                             {% endif %}
                         </li>
                         <li><i class="fa fa-envelope-o"></i> <a href="#"> {{ user.email }}</a></li>
-                        <li><i class="fa fa-calendar"></i> Membre depuis : {{ user.registrationdate|date("d F Y") }}</li>
+                        {% if user.registrationdate|date("Y") >= 2018 %}
+                            <li><i class="fa fa-calendar"></i> Membre depuis : {{ user.registrationdate|date("d F Y") }}</li>
+                        {% endif %}
                     </ul>
 
                     <ul class="listing-details-sidebar social-profiles">
@@ -92,11 +94,39 @@
                     <!-- Tabs Content -->
                     <div class="tabs-container">
                         <div class="tab-content" id="tab1b">
-                            Lorem ipsum pharetra lorem felis. Aliquam egestas consectetur elementum class aptentea taciti sociosqu ad litora torquent perea conubia nostra lorem consectetur adipiscing elit. Donec vestibulum justo a diam ultricies pellentesque.
-                        </div>
+                            {% if colocs|length == 0 %}
 
+                            {% else %}
+                                {% for c in colocs %}
+                                    <div class="listing-item-container list-layout">
+                                        <a href="{{ path('colocations_single',{ 'id' : c.id }) }}" class="listing-item">
+
+                                            <!-- Image -->
+                                            <div class="listing-item-image">
+                                                {% if c.picture1 is not null and c.picture1|length > 0 %}
+                                                    <img src="{{ asset('assets/images/colocs_pics/' ~ c.picture1) }}" alt="">
+                                                {% else %}
+                                                    <img src="{{ asset('assets/images/Unknown.png') }}" alt="">
+                                                {% endif %}
+                                                <span class="tag">{{ c.city }}</span>
+                                            </div>
+
+                                            <!-- Content -->
+                                            <div class="listing-item-content">
+                                                <div class="listing-badge now-open">{{ c.cost }} DT</div>
+
+                                                <div class="listing-item-inner">
+                                                    <h3>{{ c.title }}</h3>
+                                                    <span style="width: 300px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ c.description }}</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
                         <div class="tab-content" id="tab2b">
-                            Aenean dolor mi, luctus et laoreet hendrerit, condimentum faucibus mi. Nam et sem eros. Sed sed eros nec massa pellentesque accumsan in nec magna. Donec sollicitudin enim nec justo mollis bibendum. Nulla eleifend mollis velit. Ut sed risus eget metus egestas sagittis. Etiam vestibulum interdum turpis.
+
                         </div>
                     </div>
 
