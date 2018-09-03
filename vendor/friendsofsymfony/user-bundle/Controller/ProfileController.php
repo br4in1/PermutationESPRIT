@@ -53,8 +53,8 @@ class ProfileController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
         $em = $this->getDoctrine()->getManager();
-        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $this->getUser()));
-        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $this->getUser()));
+        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $this->getUser()),array('added' => 'DESC'),10);
+        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $this->getUser()),array('date' => 'DESC'),10);
 
         /*return $this->render('@FOSUser/Profile/show.html.twig', array(
             'user' => $user,

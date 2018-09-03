@@ -7,7 +7,7 @@
 
             </div>
             <div class="sign-in-form col-md-6">
-                {% if app.session.get('classError') is defined %}
+                {% if app.session.get('classError') is defined and app.user.classe is not defined %}
                     <div class="notification warning closeable">Merci de saisir votre classe pour pouvoir utiliser la permutation.</div>
                 {% endif %}
                 {% include "@FOSUser/Profile/edit_content.html.twig" %}

@@ -30,12 +30,13 @@
                             <li class="list-inline-item"><h1 style="font-weight: bolder;">{{ user.firstname~" "~user.lastname }}</h1></li>
                             <li class="list-inline-item"><h4>({{ user.classe }})</h4></li>
                         </div>
+                        {% if user.email is same as(app.user.email)  %}
+                            <div class="user-profile-name">
+                                <a href="{{ path('fos_user_profile_edit') }}" class="button"><i class="fa fa-pencil"></i> Modifier</a>
+                                <a href="{{ path('fos_user_change_password') }}" class="button"><i class="fa fa-lock"></i> Changer le mot de passe</a>
+                            </div>
+                        {% endif %}
                     </div>
-                    {% if user.email is same as(app.user.email)  %}
-                        <div class="user-profile-name">
-                            <a href="{{ path('fos_user_profile_edit') }}" class="button"><i class="fa fa-pencil"></i> Modifier</a>
-                        </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
@@ -95,7 +96,22 @@
                     <div class="tabs-container">
                         <div class="tab-content" id="tab1b">
                             {% if colocs|length == 0 %}
+                                <div class="row" style="margin-bottom: 100px;">
+                                    <div class="col-md-2">
 
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div align="center" style="margin-top:30px;">
+                                            <center><h1 align="center" class="fa fa-frown-o" style="font-size:1500%;color:lightgray;"></h1></center>
+                                            <div style="margin-top: 40px;text-align: center">
+                                                <span style="color:lightgray;font-size: 35px;margin-top: 50px;font-weight: normal">Désolé, aucune colocation n'est disponible.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                </div>
                             {% else %}
                                 {% for c in colocs %}
                                     <div class="listing-item-container list-layout">
@@ -126,7 +142,51 @@
                             {% endif %}
                         </div>
                         <div class="tab-content" id="tab2b">
+                            {% if covs|length != 0 %}
+                                <div class="row" style="margin-bottom: 100px;">
+                                    <div class="col-md-2">
 
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div align="center" style="margin-top:30px;">
+                                            <center><h1 align="center" class="fa fa-frown-o" style="font-size:1500%;color:lightgray;"></h1></center>
+                                            <div style="margin-top: 40px;text-align: center">
+                                                <span style="color:lightgray;font-size: 35px;margin-top: 50px;font-weight: normal">Désolé, aucun covoiturage n'est disponible.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+
+                                    </div>
+                                </div>
+                            {% else %}
+                                {% for c in covs %}
+                                    <div class="listing-item-container list-layout">
+                                        <a href="{{ path('covoiturage_show',{ 'id' : c.id }) }}" class="listing-item">
+
+                                            <!-- Image -->
+                                            <div class="listing-item-image">
+                                                {% if c.picture1 is not null and c.picture1|length > 0 %}
+                                                    <img src="{{ asset('assets/images/colocs_pics/' ~ c.picture1) }}" alt="">
+                                                {% else %}
+                                                    <img src="{{ asset('assets/images/Unknown.png') }}" alt="">
+                                                {% endif %}
+                                                <span class="tag">{{ c.city }}</span>
+                                            </div>
+
+                                            <!-- Content -->
+                                            <div class="listing-item-content">
+                                                <div class="listing-badge now-open">{{ c.cost }} DT</div>
+
+                                                <div class="listing-item-inner">
+                                                    <h3>{{ c.title }}</h3>
+                                                    <span style="width: 300px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">{{ c.description }}</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
                         </div>
                     </div>
 

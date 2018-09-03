@@ -57,6 +57,7 @@ class ChangePasswordFormType extends AbstractType
             ),
             'attr' => array(
                 'autocomplete' => 'current-password',
+                'class' => 'text-input'
             ),
         ));
 
@@ -66,6 +67,7 @@ class ChangePasswordFormType extends AbstractType
                 'translation_domain' => 'FOSUserBundle',
                 'attr' => array(
                     'autocomplete' => 'new-password',
+                    'class' => 'text-input'
                 ),
             ),
             'first_options' => array('label' => 'form.new_password'),

@@ -44,8 +44,8 @@ class DefaultController extends Controller
         if($id === -1) return $this->render('@App/default/404.html.twig');
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("AppBundle:User")->findOneBy(array("id" => $id));
-        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $user));
-        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $user));
+        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $this->getUser()),array('added' => 'DESC'),10);
+        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $this->getUser()),array('date' => 'DESC'),10);
         if($user === null) return $this->render('@App/default/404.html.twig');
         return $this->render('@App/default/profile.html.twig', [
             'user' => $user,
