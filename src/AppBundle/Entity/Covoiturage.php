@@ -43,9 +43,9 @@ class Covoiturage
     private $cout;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=255)
+     * @var int
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
      */
     private $user;
 
@@ -66,7 +66,7 @@ class Covoiturage
     /**
      * @var \DateTime|null
      *
-     * @ORM\Column(name="date", type="string", length=255,nullable=true))
+     * @ORM\Column(name="date", type="date", length=255,nullable=true))
      */
     private $date;
 
@@ -78,9 +78,9 @@ class Covoiturage
     private $datePublication;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="type", type="string", length=255)
+     * @ORM\Column(name="type", type="integer",)
      */
     private $type;
 
