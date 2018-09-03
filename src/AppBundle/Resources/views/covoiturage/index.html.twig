@@ -4,158 +4,95 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-9 col-md-8 padding-right-30">
 
-                <!-- Sorting / Layout Switcher -->
-                <div class="row margin-bottom-25">
+            <div class="col-md-12">
 
-                    <div class="col-md-6 col-xs-6">
-                        <!-- Layout Switcher -->
-                        <div class="layout-switcher">
-                            <a href="#" class="grid active"><i class="fa fa-th"></i></a>
-                            <a href="listings-list-with-sidebar.html" class="list"><i class="fa fa-align-justify"></i></a>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="{{ path('covoiturage_new') }}">Create a new covoiturage</a>
-                            </li>
-                        </ul>
+                <!-- Sorting - Filtering Section -->
+                <div class="row margin-bottom-25 margin-top-30">
+
+                    <div class="col-md-8">
+                            <a class="button medium border sign-in popup-with-zoom-anim" href="#sign-in-dialog">Proposer un trajet</a>
                     </div>
 
-                    <div class="col-md-6 col-xs-6">
-                        <!-- Sort by -->
-                        <div class="sort-by">
-                            <div class="sort-by-select">
-                                <select data-placeholder="Default order" class="chosen-select-no-single">
-                                    <option>Default Order</option>
-                                    <option>Highest Rated</option>
-                                    <option>Most Reviewed</option>
-                                    <option>Newest Listings</option>
-                                    <option>Oldest Listings</option>
-                                </select>
-                            </div>
-                        </div>
+
+                    <div class="col-md-4">
+                        <input type="text" placeholder="Lieu">
                     </div>
+
+
+
                 </div>
-                <!-- Sorting / Layout Switcher / End -->
+
+                <!-- Sorting - Filtering Section / End -->
+
 
                 <div class="row">
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-6 col-md-12">
-                        <a href="listings-single-page.html" class="listing-item-container compact">
-                            <div class="listing-item">
-                                <img src="images/listing-item-01.jpg" alt="">
+                    {% for covoiturage in covoiturages %}
+                        <!-- Listing Item -->
 
-                                <div class="listing-badge now-open">Now Open</div>
+                        <div class="col-md-12">
+                            <div class="col-md-1">
 
-                                <div class="listing-item-content">
-                                    <div class="numerical-rating" data-rating="3.5"></div>
-                                    <h3>Tom's Restaurant <i class="verified-icon"></i></h3>
-                                    <span>964 School Street, New York</span>
-                                </div>
-                                <span class="like-icon"></span>
+
                             </div>
-                        </a>
-                    </div>
-                    <!-- Listing Item / End -->
+                            <div class="col-md-2" style="padding-top: 20px;padding-left: 50px">
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-6 col-md-12">
-                        <a href="listings-single-page.html" class="listing-item-container compact">
-                            <div class="listing-item">
-                                <img src="images/listing-item-02.jpg" alt="">
-                                <div class="listing-item-details">
-                                    <ul>
-                                        <li>Friday, August 10</li>
-                                    </ul>
-                                </div>
-                                <div class="listing-item-content">
-                                    <div class="numerical-rating" data-rating="5.0"></div>
-                                    <h3>Sticky Band</h3>
-                                    <span>Bishop Avenue, New York</span>
-                                </div>
-                                <span class="like-icon"></span>
+                                    <img style="height: 110px; width: 110px;" id="user-img" src="{{ asset('assets/images/users_pics/' ~ covoiturage.user.picture) }}" alt=""><br>
+                                   <h5 style="padding-left: 5px"> {{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h5>
+
                             </div>
-                        </a>
-                    </div>
-                    <!-- Listing Item / End -->
+                                <div class="col-md-7">
+                            <div href="#" class="listing-item-container compact">
+                                <div class="listing-item">
+                                    <img src="{{ asset('assets/cov.jpg') }}" alt="">
+                                    <div class="listing-badge now-open">{% if covoiturage.type==1 %} Quotidien {% else %} Simple {% endif %}</div>
+                                    <div class="listing-item-details">
+                                        <ul>
+                                            <li>{{ covoiturage.date|date('F jS \\a\\t g:ia') }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="listing-item-content">
+                                        <h2 style="color: #fff;">{{ covoiturage.depart }}  <i class="fa fa-arrow-right"></i> {{ covoiturage.destination }} {% if covoiturage.fumeur==1 %} <img src="{{ asset('assets/smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% else %} <img src="{{ asset('assets/no-smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% endif %}</h2>
+                                        <span>Contact: <a style="color: snow;" href="#">{{ covoiturage.user.phone ~ " - " ~ covoiturage.user.username }}</a></span>
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-6 col-md-12">
-                        <a href="listings-single-page.html" class="listing-item-container compact">
-                            <div class="listing-item">
-                                <img src="images/listing-item-03.jpg" alt="">
-                                <div class="listing-item-details">
-                                    <ul>
-                                        <li>Starting from $59 per night</li>
-                                    </ul>
+
+                                    </div>
                                 </div>
-                                <div class="listing-item-content">
-                                    <div class="numerical-rating" data-rating="2.0"></div>
-                                    <h3>Hotel Govendor</h3>
-                                    <span>778 Country Street, New York</span>
+                            </div>
                                 </div>
-                                <span class="like-icon"></span>
+                            <div class="col-md-3">
+
+
                             </div>
 
-                        </a>
-                    </div>
-                    <!-- Listing Item / End -->
+                        </div>
+                        <hr>
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-6 col-md-12">
-                        <a href="listings-single-page.html" class="listing-item-container compact">
-                            <div class="listing-item">
-                                <img src="images/listing-item-04.jpg" alt="">
 
-                                <div class="listing-badge now-open">Now Open</div>
-
-                                <div class="listing-item-content">
-                                    <div class="numerical-rating" data-rating="5.0"></div>
-                                    <h3>Burger House <i class="verified-icon"></i></h3>
-                                    <span>2726 Shinn Street, New York</span>
-                                </div>
-                                <span class="like-icon"></span>
+                    {% endfor %}
+                    <!-- Modal -->
+                    <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
+                        <div class="small-dialog-header">
+                            <h3>Nouveau Trajet</h3>
+                        </div>
+                        <div class="sign-in-form style-1">
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            <!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+                            <div class="col-lg-6 col-md-12">
+                                <input type="text" id="booking-date" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-lock="from">
                             </div>
-                        </a>
-                    </div>
-                    <!-- Listing Item / End -->
 
-                    <!-- Listing Item -->
-                    <div class="col-lg-6 col-md-12">
-                        <a href="listings-single-page.html" class="listing-item-container compact">
-                            <div class="listing-item">
-                                <img src="images/listing-item-05.jpg" alt="">
-                                <div class="listing-item-content">
-                                    <div class="numerical-rating" data-rating="3.5"></div>
-                                    <h3>Airport</h3>
-                                    <span>1512 Duncan Avenue, New York</span>
-                                </div>
-                                <span class="like-icon"></span>
+                            <!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+                            <div class="col-lg-6 col-md-12">
+                                <input type="text" id="booking-time" value="9:00 am">
                             </div>
-                        </a>
+                            <input type="text" data-option="value" id="date-picker" />
+                            <button type="submit" class="button border margin-top-10 float-right">Confirmer</button>
+                            {{ form_end(form) }}
+                        </div>
                     </div>
-                    <!-- Listing Item / End -->
-
-                    <!-- Listing Item -->
-                    <div class="col-lg-6 col-md-12">
-                        <a href="listings-single-page.html" class="listing-item-container compact">
-                            <div class="listing-item">
-                                <img src="images/listing-item-06.jpg" alt="">
-
-                                <div class="listing-badge now-closed">Now Closed</div>
-
-                                <div class="listing-item-content">
-                                    <div class="numerical-rating" data-rating="4.5"></div>
-                                    <h3>Think Coffee</h3>
-                                    <span>215 Terry Lane, New York</span>
-                                </div>
-                                <span class="like-icon"></span>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Listing Item / End -->
 
                 </div>
 
@@ -180,114 +117,33 @@
 
             </div>
 
-
-            <!-- Sidebar
-            ================================================== -->
-            <div class="col-lg-3 col-md-4">
-                <div class="sidebar">
-
-                    <!-- Widget -->
-                    <div class="widget margin-bottom-40">
-                        <h3 class="margin-top-0 margin-bottom-30">Filters</h3>
-
-                        <!-- Row -->
-                        <div class="row with-forms">
-                            <!-- Cities -->
-                            <div class="col-md-12">
-                                <input type="text" placeholder="What are you looking for?" value=""/>
-                            </div>
-                        </div>
-                        <!-- Row / End -->
-
-
-                        <!-- Row -->
-                        <div class="row with-forms">
-                            <!-- Type -->
-                            <div class="col-md-12">
-                                <select data-placeholder="All Categories" class="chosen-select" >
-                                    <option>All Categories</option>
-                                    <option>Shops</option>
-                                    <option>Hotels</option>
-                                    <option>Restaurants</option>
-                                    <option>Fitness</option>
-                                    <option>Events</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Row / End -->
-
-
-                        <!-- Row -->
-                        <div class="row with-forms">
-                            <!-- Cities -->
-                            <div class="col-md-12">
-
-                                <div class="input-with-icon location">
-                                    <div id="autocomplete-container">
-                                        <input id="autocomplete-input" type="text" placeholder="Location">
-                                    </div>
-                                    <a href="#"><i class="fa fa-map-marker"></i></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- Row / End -->
-                        <br>
-
-                        <!-- Area Range -->
-                        <div class="range-slider">
-                            <input class="distance-radius" type="range" min="1" max="100" step="1" value="50" data-title="Radius around selected destination">
-                        </div>
-
-
-                        <!-- More Search Options -->
-                        <a href="#" class="more-search-options-trigger margin-bottom-5 margin-top-20" data-open-title="More Filters" data-close-title="More Filters"></a>
-
-                        <div class="more-search-options relative">
-
-                            <!-- Checkboxes -->
-                            <div class="checkboxes one-in-row margin-bottom-15">
-
-                                <input id="check-a" type="checkbox" name="check">
-                                <label for="check-a">Elevator in building</label>
-
-                                <input id="check-b" type="checkbox" name="check">
-                                <label for="check-b">Friendly workspace</label>
-
-                                <input id="check-c" type="checkbox" name="check">
-                                <label for="check-c">Instant Book</label>
-
-                                <input id="check-d" type="checkbox" name="check">
-                                <label for="check-d">Wireless Internet</label>
-
-                                <input id="check-e" type="checkbox" name="check" >
-                                <label for="check-e">Free parking on premises</label>
-
-                                <input id="check-f" type="checkbox" name="check" >
-                                <label for="check-f">Free parking on street</label>
-
-                                <input id="check-g" type="checkbox" name="check">
-                                <label for="check-g">Smoking allowed</label>
-
-                                <input id="check-h" type="checkbox" name="check">
-                                <label for="check-h">Events</label>
-
-                            </div>
-                            <!-- Checkboxes / End -->
-
-                        </div>
-                        <!-- More Search Options / End -->
-
-                        <button class="button fullwidth margin-top-25">Update</button>
-
-                    </div>
-                    <!-- Widget / End -->
-
-                </div>
-            </div>
-            <!-- Sidebar / End -->
         </div>
     </div>
 
+ {% block javascripts %}
+     <!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+     <link href="{{ asset('assets/css/plugins/datedropper.css') }}" rel="stylesheet" type="text/css">
+     <script src="{{ asset('assets/scripts/datedropper.js') }}"></script>
+     <script>$('#booking-date').dateDropper();</script>
 
+     <!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+     <script src="{{ asset('assets/scripts/timedropper.js') }}"></script>
+     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/plugins/timedropper.css') }}">
+     <script>
+         this.$('#booking-time').timeDropper({
+             setCurrentTime: false,
+             meridians: true,
+             primaryColor: "#f91942",
+             borderColor: "#f91942",
+             minutesInterval: '15'
+         });
+
+         var $clocks = $('.td-input');
+         _.each($clocks, function(clock){
+             clock.value = null;
+         });
+     </script>
+ {% endblock %}
 {% endblock %}
+
+

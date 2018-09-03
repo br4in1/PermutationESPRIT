@@ -3,7 +3,7 @@
 {% block body %}
     <h1 style="margin: 30px;">Liste des permutations</h1>
     {% for message in app.session.flashBag.get('error') %}
-        <div class="alert alert-danger">
+        <div class="notification error closeable">
             {{ message }}
         </div>
     {% endfor %}

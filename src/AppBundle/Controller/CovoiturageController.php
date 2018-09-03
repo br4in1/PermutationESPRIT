@@ -16,13 +16,32 @@ class CovoiturageController extends Controller
      * Lists all covoiturage entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
         $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findAll();
 
+        $covoiturage = new Covoiturage();
+        $form = $this->createForm('AppBundle\Form\CovoiturageType', $covoiturage);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $covoiturage->setDatePublication(new \DateTime());
+            $covoiturage->setEtat(1);
+            $covoiturage->setType(1);
+            $covoiturage->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($covoiturage);
+            $em->flush();
+
+            return $this->redirectToRoute('covoiturage_index', array(
+                'form' => $form->createView(),
+                'covoiturages' => $covoiturages,));
+        }
+
         return $this->render('@App/covoiturage/index.html.twig', array(
+            'form' => $form->createView(),
             'covoiturages' => $covoiturages,
         ));
     }

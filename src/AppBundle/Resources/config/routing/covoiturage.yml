@@ -1,7 +1,7 @@
 covoiturage_index:
     path:     /
     defaults: { _controller: "AppBundle:Covoiturage:index" }
-    methods:  GET
+    methods:  [GET, POST]
 
 covoiturage_show:
     path:     /{id}/show
