@@ -53,7 +53,7 @@
                 <h3>Nouvelle Permutation</h3>
             </div>
             <div class="sign-in-form style-1">
-                <form class="login" action="{{ path('permutation_classes_new') }}" method="post">
+                <form action="{{ path('permutation_classes_new') }}" method="post">
                     <label>Votre classe actuelle: {{ app.user.classe }}</label> <input name="destination" type="text">
                     <br>
                     <button type="submit" class="button border margin-top-10 float-right">Confirmer</button>

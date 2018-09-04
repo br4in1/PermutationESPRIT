@@ -2,16 +2,182 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6afeba2d-455f-4d35-8609-27ab618dde27" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/colocation.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/covoiturage.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/doc/pager/config.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/doc/pager/intro.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/doc/pager/usage.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/phpunit.xml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/AfterEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/BeforeEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/ItemsEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/PaginationEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/Query/WhereWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/Doctrine/ORM/QuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/FiltrationSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Filtration/PropelQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ArraySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/CollectionSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/DBALQueryBuilderSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QueryBuilderSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/MongoDB/QuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QueryBuilderSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ODM/PHPCR/QuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/AsIsHydrator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/CountWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/Helper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/LimitSubqueryWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/Query/WhereInWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QueryBuilderSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/Doctrine/ORM/QuerySubscriber/UsesPaginator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/ElasticaQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PaginationSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/PropelQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Paginate/SolariumQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ArraySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ODM/MongoDB/QuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/Query/OrderByWalker.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/Doctrine/ORM/QuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/ElasticaQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/PropelQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SolariumQuerySubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Event/Subscriber/Sortable/SortableSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/AbstractPagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/PaginationInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Pagination/SlidingPagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/Paginator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/src/Knp/Component/Pager/PaginatorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Document/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Document/Image.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Document/PHPCR/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Entity/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Entity/Composite.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Entity/Shop/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Fixture/Entity/Shop/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Mock/CustomParameterSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Mock/PaginationSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Pagination/AbstractPaginationTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Pagination/CustomParameterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Pagination/SlidingTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Pagination/TraversableItemsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/PaginatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Filtration/Doctrine/ORM/QueryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Filtration/Doctrine/ORM/WhitelistTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Filtration/FiltrationSubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/ArrayTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/CollectionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/DBALQueryBuilderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ODM/MongoDB/GridFsTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ODM/MongoDB/QueryBuilderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ODM/MongoDB/QueryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ODM/MongoDB/summer.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ODM/PHPCR/QueryBuilderSubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ODM/PHPCR/QuerySubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ORM/AdvancedQueryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ORM/CompositeKeyTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ORM/QueryBuilderTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ORM/QueryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/Doctrine/ORM/QueryTest/UsesPaginatorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/ElasticaTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/PaginationSubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Paginate/SolariumQuerySubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/ArraySubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/Doctrine/ODM/MongoDB/QueryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/Doctrine/ODM/MongoDB/WhitelistTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/Doctrine/ORM/QueryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/Doctrine/ORM/WhitelistTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/SolariumQuerySubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Pager/Subscriber/Sortable/SortableSubscriberTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Tool/BaseTestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Tool/BaseTestCaseMongoODM.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Tool/BaseTestCaseORM.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Tool/BaseTestCasePHPCRODM.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/Test/Tool/QueryAnalyzer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-components/tests/temp/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Definition/PaginatorAware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Definition/PaginatorAwareInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/DependencyInjection/Compiler/PaginatorAwarePass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/DependencyInjection/Compiler/PaginatorConfigurationPass.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/DependencyInjection/Configuration.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/DependencyInjection/KnpPaginatorExtension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Helper/Processor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/KnpPaginatorBundle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Pagination/SlidingPagination.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/config/paginator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/config/templating_php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/doc/custom_pagination_subscribers.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/doc/manual_counting.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/doc/paginator_configuration.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/doc/templates.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/doc/upgrade.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/meta/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ar.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.da.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.de.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.en.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.es.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.fa.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.fr.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.hu.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.id.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.it.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ky.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.lt.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.nl.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.pl.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.pt_BR.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ro.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.ru.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.sv.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.sw.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/translations/KnpPaginatorBundle.uk.xliff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/bulma_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/filtration.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/foundation_v5_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/semantic_ui_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sortable_link.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_v3_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_v3_sortable_link.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_v4_pagination.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Subscriber/SlidingPaginationSubscriber.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Templating/PaginationHelper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Twig/Extension/PaginationExtension.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PermutationESPRIT.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PermutationESPRIT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_08_18_12_36_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_10_08_18_12_36_s.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_8_4_18_12_08_PM_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_8_4_18_12_08_PM_s.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/Permutation_ClassesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/Permutation_ClassesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/permutation_classes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/permutation_classes/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +194,7 @@
           <entry key="dist" value="1" />
           <entry key="html" value="1" />
           <entry key="js" value="2" />
-          <entry key="json" value="6" />
+          <entry key="json" value="7" />
           <entry key="log" value="1" />
           <entry key="php" value="81" />
           <entry key="png" value="2" />
@@ -42,7 +208,7 @@
           <entry key="CSS" value="12" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JSON" value="6" />
+          <entry key="JSON" value="7" />
           <entry key="JavaScript" value="2" />
           <entry key="PHP" value="81" />
           <entry key="PLAIN_TEXT" value="2" />
@@ -57,7 +223,7 @@
           <entry key="json" value="12" />
           <entry key="php" value="6033" />
           <entry key="twig" value="8420" />
-          <entry key="txt" value="262" />
+          <entry key="txt" value="286" />
           <entry key="xml" value="288" />
           <entry key="yml" value="1263" />
         </counts>
@@ -67,7 +233,7 @@
           <entry key="CSS" value="174" />
           <entry key="JSON" value="12" />
           <entry key="PHP" value="6033" />
-          <entry key="PLAIN_TEXT" value="262" />
+          <entry key="PLAIN_TEXT" value="286" />
           <entry key="Twig" value="8420" />
           <entry key="XML" value="288" />
           <entry key="YAML" value="1263" />
@@ -98,63 +264,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="106" column="52" lean-forward="false" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="1696">
+              <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/objets_perdus/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/register.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-              <folding>
-                <element signature="e#89#132#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CovoiturageController.php" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1430">
-              <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="55" />
+            <state relative-caret-position="1008">
+              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="55" />
               <folding>
                 <element signature="e#40#73#0#PHP" expanded="true" />
               </folding>
@@ -162,24 +285,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation_classes/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="151">
+              <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="65" column="62" lean-forward="false" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-              </folding>
+            <state relative-caret-position="91">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -223,10 +342,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="s doctrine:generate:entity " />
-      <command text="s doctrine:generate:crud " />
-      <command text="s doctrine:schema:update --force" />
-      <command text="s debug:router " />
       <command text="s doctrine:schema:update --force" />
       <command text="c update " />
       <command text="s debug:router " />
@@ -248,6 +363,10 @@
       <command text="s doctrine:schema:update --force " />
       <command text="s debug:router " />
       <command text="s server:run " />
+      <command text="s doctrine:schema:update --force" />
+      <command text="c update " />
+      <command text="require knplabs/knp-paginator-bundle" />
+      <command text="c require knplabs/knp-paginator-bundle" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -329,7 +448,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+  <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
@@ -382,6 +501,8 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/sightengine/client-php" />
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -391,106 +512,28 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PermutationESPRIT" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="covoiturage" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="permutation_classes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Esprit-Entraide" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Esprit-Entraide" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PermutationESPRIT" type="462c0819:PsiDirectoryNode" />
+              <item name="var" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -528,9 +571,6 @@
       </list>
     </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -554,30 +594,30 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190035000" />
+    <option name="totallyTimeSpent" value="191008000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14806867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32799014" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15024233" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="8" visible="true" weight="0.32704404" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,150 +626,137 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/ColocationRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
-          <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/css/icons.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="219" column="17" lean-forward="false" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="17" />
+          <caret line="219" column="17" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/css/colors/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
-          <caret line="81" column="25" lean-forward="false" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
+          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing/colocation.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/colocations/single.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
-          <caret line="134" column="79" lean-forward="false" selection-start-line="134" selection-start-column="79" selection-end-line="134" selection-end-column="79" />
+          <caret line="134" column="79" selection-start-line="134" selection-start-column="79" selection-end-line="134" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
-          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/routing/profile.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="23" column="70" lean-forward="false" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="98" />
+          <caret line="23" column="70" selection-start-line="23" selection-start-column="70" selection-end-line="23" selection-end-column="98" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
-          <caret line="10" column="130" lean-forward="false" selection-start-line="10" selection-start-column="130" selection-end-line="10" selection-end-column="130" />
+          <caret line="10" column="130" selection-start-line="10" selection-start-column="130" selection-end-line="10" selection-end-column="130" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
-          <caret line="93" column="103" lean-forward="false" selection-start-line="93" selection-start-column="103" selection-end-line="93" selection-end-column="103" />
+          <caret line="93" column="103" selection-start-line="93" selection-start-column="103" selection-end-line="93" selection-end-column="103" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/config/validation.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <caret line="68" selection-start-line="68" selection-end-line="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing/objets_perdus.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" column="59" lean-forward="false" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
+          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Permutation_Classes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="74" column="7" lean-forward="false" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
+          <caret line="74" column="7" selection-start-line="74" selection-start-column="7" selection-end-line="74" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ObjetsPerdusController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-190">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-47">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding />
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="1" column="45" lean-forward="false" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing/covoiturage.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="2" column="48" lean-forward="false" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -737,133 +764,78 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/CovoiturageRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="50" column="61" lean-forward="false" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
+          <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/CovoiturageType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="15" column="79" lean-forward="false" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+          <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="908">
-          <caret line="53" column="7" lean-forward="false" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
-          <folding />
+          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/cov.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
-          <caret line="8798" column="0" lean-forward="false" selection-start-line="8798" selection-start-column="0" selection-end-line="8798" selection-end-column="0" />
-          <folding />
+          <caret line="8798" selection-start-line="8798" selection-end-line="8798" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/profile.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
-          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding>
-            <element signature="e#769#805#0#HTML" expanded="false" />
-            <element signature="e#953#1013#0#HTML" expanded="false" />
-            <element signature="e#3107#3255#0#HTML" expanded="false" />
-            <element signature="e#4898#4927#0#HTML" expanded="false" />
-            <element signature="e#5151#5175#0#HTML" expanded="false" />
-            <element signature="e#5270#5310#0#HTML" expanded="false" />
-            <element signature="e#5375#5418#0#HTML" expanded="false" />
-            <element signature="e#5474#5550#0#HTML" expanded="false" />
-            <element signature="e#7383#7468#0#HTML" expanded="false" />
-            <element signature="e#7970#7999#0#HTML" expanded="false" />
-            <element signature="e#8223#8247#0#HTML" expanded="false" />
-            <element signature="e#8342#8382#0#HTML" expanded="false" />
-            <element signature="e#8447#8490#0#HTML" expanded="false" />
-            <element signature="e#8546#8622#0#HTML" expanded="false" />
-            <element signature="e#10044#10064#0#HTML" expanded="false" />
-            <element signature="e#10231#10269#0#HTML" expanded="false" />
-            <element signature="e#10330#10368#0#HTML" expanded="false" />
-            <element signature="e#10445#10471#0#HTML" expanded="false" />
-            <element signature="e#10484#10523#0#HTML" expanded="false" />
-          </folding>
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/register_login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
-          <caret line="48" column="37" lean-forward="false" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="37" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
+          <caret line="48" column="37" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/colocations/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
-          <caret line="128" column="24" lean-forward="false" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="24" />
+          <caret line="128" column="24" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation_classes/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/colocations/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="631">
-          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <caret line="29" column="1" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -871,38 +843,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2108">
           <caret line="181" column="5" lean-forward="true" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ColocationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
-          <caret line="77" column="20" lean-forward="false" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
-          <folding />
+          <caret line="77" column="20" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PermutationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-169">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-          <folding />
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Covoiturage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-719">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1430">
-          <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="55" />
+        <state relative-caret-position="1008">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="55" />
           <folding>
             <element signature="e#40#73#0#PHP" expanded="true" />
           </folding>
@@ -912,86 +880,76 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/Permutation_ClassesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
-          <caret line="38" column="20" lean-forward="false" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding />
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-268">
-          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding />
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="43" />
-          <folding />
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/white-arrows.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/blue-arrows.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/register.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="11" column="62" lean-forward="false" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
-          <folding>
-            <element signature="e#89#132#0#HTML" expanded="true" />
-          </folding>
+          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/permutation_classes/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="151">
+          <caret line="55" column="59" selection-start-line="55" selection-start-column="59" selection-end-line="55" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="106" column="52" lean-forward="false" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
-          <folding />
+        <state relative-caret-position="1696">
+          <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/objets_perdus/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
-          <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
-          <folding />
+          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="65" column="62" lean-forward="false" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
+          <caret line="65" column="62" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
-          <folding />
+          <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
         </state>
       </provider>
     </entry>

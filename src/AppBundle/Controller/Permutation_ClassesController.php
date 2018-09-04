@@ -65,13 +65,9 @@ class Permutation_ClassesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($permutation);
             $em->flush();
-            return $this->redirectToRoute('permutation_classes_index', array(
-                'permutations' => $permutations,
-            ));
+            return $this->redirectToRoute('permutation_classes_index');
         }
-        return $this->redirectToRoute('permutation_classes_index', array(
-            'permutations' => $permutations,
-        ));
+        return $this->redirectToRoute('permutation_classes_index');
     }
 
     /**
