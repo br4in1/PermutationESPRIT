@@ -19,10 +19,16 @@ class CovoiturageController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $paginator  = $this->get('knp_paginator');
         if($request->get('lieu') === null){
             $em = $this->getDoctrine()->getManager();
 
             $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findAll();
+            $covoiturages = $paginator->paginate(
+                $covoiturages,
+                $request->get('page',1),
+                1
+            );
 
             return $this->render('@App/covoiturage/index.html.twig', array(
                 'covoiturages' => $covoiturages,
@@ -32,6 +38,11 @@ class CovoiturageController extends Controller
             $em = $this->getDoctrine()->getManager();
 
             $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findByCity($request->get('lieu'));
+            $covoiturages = $paginator->paginate(
+                $covoiturages,
+                $request->get('page',1),
+                1
+            );
 
             return $this->render('@App/covoiturage/index.html.twig', array(
                 'covoiturages' => $covoiturages,

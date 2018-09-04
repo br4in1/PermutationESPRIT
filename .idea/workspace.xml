@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6afeba2d-455f-4d35-8609-27ab618dde27" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CovoiturageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CovoiturageRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
@@ -12,6 +13,7 @@
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +34,11 @@
           <entry key="js" value="2" />
           <entry key="json" value="7" />
           <entry key="log" value="1" />
-          <entry key="php" value="84" />
+          <entry key="php" value="85" />
           <entry key="png" value="2" />
-          <entry key="twig" value="84" />
+          <entry key="twig" value="86" />
           <entry key="xml" value="16" />
-          <entry key="yml" value="47" />
+          <entry key="yml" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -46,33 +48,33 @@
           <entry key="Image" value="2" />
           <entry key="JSON" value="7" />
           <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="84" />
+          <entry key="PHP" value="85" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Twig" value="84" />
+          <entry key="Twig" value="86" />
           <entry key="XML" value="16" />
-          <entry key="YAML" value="47" />
+          <entry key="YAML" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="174" />
           <entry key="json" value="12" />
-          <entry key="php" value="6175" />
-          <entry key="twig" value="8482" />
+          <entry key="php" value="6234" />
+          <entry key="twig" value="8578" />
           <entry key="txt" value="286" />
           <entry key="xml" value="288" />
-          <entry key="yml" value="1263" />
+          <entry key="yml" value="1265" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="174" />
           <entry key="JSON" value="12" />
-          <entry key="PHP" value="6175" />
+          <entry key="PHP" value="6234" />
           <entry key="PLAIN_TEXT" value="286" />
-          <entry key="Twig" value="8482" />
+          <entry key="Twig" value="8578" />
           <entry key="XML" value="288" />
-          <entry key="YAML" value="1263" />
+          <entry key="YAML" value="1265" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions" />
@@ -100,11 +102,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="302">
+              <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="81" column="51" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -112,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="33" column="100" selection-start-line="33" selection-start-column="100" selection-end-line="33" selection-end-column="100" />
+            <state relative-caret-position="105">
+              <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
               <folding>
                 <element signature="e#40#73#0#PHP" expanded="true" />
               </folding>
@@ -241,8 +270,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/assets/css/imagehover.css" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit_content.html.twig" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Form/Type/ProfileFormType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/default/register.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Amenity.php" />
@@ -262,7 +289,6 @@
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/check_email.html.twig" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/confirmed.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" />
@@ -290,8 +316,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/CovoiturageRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php" />
+        <option value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig" />
       </list>
     </option>
   </component>
@@ -385,6 +414,17 @@
             <path>
               <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
               <item name="PermutationESPRIT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PermutationESPRIT" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PermutationESPRIT" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PermutationESPRIT" type="b2602c69:ProjectViewProjectNode" />
@@ -513,7 +553,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192183000" />
+    <option name="totallyTimeSpent" value="193351000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="728" extended-state="0" />
@@ -546,13 +586,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/assets/css/colors/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="81" column="25" selection-start-line="81" selection-start-column="25" selection-end-line="81" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/config/routing/colocation.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -627,20 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -841,16 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="33" column="100" selection-start-line="33" selection-start-column="100" selection-end-line="33" selection-end-column="100" />
-          <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/colocations/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -865,10 +874,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="20" column="64" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/CovoiturageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
+          <folding>
+            <element signature="e#40#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/covoiturage/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="302">
+          <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="81" column="51" selection-start-line="81" selection-start-column="51" selection-end-line="81" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
         </state>
       </provider>
     </entry>
