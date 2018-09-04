@@ -88,13 +88,13 @@
                             <h3>Nouveau Trajet</h3>
                         </div>
                         <div class="sign-in-form style-1">
-                            <form class="login" action="{{ path('covoiturage_new') }}" method="post">
+                            <form  action="{{ path('covoiturage_new') }}" method="post">
 
                                 <div class="col-md-12">
 
                                     <div class="col-md-5">
                                         <h4>Depart:</h4>
-                                        <input name="depart" type="text" placeholder="" maxlength="15">
+                                        <input name="depart" type="text" placeholder="" maxlength="15" required>
                                         <h4>Date:</h4><input name="date" type="text" id="booking-date" data-lang="fr" data-large-mode="true" data-large-default="true" data-min-year="2018" data-max-year="2020" data-lock="from">
                                         <h4>Type:</h4>
                                         <select name="type" class="chosen-select-no-single" >
@@ -106,21 +106,21 @@
                                     </div>
 
                                     <div class="col-md-2">
-                                        <h3> <i class="fa fa-arrow-right"></i></h3>
+
                                     </div>
 
                                     <div class="col-md-5">
                                         <h4>Destination:</h4>
-                                        <input name="destination" type="text" placeholder="" maxlength="15">
-                                        <h4>Heure:</h4><input name="heure" type="time" >
-                                        <div class="checkboxes in-row margin-bottom-20">
+                                        <input name="destination" type="text" placeholder="" maxlength="15" required>
+                                        <h4>Heure:</h4><input name="heure" type="time" required>
+                                        <div class="checkboxes in-row margin-bottom-20" style="padding-top: 30px; padding-left: 5px">
                                             <input name="fumeur" id="check-a" type="checkbox" name="check" value="Fumeur">
-                                            <label for="check-a">Fumeur</label></div>
+                                            <label for="check-a" >Fumeur</label></div>
 
                                     </div>
 
                                 </div>
-                                <button type="submit" class="button border margin-top-10 float-right">Confirmer</button>
+                                <button type="submit" class="button border margin-top-10 float-right" style="margin-top: 40px;margin-left: 150px;">Confirmer</button>
 
                             </form>
                         </div>
