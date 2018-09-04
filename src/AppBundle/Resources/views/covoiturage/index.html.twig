@@ -32,34 +32,29 @@
                         <!-- Listing Item -->
 
                         <div class="col-md-12">
-                            <div class="col-md-1">
-
-
-                            </div>
+                            <div class="col-md-1"></div>
                             <div class="col-md-2" style="padding-top: 20px;padding-left: 50px">
-
+                                <a href="{% if covoiturage.user.id == app.user.id %} {{ path('fos_user_profile_show') }} {% else %} {{ path('user_profile',{ 'id' : covoiturage.user.id }) }} {% endif %}">
                                     <img style="height: 110px; width: 110px;" id="user-img" src="{{ asset('assets/images/users_pics/' ~ covoiturage.user.picture) }}" alt=""><br>
-                                   <h5 style="padding-left: 5px"> {{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h5>
-
+                                    <h6 style="padding-left: 5px"> {{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h6>
+                                </a>
                             </div>
                                 <div class="col-md-7">
-                            <div href="#" class="listing-item-container compact">
-                                <div class="listing-item">
-                                    <img src="{{ asset('assets/cov.jpg') }}" alt="">
-                                    <div class="listing-badge now-open">{% if covoiturage.type==1 %} Quotidien {% else %} Simple {% endif %}</div>
-                                    <div class="listing-item-details">
-                                        <ul>
-                                            <li>{{ covoiturage.date|date('F jS \\a\\t g:ia') }}</li>
-                                        </ul>
+                                    <div href="#" class="listing-item-container compact">
+                                        <div class="listing-item">
+                                            <img src="{{ asset('assets/cov.jpg') }}" alt="">
+                                            <div class="listing-badge now-open">{% if covoiturage.type==1 %} Quotidien {% else %} Simple {% endif %}</div>
+                                            <div class="listing-item-details">
+                                                <ul>
+                                                    <li>{{ covoiturage.date|date('F jS \\a\\t g:ia') }}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="listing-item-content">
+                                                <h2 style="color: #fff;">{{ covoiturage.depart }}  <i class="fa fa-arrow-right"></i> {{ covoiturage.destination }} {% if covoiturage.fumeur==1 %} <img src="{{ asset('assets/smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% else %} <img src="{{ asset('assets/no-smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% endif %}</h2>
+                                                <span style="font-weight: bold;">Contact: <a style="font-weight: bold; color: snow;" href="{% if covoiturage.user.id == app.user.id %} {{ path('fos_user_profile_show') }} {% else %} {{ path('user_profile',{ 'id' : covoiturage.user.id }) }} {% endif %}">{{ covoiturage.user.phone ~ " - " ~ covoiturage.user.username }}</a></span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="listing-item-content">
-                                        <h2 style="color: #fff;">{{ covoiturage.depart }}  <i class="fa fa-arrow-right"></i> {{ covoiturage.destination }} {% if covoiturage.fumeur==1 %} <img src="{{ asset('assets/smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% else %} <img src="{{ asset('assets/no-smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% endif %}</h2>
-                                        <span>Contact: <a style="color: snow;" href="#">{{ covoiturage.user.phone ~ " - " ~ covoiturage.user.username }}</a></span>
-
-
-                                    </div>
-                                </div>
-                            </div>
                                 </div>
                             <div class="col-md-3">
 
