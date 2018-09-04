@@ -17,16 +17,26 @@ class CovoiturageController extends Controller
      * Lists all covoiturage entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        if($request->get('lieu') === null){
+            $em = $this->getDoctrine()->getManager();
 
-        $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findAll();
+            $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findAll();
 
-        return $this->render('@App/covoiturage/index.html.twig', array(
-            'covoiturages' => $covoiturages,
-        ));
+            return $this->render('@App/covoiturage/index.html.twig', array(
+                'covoiturages' => $covoiturages,
+            ));
+        }
+        else{
+            $em = $this->getDoctrine()->getManager();
 
+            $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findByCity($request->get('lieu'));
+
+            return $this->render('@App/covoiturage/index.html.twig', array(
+                'covoiturages' => $covoiturages,
+            ));
+        }
     }
 
     /**

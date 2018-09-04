@@ -16,7 +16,9 @@
 
 
                     <div class="col-md-4">
-                        <input type="text" placeholder="Lieu">
+                        <form method="get" action="{{ path('covoiturage_index') }}">
+                            <input type="text" name="lieu" placeholder="Lieu">
+                        </form>
                     </div>
 
 
@@ -27,18 +29,33 @@
 
 
                 <div class="row">
+                    {% if covoiturages|length == 0 %}
+                        <div class="row" style="margin-bottom: 100px;">
+                            <div class="col-md-2">
 
-                    {% for covoiturage in covoiturages %}
-                        <!-- Listing Item -->
-
-                        <div class="col-md-12">
-                            <div class="col-md-1"></div>
-                            <div class="col-md-2" style="padding-top: 20px;padding-left: 50px">
-                                <a href="{% if covoiturage.user.id == app.user.id %} {{ path('fos_user_profile_show') }} {% else %} {{ path('user_profile',{ 'id' : covoiturage.user.id }) }} {% endif %}">
-                                    <img style="height: 110px; width: 110px;" id="user-img" src="{{ asset('assets/images/users_pics/' ~ covoiturage.user.picture) }}" alt=""><br>
-                                    <h5 style="padding-left: 5px"> {{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h5>
-                                </a>
                             </div>
+                            <div class="col-md-8">
+                                <div align="center" style="margin-top:30px;">
+                                    <center><h1 align="center" class="fa fa-frown-o" style="font-size:1500%;color:lightgray;"></h1></center>
+                                    <div style="margin-top: 40px;text-align: center">
+                                        <span style="color:lightgray;font-size: 35px;margin-top: 50px;font-weight: normal">Désolé, aucun covoiturage n'est disponible.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+
+                            </div>
+                        </div>
+                    {% else %}
+                        {% for covoiturage in covoiturages %}
+                            <div class="col-md-12">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-2" style="padding-top: 20px;padding-left: 50px">
+                                    <a href="{% if covoiturage.user.id == app.user.id %} {{ path('fos_user_profile_show') }} {% else %} {{ path('user_profile',{ 'id' : covoiturage.user.id }) }} {% endif %}">
+                                        <img style="height: 110px; width: 110px;" id="user-img" src="{{ asset('assets/images/users_pics/' ~ covoiturage.user.picture) }}" alt=""><br>
+                                        <h5 style="padding-left: 5px"> {{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h5>
+                                    </a>
+                                </div>
                                 <div class="col-md-7">
                                     <div href="#" class="listing-item-container compact">
                                         <div class="listing-item">
@@ -56,16 +73,30 @@
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-3">
-
-
+                                <div class="col-md-3">
+                                </div>
                             </div>
-
+                            <hr>
+                        {% endfor %}
+                        <!-- Pagination -->
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- Pagination -->
+                                <div class="pagination-container margin-top-20 margin-bottom-40">
+                                    <nav class="pagination">
+                                        <ul>
+                                            <li><a href="#" class="current-page">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
-                        <hr>
-
-
-                    {% endfor %}
+                        <!-- Pagination / End -->
+                    {% endif %}
                     <!-- Modal -->
                     <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
                         <div class="small-dialog-header">
@@ -109,28 +140,7 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
-
-                <!-- Pagination -->
-                <div class="clearfix"></div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <!-- Pagination -->
-                        <div class="pagination-container margin-top-20 margin-bottom-40">
-                            <nav class="pagination">
-                                <ul>
-                                    <li><a href="#" class="current-page">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-                <!-- Pagination / End -->
-
             </div>
 
         </div>
