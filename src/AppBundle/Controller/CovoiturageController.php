@@ -27,11 +27,7 @@ class CovoiturageController extends Controller
             $covoiturages = $paginator->paginate(
                 $covoiturages,
                 $request->get('page',1),
-<<<<<<< HEAD
                 8
-=======
-                10
->>>>>>> 2b83671f0bb6f8313dd36f78dfff3d385c3324fe
             );
 
             return $this->render('@App/covoiturage/index.html.twig', array(
@@ -45,11 +41,7 @@ class CovoiturageController extends Controller
             $covoiturages = $paginator->paginate(
                 $covoiturages,
                 $request->get('page',1),
-<<<<<<< HEAD
                 8
-=======
-                10
->>>>>>> 2b83671f0bb6f8313dd36f78dfff3d385c3324fe
             );
 
             return $this->render('@App/covoiturage/index.html.twig', array(
