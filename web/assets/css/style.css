@@ -8760,6 +8760,7 @@ section.fullwidth .listing-item-container.list-layout,
 
 .listing-item img {
 	object-fit: cover;
+	opacity:0.85;
 	height: 100%;
 	width: 100%;
 	border-radius: 4px 4px 0 0;
@@ -8795,7 +8796,7 @@ section.fullwidth .listing-item-container.list-layout,
 	font-size: 20px;
 	bottom: -1px;
 	position: relative;
-	font-weight: 500;
+
 	margin: 0;
 	line-height: 31px;
 }

@@ -6,6 +6,7 @@ use AppBundle\Entity\Covoiturage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+
 /**
  * Covoiturage controller.
  *
@@ -16,34 +17,16 @@ class CovoiturageController extends Controller
      * Lists all covoiturage entities.
      *
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
         $covoiturages = $em->getRepository('AppBundle:Covoiturage')->findAll();
 
-        $covoiturage = new Covoiturage();
-        $form = $this->createForm('AppBundle\Form\CovoiturageType', $covoiturage);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $covoiturage->setDatePublication(new \DateTime());
-            $covoiturage->setEtat(1);
-            $covoiturage->setType(1);
-            $covoiturage->setUser($this->getUser());
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($covoiturage);
-            $em->flush();
-
-            return $this->redirectToRoute('covoiturage_index', array(
-                'form' => $form->createView(),
-                'covoiturages' => $covoiturages,));
-        }
-
         return $this->render('@App/covoiturage/index.html.twig', array(
-            'form' => $form->createView(),
             'covoiturages' => $covoiturages,
         ));
+
     }
 
     /**
@@ -52,22 +35,35 @@ class CovoiturageController extends Controller
      */
     public function newAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
         $covoiturage = new Covoiturage();
-        $form = $this->createForm('AppBundle\Form\CovoiturageType', $covoiturage);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($covoiturage);
-            $em->flush();
 
-            return $this->redirectToRoute('covoiturage_show', array('id' => $covoiturage->getId()));
-        }
 
-        return $this->render('@App/covoiturage/new.html.twig', array(
-            'covoiturage' => $covoiturage,
-            'form' => $form->createView(),
-        ));
+        $date=new \DateTime($date=$request->get('heure'));
+        $date->setDate((int)substr($request->get('date'),6,4),(int)substr($request->get('date'),0,2),(int)substr($request->get('date'),3,2));
+
+        $covoiturage->setDate($date);
+        $covoiturage->setDatePublication(new \DateTime());
+
+        if ($request->get('type') == "Quotidien")
+            $covoiturage->setType(1);
+        else
+            $covoiturage->setType(0);
+
+        if ($request->get('fumeur') == "Fumeur")
+            $covoiturage->setFumeur(1);
+        else
+            $covoiturage->setFumeur(0);
+
+        $covoiturage->setDepart($request->get('depart'));
+        $covoiturage->setDestination($request->get('destination'));
+        $covoiturage->setUser($this->getUser());
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($covoiturage);
+        $em->flush();
+    return $this->redirectToRoute('covoiturage_index');
     }
 
     /**
@@ -137,7 +133,6 @@ class CovoiturageController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('covoiturage_delete', array('id' => $covoiturage->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

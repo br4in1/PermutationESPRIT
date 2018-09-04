@@ -35,12 +35,7 @@ class Covoiturage
      */
     private $destination;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="cout", type="float")
-     */
-    private $cout;
+
 
     /**
      * @var int
@@ -49,12 +44,6 @@ class Covoiturage
      */
     private $user;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="etat", type="integer")
-     */
-    private $etat;
 
     /**
      * @var int
@@ -66,7 +55,7 @@ class Covoiturage
     /**
      * @var \DateTime|null
      *
-     * @ORM\Column(name="date", type="date", length=255,nullable=true))
+     * @ORM\Column(name="date", type="datetime")
      */
     private $date;
 
@@ -142,31 +131,6 @@ class Covoiturage
     {
         return $this->destination;
     }
-
-    /**
-     * Set cout.
-     *
-     * @param float $cout
-     *
-     * @return Covoiturage
-     */
-    public function setCout($cout)
-    {
-        $this->cout = $cout;
-
-        return $this;
-    }
-
-    /**
-     * Get cout.
-     *
-     * @return float
-     */
-    public function getCout()
-    {
-        return $this->cout;
-    }
-
     /**
      * Set user.
      *
@@ -191,29 +155,7 @@ class Covoiturage
         return $this->user;
     }
 
-    /**
-     * Set etat.
-     *
-     * @param int $etat
-     *
-     * @return Covoiturage
-     */
-    public function setEtat($etat)
-    {
-        $this->etat = $etat;
 
-        return $this;
-    }
-
-    /**
-     * Get etat.
-     *
-     * @return int
-     */
-    public function getEtat()
-    {
-        return $this->etat;
-    }
 
     /**
      * Set fumeur.
