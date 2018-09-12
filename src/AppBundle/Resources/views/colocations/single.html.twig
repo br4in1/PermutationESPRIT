@@ -65,7 +65,7 @@
 
                     <!-- Description -->
 
-                    <p>
+                    <p style="word-wrap: break-word;">
                         {{ c.description }}
                     </p>
 
@@ -143,6 +143,8 @@
                             <a href="{{ path('colocations_enable',{ 'id' : c.id }) }}" class="send-message-to-owner button"><i
                                         class="sl sl-icon-check"></i> Marquer comme disponible</a>
                         {% endif %}
+                        <a href="{{ path('colocations_delete',{ 'id' : c.id }) }}" class="send-message-to-owner button"><i
+                                        class="sl sl-icon-close"></i> Supprimer</a>
                     {% endif %}
                 </div>
                 <!-- Contact / End-->

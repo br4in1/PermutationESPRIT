@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %} Covoiturages {% endblock %}
+
 {% block body %}
     <div class="container">
         <div class="row">
@@ -49,11 +51,10 @@
                     {% else %}
                         {% for covoiturage in covoiturages %}
                             <div class="col-md-12">
-                                <div class="col-md-1"></div>
-                                <div class="col-md-2" style="padding-top: 20px;padding-left: 50px">
+                                <div align="center" class="col-md-2" style="padding-top: 20px;padding-left: 50px">
                                     <a href="{% if covoiturage.user.id == app.user.id %} {{ path('fos_user_profile_show') }} {% else %} {{ path('user_profile',{ 'id' : covoiturage.user.id }) }} {% endif %}">
                                         <img style="height: 110px; width: 110px;" id="user-img" src="{{ asset('assets/images/users_pics/' ~ covoiturage.user.picture) }}" alt=""><br>
-                                        <h5 style="padding-left: 5px"> {{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h5>
+                                        <div><h5  align="center">{{ covoiturage.user.firstname~" "~covoiturage.user.lastname }}</h5></div>
                                     </a>
                                 </div>
                                 <div class="col-md-7">
@@ -64,16 +65,22 @@
                                             <div class="listing-item-details">
                                                 <ul>
                                                     <li>{{ covoiturage.date|date('F jS \\a\\t g:ia') }}</li>
+                                                    <li>{% if covoiturage.fumeur==1 %} <img src="{{ asset('assets/smoking.png') }}" style=" width: 20px; margin-left: 5px"> {% else %} <img src="{{ asset('assets/no-smoking.png') }}" style=" width: 20px; margin-left: 5px"> {% endif %}</li>
                                                 </ul>
                                             </div>
-                                            <div class="listing-item-content">
-                                                <h2 style="display:block; width: 400px;white-space: nowrap;color: #fff;overflow: hidden;text-overflow: ellipsis;" >{{ covoiturage.depart }}  <i class="fa fa-arrow-right"></i> {{ covoiturage.destination }} {% if covoiturage.fumeur==1 %} <img src="{{ asset('assets/smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% else %} <img src="{{ asset('assets/no-smoking.png') }}" style=" width: 30px; margin-left: 5px"> {% endif %}</h2>
+                                            <div style="top:70px;" class="listing-item-content">
+                                                <h3 style="display:block; width: 400px;white-space: nowrap;color: #fff;overflow: hidden;text-overflow: ellipsis;" >{{ covoiturage.depart }}  <i class="fa fa-arrow-right"></i> {{ covoiturage.destination }} 
+                                                </h3>
                                                 <span style="font-weight: bold;">Contact: <a style="font-weight: bold; color: snow;" href="{% if covoiturage.user.id == app.user.id %} {{ path('fos_user_profile_show') }} {% else %} {{ path('user_profile',{ 'id' : covoiturage.user.id }) }} {% endif %}">{{ covoiturage.user.phone ~ " - " ~ covoiturage.user.username }}</a></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
+                                    {% if covoiturage.user.id == app.user.id %}
+                                  <a style="position:relative;    margin-top:28%;margin-left: 20%;" href="{{ path('covoiturage_delete',{ 'id' : covoiturage.id }) }}" class="send-message-to-owner button"><i
+                                                class="sl sl-icon-close"></i> Supprimer</a>
+                                                {% endif %}
                                 </div>
                             </div>
                             <hr>
@@ -98,7 +105,7 @@
                                         <h4>Date:</h4><input name="date" type="text" id="booking-date" data-lang="fr" data-large-mode="true" data-large-default="true" data-min-year="2018" data-max-year="2020" data-lock="from">
                                         <h4>Type:</h4>
                                         <select name="type" class="chosen-select-no-single" >
-                                            <option label="blank">Simple:</option>
+                                            <option label="blank">Simple</option>
                                             <option>Quotidien</option>
 
                                         </select>
@@ -130,8 +137,9 @@
 
         </div>
     </div>
+{% endblock %}
 
- {% block javascripts %}
+{% block javascripts %}
      <!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
      <link href="{{ asset('assets/css/plugins/datedropper.css') }}" rel="stylesheet" type="text/css">
      <script src="{{ asset('assets/scripts/datedropper.js') }}"></script>
@@ -139,6 +147,5 @@
 
 
  {% endblock %}
-{% endblock %}
 
 

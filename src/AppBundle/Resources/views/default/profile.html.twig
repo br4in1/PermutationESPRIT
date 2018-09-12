@@ -24,11 +24,14 @@
                                 </figcaption>
                             </figure>
                         {% else %}
-                            <img class="user-profile-avatar" src="{{ asset('assets/images/users_pics/' ~ user.picture) }}" alt="">
+                            <img style="position:relative;top: 68px; height: 110px; width: 110px; border-radius: 50%;" class="user-profile-avatar" src="{{ asset('assets/images/users_pics/' ~ user.picture) }}" alt="">
+
                         {% endif %}
                         <div class="user-profile-name list-inline">
                             <li class="list-inline-item"><h1 style="font-weight: bolder;">{{ user.firstname~" "~user.lastname }}</h1></li>
-                            <li class="list-inline-item"><h4>({{ user.classe }})</h4></li>
+                            {% if user.classe is not null %}
+                                <li class="list-inline-item"><h4>({{ user.classe }})</h4></li>
+                            {% endif %}
                         </div>
                         {% if user.email is same as(app.user.email)  %}
                             <div class="user-profile-name">
@@ -178,6 +181,10 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {% if covoiturage.user.id == app.user.id %}
+                                  <a href="{{ path('covoiturage_delete',{ 'id' : covoiturage.id }) }}" class="send-message-to-owner button"><i
+                                                class="sl sl-icon-close"></i> Supprimer</a>
+                                                {% endif %}
                                     <hr>
                                 {% endfor %}
                             {% endif %}

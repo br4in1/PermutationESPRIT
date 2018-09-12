@@ -296,6 +296,13 @@ class ComposerStaticInit1c56b9f8baaef3511324c8a024f1eb72
     );
 
     public static $prefixesPsr0 = array (
+        'j' => 
+        array (
+            'jjalvarezl\\PDFjsViewerBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/jjalvarezl/pdfjs-viewer-bundle',
+            ),
+        ),
         'T' => 
         array (
             'Twig_' => 

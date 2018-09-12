@@ -38,3 +38,7 @@ show_hide_phone:
 change_user_photo:
     path:   /cppic
     defaults:   {   _controller:    "AppBundle:Default:changeUserPhoto" }
+
+emplois:
+    path:   /emplois
+    defaults:   {   _controller:    "AppBundle:Default:emplois"  }

@@ -9,6 +9,9 @@
                 <h2>Ajouter une colocation</h2>
             </div>
         </div>
+        <div class="margin-top-20 notification warning">
+                Tous les champs marqués par (*) sont requis. Les équipements et les photos sont optionnels.
+            </div>
     </div>
 
     <div style="background-color: #f8f8f8;" class="row padding-left-25 padding-right-25 padding-bottom-25">
@@ -25,19 +28,19 @@
                     <!-- Title -->
                     <div class="row with-forms">
                         <div class="col-md-6">
-                            <h5>Titre <i class="tip" data-tip-content="Veuillez choisir un titre significatif"></i></h5>
-                            <input class="search-field" required name="title" id="title" type="text" value=""/>
+                            <h5>Titre *<i class="tip" data-tip-content="Veuillez choisir un titre significatif"></i></h5>
+                            <input required class="search-field" required name="title" id="title" type="text" value=""/>
                         </div>
                         <div class="col-md-6">
-                            <h5>Cité</h5>
-                            <input class="search-field" required name="title" id="city" type="text" value=""/>
+                            <h5>Cité *</h5>
+                            <input required class="search-field" required name="title" id="city" type="text" value=""/>
                         </div>
                     </div>
 
                     <!-- Description -->
                     <div class="form">
-                        <h5>Description</h5>
-                        <textarea class="WYSIWYG" required name="summary" id="description" cols="40" rows="3" spellcheck="true"></textarea>
+                        <h5>Description *</h5>
+                        <textarea required class="WYSIWYG" required name="summary" id="description" cols="40" rows="3" spellcheck="true"></textarea>
                     </div>
                 </div>
                 <!-- Section / End -->
@@ -92,12 +95,12 @@
                     <div class="row">
                         <div class="row with-forms">
                             <div class="col-md-3">
-                                <h5>Nombre de personnes <i class="tip" data-tip-content="Manquantes"></i></h5>
-                                <input class="search-field" required id="nbper" type="number" value=""/>
+                                <h5>Nombre de personnes *<i class="tip" data-tip-content="Manquantes"></i></h5>
+                                <input required class="search-field" required id="nbper" type="number" value=""/>
                             </div>
                             <div class="col-md-3">
-                                <h5>Part de l'individu</h5>
-                                <div class="fm-input pricing-price"><input type="number" required id="prix" data-unit="TND" /></div>
+                                <h5>Part de l'individu *</h5>
+                                <div class="fm-input pricing-price"><input required type="number" required id="prix" data-unit="TND" /></div>
                             </div>
                         </div>
                     </div>
@@ -123,6 +126,7 @@
                 uploadMultiple: true,
                 addRemoveLinks: true,
                 successmultiple: function(file,responsenew) {
+                    $('#submit-link').html("Merci de patienter ...");
                     var response = jQuery.parseJSON(responsenew);
                     formData = new FormData();
                     formData.append('title',$('#title').val());
@@ -153,6 +157,7 @@
                     var myDropzone = this;
                     $("#submit-link").click(function (e) {
                         e.preventDefault();
+                        $('#submit-link').html("Merci de patienter ...");
                         if(myDropzone.getQueuedFiles().length > 0)
                             myDropzone.processQueue();
                         else{

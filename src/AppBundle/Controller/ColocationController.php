@@ -11,12 +11,24 @@ use \Sightengine\SightengineClient;
 
 class ColocationController extends Controller
 {
+    public function deleteAction(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $c = $em->getRepository('AppBundle:Colocation')->findOneBy(array('id' => $id));
+        if($c === null || $c->getUser()->getEmail() !== $this->getUser()->getEmail()) return $this->render('@App/default/404.html.twig');
+        else{
+            $em->remove($c);
+            $em->flush();
+            return $this->redirectToRoute('colocations_index');
+        }
+    }
+    
     public function disableAction(Request $request,$id){
         $em = $this->getDoctrine()->getManager();
         $coloc = $em->getRepository('AppBundle:Colocation')->findOneBy(array('id' => $id));
         if($coloc === null || $coloc->getUser()->getEmail() !== $this->getUser()->getEmail()) return $this->render('@App/default/404.html.twig');
         else {
             $coloc->setAvailable(false);
+            $em->persist($coloc);
             $em->flush();
             return $this->redirectToRoute('colocations_single',array('id' => $coloc->getId()));
         }
@@ -28,6 +40,7 @@ class ColocationController extends Controller
         if($coloc === null || $coloc->getUser()->getEmail() !== $this->getUser()->getEmail()) return $this->render('@App/default/404.html.twig');
         else {
             $coloc->setAvailable(true);
+            $em->persist($coloc);
             $em->flush();
             return $this->redirectToRoute('colocations_single',array('id' => $coloc->getId()));
         }
@@ -92,11 +105,10 @@ class ColocationController extends Controller
         foreach ($files as $file){
             $output = $client->check(['nudity'])->set_file($file->getRealPath());
             $output = json_decode(json_encode($output,true),true);
-            dump($output);
             if($output["nudity"]["safe"] > 0.5){
                 $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
                 $file->move(
-                    'assets/images/colocs_pics',
+                    '../assets/images/colocs_pics',
                     $fileName
                 );
                 $response[] = $fileName;

@@ -16,6 +16,31 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
+    public function emploisAction(Request $request){
+        $parameters = array(
+            'isPdfOutsideWebroot' => false,
+            'pdf' => '../../../assets/test.pdf',
+            'deletePdfInTmpAfterRenderized' => false,
+            'showToolBar' => true,
+            'showLeftToolbarButton' => true,
+            'showSearchInDocumentButton' => true,
+            'showPreviousPageButton' => true,
+            'showPreviousPageButton' => true,
+            'showFindPageInputText' => true,
+            'showNumberOfPagesLabel' => true,
+            'showZoomInButton'=> false,
+            'showZoomOutButton'=> false,
+            'showScaleSelectComboBox'=> false,
+            'showPresentationModeButton'=> true,
+            'showOpenFileButton'=> true,
+            'showPrintButton'=> true,
+            'showDownloadButton'=> true,
+            'showViewBookmarkButton'=> true,
+            'showToolsButton'=> true,
+        );
+        return $this->get('jjalvarezl_pdfjs_viewer.viewer_controller')->renderCustomViewer($parameters);
+    }
+
     /**
      * @Route("/", name="homepage")
      */
@@ -44,8 +69,8 @@ class DefaultController extends Controller
         if($id === -1) return $this->render('@App/default/404.html.twig');
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("AppBundle:User")->findOneBy(array("id" => $id));
-        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $this->getUser()),array('added' => 'DESC'),10);
-        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $this->getUser()),array('date' => 'DESC'),10);
+        $colocs = $em->getRepository("AppBundle:Colocation")->findBy(array("user" => $user),array('added' => 'DESC'),10);
+        $covs = $em->getRepository('AppBundle:Covoiturage')->findBy(array("user" => $user),array('date' => 'DESC'),10);
         if($user === null) return $this->render('@App/default/404.html.twig');
         return $this->render('@App/default/profile.html.twig', [
             'user' => $user,
@@ -70,7 +95,7 @@ class DefaultController extends Controller
             $file = $request->files->get('file-0');
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
             $file->move(
-                'assets/images/users_pics',
+                '../assets/images/users_pics',
                 $fileName
             );
             $em = $this->getDoctrine()->getManager();
@@ -117,6 +142,7 @@ class DefaultController extends Controller
         $lastname = ucfirst(substr($request->get('fos_user_registration_form')["email"],strpos($request->get('fos_user_registration_form')["email"],'.')+1,strpos($request->get('fos_user_registration_form')["email"],'@')-strpos($request->get('fos_user_registration_form')["email"],'.')-1));
         $user->setFirstname(preg_replace('/[0-9]+/', '',$firstname));
         $user->setLastname(preg_replace('/[0-9]+/', '',$lastname));
+        $user->setPicture("_1.png");
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {

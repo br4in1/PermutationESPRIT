@@ -2,6 +2,10 @@ colocations_new:
     path:     /new
     defaults: { _controller: "AppBundle:Colocation:new" }
     methods:  [GET, POST]
+    
+colocations_delete:
+    path: /delete/{id}
+    defaults:   {   _controller:    "AppBundle:Colocation:delete"  }
 
 colocation_upload_pictures:
     path:   /upload_colpics

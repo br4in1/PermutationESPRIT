@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'jjalvarezl\\PDFjsViewerBundle' => array($vendorDir . '/jjalvarezl/pdfjs-viewer-bundle'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'SensioLabs\\Security' => array($vendorDir . '/sensiolabs/security-checker'),
     'Knp\\Component' => array($vendorDir . '/knplabs/knp-components/src'),

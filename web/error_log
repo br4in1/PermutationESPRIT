@@ -23,3 +23,146 @@
 [06-Aug-2018 16:20:22 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ';' or '{' in /home/vhcctmvr/public_html/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php on line 50
 [06-Aug-2018 17:40:52 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ';' or '{' in /home/vhcctmvr/public_html/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php on line 50
 [06-Aug-2018 17:40:54 UTC] PHP Parse error:  syntax error, unexpected ':', expecting ';' or '{' in /home/vhcctmvr/public_html/vendor/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php on line 50
+[06-Sep-2018 01:26:10 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:12 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:13 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:13 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:15 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:16 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:18 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:21 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:22 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:26 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:27 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:31 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:26:58 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:27:18 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:27:20 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:27:25 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:27:28 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:27:44 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:27:47 UTC] PHP Fatal error:  Uncaught Symfony\Component\Config\Definition\Exception\InvalidConfigurationException: Unrecognized option "auto_start" under "framework.session" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php:315
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php(305): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/BaseNode.php(262): Symfony\Component\Config\Definition\ArrayNode->normalizeValue(Array)
+#3 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/Processor.php(33): Symfony\Component\Config\Definition\BaseNode->normalize(Array)
+#4 /home/vhcctmvr/public_html/vendor/symfo in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/Config/Definition/ArrayNode.php on line 315
+[06-Sep-2018 01:42:32 UTC] PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: There is no extension able to load the configuration for "session" (in /home/vhcctmvr/public_html/app/config/config_prod.yml). Looked for namespace "session", found "framework", "security", "twig", "monolog", "swiftmailer", "doctrine", "sensio_framework_extra", "fos_user", "sonata_intl", "knp_paginator" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php:652
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(622): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/home/vhcctmvr/...')
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(109): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loadFile('/home/vhcctmvr/...')
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/ in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php on line 652
+[06-Sep-2018 01:42:46 UTC] PHP Fatal error:  Uncaught Symfony\Component\DependencyInjection\Exception\InvalidArgumentException: There is no extension able to load the configuration for "session" (in /home/vhcctmvr/public_html/app/config/config_prod.yml). Looked for namespace "session", found "framework", "security", "twig", "monolog", "swiftmailer", "doctrine", "sensio_framework_extra", "fos_user", "sonata_intl", "knp_paginator" in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php:652
+Stack trace:
+#0 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(622): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->validate(Array, '/home/vhcctmvr/...')
+#1 /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php(109): Symfony\Component\DependencyInjection\Loader\YamlFileLoader->loadFile('/home/vhcctmvr/...')
+#2 /home/vhcctmvr/public_html/vendor/symfony/symfony/ in /home/vhcctmvr/public_html/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php on line 652

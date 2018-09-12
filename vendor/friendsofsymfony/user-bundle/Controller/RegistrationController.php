@@ -79,6 +79,7 @@ class RegistrationController extends Controller
         $user->setRegistrationdate(new \DateTime("now"));
         $prefs = new ProfilePrefs();
         $prefs->setUser($user);
+        $user->setPicture("_1.png");
         $prefs->setPhonenumbervisible(true); $prefs->setFacebooklinkvisible(true);
         $form->handleRequest($request);
 

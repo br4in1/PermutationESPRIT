@@ -3,13 +3,6 @@
 {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit register' } }) }}
 
     <p class="form-row form-row-wide">
-        <label for="username2">
-            <i class="im im-icon-Mail"></i>
-            {{ form_widget(form.email) }}
-            {% if form_errors(form.email) is not empty %}<div class="notification error closeable">{{ form_errors(form.email) }}</div>{% endif %}
-        </label>
-    </p>
-    <p class="form-row form-row-wide">
         <label>
             <i class="im im-icon-Phone"></i>
             {{ form_widget(form.phone) }}
