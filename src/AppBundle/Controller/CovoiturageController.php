@@ -84,7 +84,7 @@ class CovoiturageController extends Controller
         $em = $this->getDoctrine()->getManager();
         $em->persist($covoiturage);
         $em->flush();
-    return $this->redirectToRoute('covoiturage_index');
+        return $this->redirectToRoute('covoiturage_index');
     }
 
     /**
@@ -128,20 +128,16 @@ class CovoiturageController extends Controller
      * Deletes a covoiturage entity.
      *
      */
-    public function deleteAction(Request $request, Covoiturage $covoiturage)
-    {
-        $form = $this->createDeleteForm($covoiturage);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($covoiturage);
+    public function deleteAction(Request $request,$id){
+        $em = $this->getDoctrine()->getManager();
+        $c = $em->getRepository('AppBundle:Covoiturage')->findOneBy(array('id' => $id));
+        if($c === null || $c->getUser()->getEmail() !== $this->getUser()->getEmail()) return $this->render('@App/default/404.html.twig');
+        else{
+            $em->remove($c);
             $em->flush();
+            return $this->redirectToRoute('covoiturage_index');
         }
-
-        return $this->redirectToRoute('covoiturage_index');
     }
-
     /**
      * Creates a form to delete a covoiturage entity.
      *

@@ -5,6 +5,9 @@ parameters:
     database_name: vhcctmvr_esprit
     database_user: vhcctmvr_admin_db
     database_password: A1Z2E3R41995
+    #database_name: esprit_entraide
+    #database_user: root
+    #database_password: root
     mailer_transport: sendmail
     mailer_host: mail.esprit-entraide.tn
     mailer_user: contact@esprit-entraide.tn
